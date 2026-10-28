@@ -1353,16 +1353,39 @@
       background: linear-gradient(135deg, #18251e, #101915);
       border: 1px solid rgba(200, 255, 57, 0.3);
       border-radius: 30px;
-      padding: 60px 50px;
+      padding: 56px 48px;
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.35fr 1fr;
       align-items: center;
-      gap: 40px;
+      gap: 36px;
     }
     .cta-banner h2 { font: 800 clamp(28px, 3.4vw, 48px)/1.15 var(--font-heading); margin-bottom: 14px; }
     .cta-banner p { color: #cad4cd; font-size: 15px; line-height: 1.7; margin-bottom: 22px; }
     .guarantees { display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #e0e9e2; }
     .guarantees span { color: var(--lime); font-size: 15px; }
+    .cta-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: 100%;
+    }
+    .cta-banner-actions a.primary,
+    .cta-banner-actions a.outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px 28px;
+      font-size: 14px;
+      font-weight: 800;
+      border-radius: 100px;
+      box-sizing: border-box;
+      gap: 10px;
+      width: 100%;
+      height: 52px;
+      max-height: 52px;
+      flex: none;
+    }
 
     /* Section 07: Contact & Form */
     .contact-layout {
@@ -1624,9 +1647,9 @@
       .solution-copy { padding: 32px; }
       .contact-layout { grid-template-columns: 1fr; gap: 28px; }
       .contact-card, .form-panel { height: auto; }
-      .cta-banner { grid-template-columns: 1fr; padding: 44px 32px; gap: 28px; }
+      .cta-banner { grid-template-columns: 1fr; padding: 40px 30px; gap: 26px; }
       .cta-banner-actions { flex-direction: row; flex-wrap: wrap; gap: 14px; }
-      .cta-banner a.primary, .cta-banner a.outline { flex: 1 1 220px; justify-content: center; }
+      .cta-banner-actions a.primary, .cta-banner-actions a.outline { flex: 1 1 200px; height: 50px; max-height: 50px; justify-content: center; }
     }
 
     /* Extra helper styles */
@@ -1881,7 +1904,7 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: stretch !important;
-        padding: 30px 20px !important;
+        padding: 28px 18px !important;
         border-radius: 20px !important;
         gap: 22px !important;
         width: 100% !important;
@@ -1895,13 +1918,13 @@
       .cta-banner p {
         font-size: 13.5px !important;
         line-height: 1.65 !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 18px !important;
         color: #b9c9bc !important;
       }
       .guarantees {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
+        gap: 11px !important;
         font-size: 12.5px !important;
       }
       .guarantees > div {
@@ -1924,22 +1947,29 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
+      .cta-banner-actions a.primary,
+      .cta-banner-actions a.outline,
       .cta-banner a.primary,
       .cta-banner a.outline {
         width: 100% !important;
         max-width: 100% !important;
+        height: 50px !important;
+        min-height: 50px !important;
+        max-height: 50px !important;
+        flex: none !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
-        padding: 14px 18px !important;
+        padding: 0 16px !important;
         font-size: 13.5px !important;
         font-weight: 700 !important;
         border-radius: 100px !important;
         box-sizing: border-box !important;
         gap: 8px !important;
-        white-space: normal !important;
-        min-height: 48px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
       }
 
       /* Section 07: Contact Form (Full Mobile Flex Overhaul) */
@@ -2031,11 +2061,21 @@
       .showcard.burger { height: 185px !important; }
       .wa-chatcard { width: min(250px, 86%) !important; }
       .solution-photo { min-height: 190px; }
-      .cta-banner { padding: 22px 15px !important; border-radius: 18px !important; gap: 18px !important; }
+      .cta-banner { padding: 22px 14px !important; border-radius: 18px !important; gap: 18px !important; }
       .cta-banner h2 { font-size: clamp(20px, 5.8vw, 24px) !important; }
       .cta-banner p { font-size: 12.5px !important; line-height: 1.6 !important; }
-      .guarantees { font-size: 12px !important; gap: 10px !important; }
-      .cta-banner a.primary, .cta-banner a.outline { padding: 13px 14px !important; font-size: 13px !important; }
+      .guarantees { font-size: 12px !important; gap: 9px !important; }
+      .cta-banner-actions a.primary,
+      .cta-banner-actions a.outline,
+      .cta-banner a.primary,
+      .cta-banner a.outline {
+        height: 48px !important;
+        min-height: 48px !important;
+        max-height: 48px !important;
+        padding: 0 12px !important;
+        font-size: 13px !important;
+        flex: none !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -2564,12 +2604,12 @@
 <div><span>✔</span> <span data-i18n="guarantee_3"><strong>Transparent Discussion:</strong> Upfront scope and clear quotation before any commitment.</span></div>
 </div>
 </div>
-<div class="cta-banner-actions" style="display:flex;flex-direction:column;gap:16px">
-<a class="primary" href="#contact" style="justify-content:center;padding:17px 28px;font-size:14px">
+<div class="cta-banner-actions">
+<a class="primary" href="#contact">
 <span data-i18n="cta_quote">Get a Custom Quote</span>
 <span>➔</span>
 </a>
-<a class="outline" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20pricing%20aur%20custom%20quote%20chahiye." rel="noopener noreferrer" style="justify-content:center" target="_blank">
+<a class="outline" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20pricing%20aur%20custom%20quote%20chahiye." rel="noopener noreferrer" target="_blank">
 <span>💬</span>
 <span data-i18n="cta_quote_wa">Direct WhatsApp Inquiry</span>
 </a>
