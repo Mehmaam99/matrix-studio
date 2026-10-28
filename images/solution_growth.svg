@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bgGradGrowth" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e0c"/>
+      <stop offset="50%" stop-color="#111814"/>
+      <stop offset="100%" stop-color="#080c0a"/>
+    </linearGradient>
+    <linearGradient id="goldLime" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="60%" stop-color="#c8ff39"/>
+      <stop offset="100%" stop-color="#27c93f"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2b22"/>
+      <stop offset="50%" stop-color="#121c16"/>
+      <stop offset="100%" stop-color="#0b120e"/>
+    </linearGradient>
+    <filter id="glowLime" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradGrowth)"/>
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="950" cy="250" r="300" fill="#ffd166" opacity="0.05" filter="url(#glowLime)"/>
+  <circle cx="250" cy="550" r="300" fill="#c8ff39" opacity="0.06" filter="url(#glowLime)"/>
+
+  <!-- Main Container -->
+  <rect x="60" y="50" width="1080" height="700" rx="24" fill="#0d1511" stroke="#2b3d30" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <g transform="translate(100, 95)">
+    <text font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" fill="#c8ff39" letter-spacing="0.16em">06 / CUSTOMER RETENTION &amp; GROWTH ENGINE</text>
+    <text y="32" font-family="'Segoe UI', Roboto, sans-serif" font-size="28" font-weight="800" fill="#ffffff" letter-spacing="-0.03em">Turn First-Time Buyers Into Permanent Regulars</text>
+  </g>
+
+  <!-- Left: VIP Loyalty Rewards Pass (Large Realistic Card) -->
+  <g transform="translate(100, 180)">
+    <!-- Card Outer Shadow / Glow -->
+    <rect width="460" height="280" rx="22" fill="#000000" opacity="0.6" transform="translate(10, 15)"/>
+    <rect width="460" height="280" rx="22" fill="url(#cardGrad)" stroke="#c8ff39" stroke-width="1.8" filter="url(#glowLime)"/>
+
+    <!-- Card Brand & VIP Pill -->
+    <text x="32" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#ffffff" letter-spacing="0.1em">MATRIX VIP CLUB</text>
+    <rect x="330" y="28" width="98" height="26" rx="13" fill="#c8ff39"/>
+    <text x="345" y="45" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="900" fill="#0b120e">GOLD PASS</text>
+
+    <!-- Stylized QR Code Scanner -->
+    <g transform="translate(32, 90)">
+      <rect width="90" height="90" rx="12" fill="#0a100d" stroke="#364d3d" stroke-width="1.5"/>
+      <!-- QR Blocks -->
+      <rect x="12" y="12" width="24" height="24" rx="4" fill="#c8ff39"/>
+      <rect x="54" y="12" width="24" height="24" rx="4" fill="#c8ff39"/>
+      <rect x="12" y="54" width="24" height="24" rx="4" fill="#c8ff39"/>
+      <rect x="42" y="42" width="12" height="12" rx="2" fill="#ffd166"/>
+      <rect x="60" y="60" width="18" height="18" rx="2" fill="#53bdeb"/>
+    </g>
+
+    <!-- Member Details -->
+    <g transform="translate(145, 105)">
+      <text font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#8da393" letter-spacing="0.12em">MEMBER STATUS</text>
+      <text y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#ffffff">VIP Regular • 10% Off</text>
+
+      <text y="58" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#8da393" letter-spacing="0.12em">REPEAT VISITS</text>
+      <text y="80" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" fill="#c8ff39">6 Visits This Month ✦</text>
+    </g>
+
+    <!-- Card Bottom Footer -->
+    <line x1="32" y1="225" x2="428" y2="225" stroke="#25382b" stroke-width="1"/>
+    <text x="32" y="252" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#9db3a4">Scan on WhatsApp to Redeem Automatic Perk</text>
+    <text x="380" y="252" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" fill="#c8ff39">🎁</text>
+  </g>
+
+  <!-- Right: Google 5-Star Reviews Automator Card -->
+  <g transform="translate(600, 180)">
+    <rect width="480" height="280" rx="22" fill="#101b15" stroke="#2b3e30" stroke-width="1.5"/>
+    
+    <!-- Google Reviews Badge Top -->
+    <g transform="translate(32, 35)">
+      <circle cx="16" cy="16" r="16" fill="#ffffff"/>
+      <text x="9" y="22" font-family="'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" fill="#4285f4">G</text>
+      <text x="44" y="16" font-family="'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#ffffff">Google Verified Reviews</text>
+      <text x="44" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#8da393">Automated Post-Purchase SMS &amp; WhatsApp</text>
+    </g>
+
+    <!-- Star Rating Counter -->
+    <g transform="translate(32, 100)">
+      <text font-family="'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffd166">5.0</text>
+      <g transform="translate(85, -28)">
+        <text font-family="'Segoe UI', Roboto, sans-serif" font-size="24" fill="#ffd166" letter-spacing="4">★★★★★</text>
+        <text y="24" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#c8ff39">240+ Local Customer Reviews</text>
+      </g>
+    </g>
+
+    <!-- Real Review Quote Bubble -->
+    <g transform="translate(32, 165)">
+      <rect width="416" height="85" rx="14" fill="#15241c" stroke="#2a3f30" stroke-width="1"/>
+      <text x="18" y="28" font-family="'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#ffffff">“50+ new 5-star Google reviews in just 2 weeks!”</text>
+      <text x="18" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#8ea293">Our customers automatically receive a gentle WhatsApp follow-up.</text>
+      <text x="18" y="68" font-family="'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" fill="#c8ff39">✓ Verified Business Owner • Karachi</text>
+    </g>
+  </g>
+
+  <!-- Bottom 3 Impact Metrics Row -->
+  <g transform="translate(100, 500)">
+    <!-- Metric 1 -->
+    <rect width="300" height="190" rx="18" fill="#101914" stroke="#253529" stroke-width="1"/>
+    <text x="24" y="36" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#8da393" letter-spacing="0.1em">REPEAT CUSTOMER RATE</text>
+    <text x="24" y="86" font-family="'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#c8ff39">+45%</text>
+    <text x="24" y="118" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">Within 30 Days</text>
+    <text x="24" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#788c7e">Via automated 14-day WhatsApp repeat-purchase reminders</text>
+
+    <!-- Metric 2 -->
+    <g transform="translate(340, 0)">
+      <rect width="300" height="190" rx="18" fill="#101914" stroke="#253529" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#8da393" letter-spacing="0.1em">CUSTOMER LIFETIME VALUE</text>
+      <text x="24" y="86" font-family="'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#53bdeb">2.4x</text>
+      <text x="24" y="118" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">Higher Revenue per Buyer</text>
+      <text x="24" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#788c7e">Turning one-time shoppers into habitual repeat clients</text>
+    </g>
+
+    <!-- Metric 3 -->
+    <g transform="translate(680, 0)">
+      <rect width="300" height="190" rx="18" fill="#101914" stroke="#253529" stroke-width="1"/>
+      <text x="24" y="36" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#8da393" letter-spacing="0.1em">WORD-OF-MOUTH TRUST</text>
+      <text x="24" y="86" font-family="'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffd166">5.0 ★</text>
+      <text x="24" y="118" font-family="'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">Google Maps Dominance</text>
+      <text x="24" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#788c7e">Outranking neighborhood competitors on Google Search</text>
+    </g>
+  </g>
+</svg>

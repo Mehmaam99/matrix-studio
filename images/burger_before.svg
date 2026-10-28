@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <radialGradient id="flatLight" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#8b7d6b" />
+      <stop offset="60%" stop-color="#4a3f35" />
+      <stop offset="100%" stop-color="#221d19" />
+    </radialGradient>
+    <linearGradient id="woodTable" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5c4a3b" />
+      <stop offset="50%" stop-color="#423429" />
+      <stop offset="100%" stop-color="#2d231b" />
+    </linearGradient>
+    <linearGradient id="bunTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c99a63" />
+      <stop offset="70%" stop-color="#9b6b38" />
+      <stop offset="100%" stop-color="#784e24" />
+    </linearGradient>
+    <linearGradient id="patty" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#422518" />
+      <stop offset="100%" stop-color="#28160e" />
+    </linearGradient>
+    <linearGradient id="cheese" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5a92a" />
+      <stop offset="100%" stop-color="#b88218" />
+    </linearGradient>
+    <linearGradient id="lettuce" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#638c36" />
+      <stop offset="100%" stop-color="#3e5c1e" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background: Plain restaurant table under flat harsh ambient light -->
+  <rect width="800" height="1000" fill="url(#flatLight)" />
+  <rect y="550" width="800" height="450" fill="url(#woodTable)" />
+
+  <!-- Flat table lines -->
+  <line x1="0" y1="650" x2="800" y2="650" stroke="#382a1f" stroke-width="2" opacity="0.6" />
+  <line x1="0" y1="780" x2="800" y2="780" stroke="#382a1f" stroke-width="2" opacity="0.6" />
+  <line x1="0" y1="910" x2="800" y2="910" stroke="#382a1f" stroke-width="2" opacity="0.6" />
+
+  <!-- Dull Plate Shadow -->
+  <ellipse cx="400" cy="690" rx="260" ry="70" fill="#15100c" opacity="0.6" />
+  <!-- Plain White Diner Plate -->
+  <ellipse cx="400" cy="670" rx="250" ry="60" fill="#d9d5ce" />
+  <ellipse cx="400" cy="670" rx="220" ry="50" fill="#e8e5df" />
+
+  <!-- Burger Shadow -->
+  <ellipse cx="400" cy="660" rx="170" ry="40" fill="#1c1713" opacity="0.5" />
+
+  <!-- Bottom Bun -->
+  <path d="M245 620 C245 655 555 655 555 620 C555 605 245 605 245 620 Z" fill="#9b6b38" />
+
+  <!-- Sauce / Mayo -->
+  <path d="M260 610 Q400 615 540 610 Q400 620 260 610 Z" fill="#f5eedc" opacity="0.8" />
+
+  <!-- Beef Patty 1 -->
+  <path d="M230 585 C230 615 570 615 570 585 C570 575 230 575 230 585 Z" fill="url(#patty)" />
+
+  <!-- Melted Cheese Layer (Flat, standard lighting) -->
+  <polygon points="240,580 320,620 360,585 430,625 480,585 540,610 560,580 540,570 260,570" fill="url(#cheese)" />
+
+  <!-- Beef Patty 2 -->
+  <path d="M235 550 C235 580 565 580 565 550 C565 540 235 540 235 550 Z" fill="url(#patty)" />
+
+  <!-- Tomato Slices -->
+  <ellipse cx="330" cy="535" rx="90" ry="20" fill="#b83325" />
+  <ellipse cx="470" cy="535" rx="90" ry="20" fill="#a82d20" />
+
+  <!-- Crinkled Lettuce (No studio gloss) -->
+  <path d="M220 525 Q260 545 300 520 Q350 545 400 520 Q450 545 500 520 Q550 545 580 525 C570 515 230 515 220 525 Z" fill="url(#lettuce)" />
+
+  <!-- Top Bun (Plain daylight, no glowing highlight) -->
+  <path d="M230 515 C230 380 570 380 570 515 Z" fill="url(#bunTop)" />
+  
+  <!-- Sesame seeds -->
+  <ellipse cx="350" cy="440" rx="5" ry="2" fill="#eed2ab" transform="rotate(15 350 440)" />
+  <ellipse cx="420" cy="420" rx="6" ry="2" fill="#eed2ab" transform="rotate(-10 420 420)" />
+  <ellipse cx="460" cy="450" rx="5" ry="3" fill="#eed2ab" transform="rotate(25 460 450)" />
+  <ellipse cx="310" cy="470" rx="6" ry="2" fill="#eed2ab" transform="rotate(-20 310 470)" />
+  <ellipse cx="380" cy="470" rx="5" ry="2" fill="#eed2ab" transform="rotate(5 380 470)" />
+  <ellipse cx="500" cy="480" rx="5" ry="2" fill="#eed2ab" transform="rotate(-15 500 480)" />
+
+  <!-- Camera Viewfinder Overlay (Simulates raw phone snapshot) -->
+  <g stroke="#ffffff" stroke-width="1.5" opacity="0.45">
+    <!-- Top-left bracket -->
+    <path d="M50 90 L50 50 L90 50" fill="none" />
+    <!-- Top-right bracket -->
+    <path d="M710 50 L750 50 L750 90" fill="none" />
+    <!-- Bottom-left bracket -->
+    <path d="M50 910 L50 950 L90 950" fill="none" />
+    <!-- Bottom-right bracket -->
+    <path d="M710 950 L750 950 L750 910" fill="none" />
+    <!-- Center focus crosshair -->
+    <line x1="380" y1="500" x2="390" y2="500" />
+    <line x1="410" y1="500" x2="420" y2="500" />
+    <line x1="400" y1="480" x2="400" y2="490" />
+    <line x1="400" y1="510" x2="400" y2="520" />
+    <circle cx="400" cy="500" r="25" fill="none" stroke-dasharray="3 3" />
+  </g>
+
+  <!-- Raw Photo Metadata Watermark -->
+  <rect x="50" y="905" width="340" height="42" rx="6" fill="#000000" opacity="0.75" />
+  <text x="65" y="931" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#e0e0e0" letter-spacing="1">RAW SMARTPHONE PHOTO • 1/60s f/2.2</text>
+
+  <rect x="560" y="50" width="190" height="38" rx="6" fill="#1f2422" stroke="#ffffff30" stroke-width="1" />
+  <text x="580" y="74" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#a0aaa3" letter-spacing="1.5">BEFORE: UNEDITED</text>
+</svg>

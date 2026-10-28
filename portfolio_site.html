@@ -1,0 +1,3294 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080b0b" name="theme-color"/>
+<title>Matrix Studio | Websites, Branding &amp; Automation for Pakistan</title>
+<meta content="Matrix Studio helps Pakistani businesses build websites, stronger branding, WhatsApp automations and practical digital systems. Request a free consultation." name="description"/>
+<meta content="Matrix Studio — Your Business. Our Creative Edge." property="og:title"/>
+<meta content="We don't just make your business look better. We help it work smarter. Save time, cut costs, and grow sales." property="og:description"/>
+<meta content="images/burger_deal.webp" property="og:image"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* CSS Variables & Reset */
+    :root {
+      --bg: #080b0b;
+      --panel: #111717;
+      --panel-card: #15201b;
+      --lime: #c8ff39;
+      --lime-glow: rgba(200, 255, 57, 0.25);
+      --muted: #a5aeaa;
+      --line: #ffffff1f;
+      --font-heading: 'Manrope', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-hand: 'Caveat', cursive;
+      --font-serif: 'Playfair Display', serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: #f4f7f3;
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; background: none; border: 0; }
+    ::selection { background: var(--lime); color: #111; }
+
+    /* Layout Container */
+    .wrap {
+      width: min(1440px, calc(100% - 9vw));
+      margin: auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b5c0b8;
+    }
+    .lime { color: var(--lime); }
+    .handwritten { font-family: var(--font-hand); letter-spacing: 0.04em; }
+    .cursive-brand { font-family: var(--font-serif); font-style: italic; }
+
+    /* Navigation Header */
+    .header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      background: rgba(8, 11, 11, 0.92);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font: 800 28px/0.9 var(--font-heading);
+      letter-spacing: .2em;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .logo span span { color: var(--lime); }
+    .logo small {
+      font: 600 10px var(--font-body);
+      letter-spacing: .54em;
+      text-align: center;
+      margin-top: 7px;
+      color: #8c9790;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-size: 13px;
+      color: #d4dbd7;
+      align-items: center;
+    }
+    .nav-links a { transition: color 0.2s; position: relative; }
+    .nav-links a:hover, .nav-links a.active { color: var(--lime); }
+
+    .navright {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #aeb8b2;
+      transition: all 0.2s;
+    }
+    .lang-btn.active { background: var(--lime); color: #10150c; }
+    .lang-btn:hover:not(.active) { color: #ffffff; }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 100px;
+      padding: 11px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .25s;
+      background: transparent;
+      color: white;
+      white-space: nowrap;
+    }
+    .pill:hover { background: white; color: #111; }
+
+    .menu {
+      display: none;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 26px;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 840px;
+      padding: 165px 0 95px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse 50% 55% at 88% 44%, #25301966, transparent 75%), linear-gradient(130deg, #080b0b 40%, #101615);
+    }
+    .hero:after {
+      content: 'M';
+      position: absolute;
+      font: 900 650px var(--font-heading);
+      right: -110px;
+      top: 55px;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 51% 49%;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      gap: 20px;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 4;
+      max-width: 580px;
+    }
+    .hero h1 {
+      font: 800 clamp(48px, 5.2vw, 88px)/1.06 var(--font-heading);
+      letter-spacing: -.07em;
+      margin: 22px 0 16px;
+    }
+    .hero h1 em { font-style: italic; color: var(--lime); }
+
+    .hero-subhead {
+      font-size: 17px;
+      font-weight: 600;
+      color: #e6eee8;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 500px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+    .primary {
+      background: var(--lime);
+      color: #10150c;
+      border: 1px solid var(--lime);
+      border-radius: 100px;
+      padding: 15px 26px;
+      font-weight: 800;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: .25s;
+    }
+    .primary:hover {
+      background: white;
+      border-color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px var(--lime-glow);
+    }
+    .outline {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 100px;
+      padding: 15px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: .25s;
+    }
+    .outline:hover { border-color: var(--lime); color: var(--lime); }
+
+    /* Target Industries */
+    .industries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 34px;
+      color: #d8dfd9;
+    }
+    .industry {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+      padding-right: 16px;
+      font-size: 11px;
+    }
+    .industry:last-child { border: 0; padding-right: 0; }
+
+    /* Karachi Landmark & Architectural Sketch */
+    .karachi-wrap {
+      margin-top: 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .karachi-label {
+      color: var(--lime);
+      font-size: 18px;
+      transform: rotate(-3deg);
+      line-height: 1.25;
+    }
+    .mazar-svg {
+      width: 140px;
+      height: auto;
+      opacity: 0.5;
+      filter: drop-shadow(0 0 8px rgba(200, 255, 57, 0.15));
+    }
+
+    /* Hero Art & Floating Showcards */
+    .hero-art {
+      height: 590px;
+      position: relative;
+      perspective: 1000px;
+    }
+    .lime-slash {
+      position: absolute;
+      right: -20px;
+      bottom: 120px;
+      width: 140px;
+      height: 8px;
+      background: var(--lime);
+      transform: rotate(-45deg);
+      box-shadow: 0 0 25px var(--lime);
+      filter: blur(0.5px);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .showcard {
+      position: absolute;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 23px;
+      box-shadow: 0 35px 65px rgba(0, 0, 0, 0.85);
+      background: #17201b;
+      transition: transform .5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .5s;
+    }
+    .showcard:hover {
+      transform: translateY(-12px) rotate(0deg) !important;
+      box-shadow: 0 45px 80px rgba(0, 0, 0, 0.95);
+      z-index: 10;
+    }
+    .showcard img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .showcard:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent 58%);
+      pointer-events: none;
+    }
+    .showcard .label {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      right: 20px;
+      z-index: 2;
+      font: 800 21px/1.15 var(--font-heading);
+      letter-spacing: -.05em;
+    }
+
+    .burger {
+      width: 57%;
+      height: 280px;
+      left: 6%;
+      top: 12px;
+      transform: rotate(6deg);
+      z-index: 3;
+      animation: floatHeroCard1 6s ease-in-out infinite alternate;
+    }
+    .perfume {
+      width: 51%;
+      height: 280px;
+      right: 0;
+      top: 0;
+      transform: rotate(-5deg);
+      z-index: 2;
+      animation: floatHeroCard2 7.5s ease-in-out infinite alternate;
+    }
+    .food {
+      width: 43%;
+      height: 230px;
+      left: 0;
+      top: 315px;
+      transform: rotate(-8deg);
+      z-index: 2;
+      animation: floatHeroCard3 6.8s ease-in-out infinite alternate;
+    }
+    .clinic {
+      width: 34%;
+      height: 335px;
+      right: -2%;
+      top: 240px;
+      transform: rotate(5deg);
+      z-index: 5;
+      animation: floatHeroCard4 8s ease-in-out infinite alternate;
+    }
+    .wa-chatcard {
+      position: absolute;
+      z-index: 7;
+      width: 280px;
+      left: 35%;
+      top: 240px;
+      background: #0b141a;
+      border: 1px solid #2a3942;
+      border-radius: 20px;
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+      transform: rotate(-2deg);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+      animation: floatHeroWa 5.5s ease-in-out infinite alternate;
+    }
+    .showcard:hover, .wa-chatcard:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes floatHeroCard1 {
+      0% { transform: translateY(0px) rotate(6deg); }
+      100% { transform: translateY(-16px) rotate(4deg); }
+    }
+    @keyframes floatHeroCard2 {
+      0% { transform: translateY(0px) rotate(-5deg); }
+      100% { transform: translateY(-18px) rotate(-7deg); }
+    }
+    @keyframes floatHeroCard3 {
+      0% { transform: translateY(0px) rotate(-8deg); }
+      100% { transform: translateY(-14px) rotate(-6deg); }
+    }
+    @keyframes floatHeroCard4 {
+      0% { transform: translateY(0px) rotate(5deg); }
+      100% { transform: translateY(-20px) rotate(7.5deg); }
+    }
+    @keyframes floatHeroWa {
+      0% { transform: translateY(0px) rotate(-2deg); }
+      100% { transform: translateY(-12px) rotate(0.5deg); }
+    }
+
+    .card-badge-top {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font: 800 11px var(--font-heading);
+      letter-spacing: 0.08em;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    }
+    .card-badge-right {
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      z-index: 3;
+      font: 700 12px/1.3 var(--font-heading);
+      color: #e5ece6;
+      text-align: right;
+      max-width: 140px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    }
+    .card-btn-pill {
+      display: inline-block;
+      margin-top: 8px;
+      background: white;
+      color: #111;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 5px 12px;
+      border-radius: 100px;
+    }
+
+    /* Floating WhatsApp Phone Card */
+    
+    .wa-chatcard:hover { transform: rotate(0) translateY(-10px); }
+    .wa-head {
+      background: #1f2c34;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .wa-head-user { display: flex; align-items: center; gap: 10px; }
+    .wa-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #00a884;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 15px;
+    }
+    .wa-meta strong {
+      font-size: 12px;
+      color: #e9edef;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .wa-meta small { display: block; color: #8696a0; font-size: 10px; }
+    .wa-actions { display: flex; gap: 12px; color: #aebac1; font-size: 14px; }
+    .wa-body {
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+    .wa-msg {
+      max-width: 88%;
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      line-height: 1.45;
+      position: relative;
+    }
+    .wa-out { background: #005c4b; color: #e9edef; align-self: flex-end; border-top-right-radius: 2px; }
+    .wa-in { background: #202c33; color: #e9edef; align-self: flex-start; border-top-left-radius: 2px; }
+    .wa-time { font-size: 9px; color: #8696a0; float: right; margin-left: 8px; margin-top: 4px; }
+    .wa-input-bar {
+      padding: 8px 12px;
+      background: #1f2c34;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .wa-input-fake { flex: 1; background: #2a3942; border-radius: 20px; padding: 6px 12px; font-size: 11px; color: #8696a0; }
+    .wa-mic-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #00a884;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+    }
+
+    /* Hero Bottom Bar */
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 60px;
+      color: #aeb7b0;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      gap: 20px;
+    }
+    .scrollmark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: #aeb7b0;
+      flex-shrink: 0;
+      transition: color .25s;
+    }
+    .scrollmark:hover {
+      color: #ffffff;
+    }
+    .scroll-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(200, 255, 57, 0.35);
+      color: var(--lime);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .25s ease;
+      box-shadow: 0 0 15px rgba(200, 255, 57, 0.1);
+      animation: scrollBounce 2s infinite ease-in-out;
+    }
+    .scrollmark:hover .scroll-badge {
+      background: var(--lime);
+      color: #10150c;
+      border-color: var(--lime);
+      box-shadow: 0 0 20px var(--lime-glow);
+      transform: translateY(2px);
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    .trusted-bar {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .trusted-title {
+      font-size: 10px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #7d8980;
+      font-weight: 700;
+      white-space: nowrap;
+      padding-right: 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .trusted-logos {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .t-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #b5c2b8;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .t-logo:hover { opacity: 1; color: white; }
+    .t-logo small {
+      display: block;
+      font-size: 8px;
+      letter-spacing: .15em;
+      color: #6d7b71;
+    }
+
+    /* Marquee Infinite Ticker */
+    .ticker {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      background: #101612;
+      padding: 19px 0;
+    }
+    .ticker-inner {
+      display: flex;
+      gap: 65px;
+      white-space: nowrap;
+      animation: marquee 26s linear infinite;
+      font: 700 12px var(--font-heading);
+      letter-spacing: .16em;
+      color: #b8c1b7;
+    }
+    .ticker-inner b { color: var(--lime); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* General Section Styles */
+    section.content {
+      padding: 110px 0;
+      position: relative;
+    }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 48px;
+    }
+    .section-head h2 {
+      font: 800 clamp(32px, 3.8vw, 58px)/1.1 var(--font-heading);
+      letter-spacing: -.05em;
+      margin: 14px 0 0;
+    }
+    .section-head p {
+      max-width: 440px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ========================================================
+       SECTION 01: SOLUTIONS (Interactive Accordion Drawers)
+       ======================================================== */
+    .services-accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .svc-acc-card {
+      background: linear-gradient(160deg, #131a16 0%, #0c100f 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 0;
+      transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+      position: relative;
+    }
+    .svc-acc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--lime);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .svc-acc-card:hover {
+      border-color: rgba(200, 255, 57, 0.35);
+      background: linear-gradient(160deg, #16201b 0%, #0e1311 100%);
+      transform: translateY(-2px);
+    }
+    .svc-acc-card.active {
+      border-color: var(--lime);
+      background: linear-gradient(160deg, #16221c 0%, #0b100e 100%);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(200, 255, 57, 0.08);
+    }
+    .svc-acc-card.active::before {
+      opacity: 1;
+    }
+
+    /* Accordion Clickable Header */
+    .svc-acc-header {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      outline: none;
+      user-select: none;
+      transition: background .25s ease;
+    }
+    .svc-acc-header:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .svc-acc-header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+    .svc-acc-num {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .15em;
+      color: #637769;
+      transition: color .3s;
+      flex-shrink: 0;
+      font-family: monospace;
+    }
+    .svc-acc-card.active .svc-acc-num,
+    .svc-acc-card:hover .svc-acc-num {
+      color: var(--lime);
+    }
+    .svc-acc-icon-pod {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(200, 255, 57, 0.08);
+      border: 1px solid rgba(200, 255, 57, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--lime);
+      transition: all .3s ease;
+      flex-shrink: 0;
+    }
+    .svc-acc-card.active .svc-acc-icon-pod {
+      background: var(--lime);
+      color: #10150c;
+      box-shadow: 0 0 20px var(--lime-glow);
+      transform: scale(1.05) rotate(-3deg);
+    }
+    .svc-acc-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .svc-acc-title-group h3 {
+      font: 800 22px var(--font-heading);
+      letter-spacing: -.03em;
+      color: #ffffff;
+      margin: 0;
+      transition: color .3s;
+    }
+    .svc-acc-card.active .svc-acc-title-group h3 {
+      color: var(--lime);
+    }
+    .svc-acc-summary-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8da194;
+      letter-spacing: .02em;
+    }
+
+    /* Accordion Toggle Pill Button */
+    .svc-acc-toggle-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #cad8ce;
+      transition: all .3s ease;
+      flex-shrink: 0;
+    }
+    .svc-acc-toggle-pill .toggle-indicator {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--lime);
+      transition: transform .35s ease, background .35s ease, color .35s ease;
+    }
+    .svc-acc-card.active .svc-acc-toggle-pill {
+      background: rgba(200, 255, 57, 0.12);
+      border-color: var(--lime);
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(200, 255, 57, 0.15);
+    }
+    .svc-acc-card.active .svc-acc-toggle-pill .toggle-indicator {
+      transform: rotate(45deg);
+      background: var(--lime);
+      color: #10150c;
+    }
+
+    /* Accordion Body */
+    .svc-acc-body {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height .5s cubic-bezier(0.16, 1, 0.3, 1), opacity .35s ease;
+      background: #090e0c;
+    }
+    .svc-acc-card.active .svc-acc-body {
+      max-height: 1200px;
+      opacity: 1;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .svc-acc-body-content {
+      padding: 30px 32px 34px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    /* Left Details in Drawer */
+    .svc-acc-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .svc-acc-desc {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #c9d8ce;
+      margin: 0;
+    }
+    .svc-acc-features-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-top: 4px;
+    }
+    .svc-acc-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .svc-acc-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12px;
+      color: #e0e9e3;
+      line-height: 1.4;
+    }
+    .svc-acc-feature-item .f-dot {
+      color: var(--lime);
+      font-size: 11px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+    .svc-acc-outcome-box {
+      background: rgba(200, 255, 57, 0.06);
+      border-left: 3px solid var(--lime);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #e2ece5;
+    }
+    .svc-acc-outcome-box strong {
+      color: var(--lime);
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .svc-acc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 24px;
+      background: var(--lime);
+      color: #10150c;
+      border-radius: 100px;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      width: fit-content;
+      transition: all .25s ease;
+      box-shadow: 0 0 20px rgba(200, 255, 57, 0.2);
+    }
+    .svc-acc-cta:hover {
+      background: #d8ff6b;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px var(--lime-glow);
+    }
+
+    /* Right Visual Showcase inside Drawer */
+    .svc-acc-visual {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(200, 255, 57, 0.25);
+      background: #0d1411;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 960px) {
+      .svc-acc-body-content {
+        grid-template-columns: 1fr;
+        padding: 22px 20px 26px;
+        gap: 24px;
+      }
+      .svc-acc-features-grid {
+        grid-template-columns: 1fr;
+      }
+      .svc-acc-header {
+        padding: 18px 20px;
+        gap: 14px;
+      }
+      .svc-acc-toggle-pill span:not(.toggle-indicator) {
+        display: none;
+      }
+      .svc-acc-title-group h3 {
+        font-size: 18px;
+      }
+    }
+
+    /* Section 02: Portfolio */
+    .portfolio { background: #0c1110; }
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter {
+      background: rgba(255, 255, 255, 0.05);
+      color: #bfc8bf;
+      border: 1px solid var(--line);
+      border-radius: 40px;
+      padding: 10px 22px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .filter.active, .filter:hover {
+      background: var(--lime);
+      color: #10150c;
+      border-color: var(--lime);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .project {
+      grid-column: span 6;
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 360px;
+      background: #19241f;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: border-color .3s, transform .3s;
+    }
+    .project.third { grid-column: span 4; min-height: 330px; }
+    .project.fullwidth { grid-column: span 12; min-height: 360px; }
+    .project:hover {
+      border-color: var(--lime);
+      transform: translateY(-4px);
+    }
+    .project img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: transform .7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project:hover img { transform: scale(1.08); }
+    .project:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8, 11, 11, 0.95) 0%, rgba(8, 11, 11, 0.2) 65%, transparent 100%);
+    }
+    .project-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      background: rgba(8, 11, 11, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 100px;
+      padding: 5px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--lime);
+      backdrop-filter: blur(8px);
+    }
+    .project-info {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
+      z-index: 2;
+    }
+    .project-info small {
+      color: var(--lime);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-size: 10px;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .project-info h3 {
+      font: 800 22px var(--font-heading);
+      letter-spacing: -.04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Section 03: Before & After Slider */
+    .comp-container {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      aspect-ratio: 4 / 5;
+      background: #101614;
+      user-select: none;
+      touch-action: pan-y;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.85);
+    }
+    .comp-after-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .comp-before-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      overflow: hidden;
+      border-right: 2px solid var(--lime);
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.6);
+      background: #111;
+    }
+    .comp-before-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+    .comp-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 44px;
+      margin-left: -22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      cursor: ew-resize;
+      touch-action: none;
+    }
+    .comp-handle-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: #10150c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 800;
+      box-shadow: 0 0 25px var(--lime-glow), 0 4px 15px rgba(0, 0, 0, 0.9);
+      border: 2px solid #ffffff;
+      transition: transform 0.2s;
+    }
+    .comp-handle:hover .comp-handle-btn { transform: scale(1.1); }
+    .comp-badge {
+      position: absolute;
+      top: 20px;
+      z-index: 8;
+      padding: 7px 16px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+    .badge-before {
+      left: 20px;
+      background: rgba(18, 24, 21, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #b5c2b8;
+    }
+    .badge-after {
+      right: 20px;
+      background: rgba(200, 255, 57, 0.95);
+      color: #10150c;
+      border: 1px solid var(--lime);
+    }
+
+    /* Section 04: WhatsApp Chatbot Simulator */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+    .demo-panel {
+      background: #111a17;
+      border: 1px solid var(--line);
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .demo-title {
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #14201b;
+    }
+    .demo-title strong {
+      font: 800 16px var(--font-heading);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .status { font-size: 11px; color: var(--lime); font-weight: 700; }
+    .chat-reset-btn {
+      font-size: 11px;
+      color: #8da093;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 100px;
+      transition: all 0.2s;
+    }
+    .chat-reset-btn:hover { color: white; border-color: var(--lime); }
+
+    .messages {
+      height: 330px;
+      overflow-y: auto;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 16px 16px;
+    }
+    .msg {
+      max-width: 82%;
+      padding: 11px 15px;
+      font-size: 13px;
+      line-height: 1.5;
+      border-radius: 14px;
+      background: #24332c;
+    }
+    .msg.user { background: #005c4b; color: white; align-self: flex-end; }
+    .msg.bot { background: #1c2a24; align-self: flex-start; }
+    .msg-time { font-size: 9px; color: rgba(255, 255, 255, 0.5); float: right; margin-left: 10px; margin-top: 4px; }
+
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+      background: #1c2a24;
+      padding: 10px 14px;
+      border-radius: 14px;
+      gap: 4px;
+      align-items: center;
+      margin-left: 22px;
+      margin-bottom: 10px;
+    }
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--lime);
+      animation: typingBounce 1.2s infinite ease-in-out;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+      40% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      padding: 0 20px 14px;
+      flex-wrap: wrap;
+    }
+    .chips button {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      color: #dce7da;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 11px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .chips button:hover { background: var(--lime); color: #10150c; border-color: var(--lime); }
+
+    .chat-form {
+      display: flex;
+      gap: 8px;
+      padding: 16px 20px;
+      border-top: 1px solid var(--line);
+      background: #0d1412;
+    }
+    .chat-form input {
+      background: #17221d;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: white;
+      border-radius: 30px;
+      padding: 12px 18px;
+      flex: 1;
+      min-width: 0;
+      outline: none;
+      font-size: 13px;
+    }
+    .chat-form button {
+      background: var(--lime);
+      color: #111;
+      border: 0;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .flow {
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      height: 100%;
+      justify-content: center;
+    }
+    .flow-step {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      background: #1b2721;
+      padding: 18px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+    }
+    .flow-step b {
+      background: var(--lime);
+      color: #111;
+      border-radius: 12px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .flow-step strong { display: block; font-size: 14px; margin-bottom: 2px; }
+    .flow-step span { font-size: 12px; color: var(--muted); }
+    .arrow-down { text-align: center; color: var(--lime); font-size: 20px; }
+
+    /* Section 05: How We Work */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .process-card {
+      background: #121916;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px 24px;
+      transition: all 0.3s;
+    }
+    .process-card:hover { border-color: var(--lime); transform: translateY(-5px); }
+    .process-num {
+      font: 800 36px var(--font-heading);
+      color: var(--lime);
+      letter-spacing: -.05em;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .process-card h3 { font: 800 20px var(--font-heading); margin-bottom: 10px; }
+    .process-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* Section 06: Custom Quote Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #18251e, #101915);
+      border: 1px solid rgba(200, 255, 57, 0.3);
+      border-radius: 30px;
+      padding: 60px 50px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+    .cta-banner h2 { font: 800 clamp(28px, 3.4vw, 48px)/1.15 var(--font-heading); margin-bottom: 14px; }
+    .cta-banner p { color: #cad4cd; font-size: 15px; line-height: 1.7; margin-bottom: 22px; }
+    .guarantees { display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #e0e9e2; }
+    .guarantees span { color: var(--lime); font-size: 15px; }
+
+    /* Section 07: Contact & Form */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    .contact-card {
+      background: #111815;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .contact-card h3 { font: 800 26px var(--font-heading); margin-bottom: 12px; }
+    .contact-card p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 28px; }
+    .contact-meta { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+    .contact-meta-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-meta-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(200, 255, 57, 0.1);
+      color: var(--lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-meta-row small { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: #839187; }
+    .contact-meta-row strong { font-size: 14px; color: white; }
+
+    .form-panel {
+      background: #121a17;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .contact-card > a.outline {
+      margin-top: auto;
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-group.full { grid-column: span 2; }
+    .form-group label { font-size: 12px; font-weight: 700; color: #c9d5cd; }
+    .form-group label .req { color: var(--lime); }
+    .form-input, .form-select, .form-textarea {
+      background: #090e0c;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 13px;
+      color: white;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--lime);
+      background: #0c1411;
+    }
+    .form-textarea { resize: vertical; min-height: 95px; }
+    .form-error { color: #ff6b6b; font-size: 11px; display: none; }
+    .form-error.visible { display: block; }
+    .form-notice {
+      grid-column: span 2;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 11px;
+      color: #9ab0a1;
+      line-height: 1.5;
+    }
+
+    /* Section 08: FAQ Accordion */
+    .faq-list {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: #111815;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(200, 255, 57, 0.4); }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font: 700 16px var(--font-heading);
+      color: white;
+      background: transparent;
+    }
+    .faq-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--lime);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+      padding: 0 26px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .faq-item.open .faq-answer { padding: 0 26px 24px; max-height: 350px; }
+
+    /* Footer */
+    footer {
+      padding: 80px 0 35px;
+      border-top: 1px solid var(--line);
+      background: #060908;
+    }
+    .foot-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 45px;
+    }
+    .foot-top p { color: var(--muted); max-width: 380px; line-height: 1.7; font-size: 14px; margin-top: 14px; }
+    .foot-col h4 {
+      font: 700 12px var(--font-heading);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: white;
+      margin-bottom: 16px;
+    }
+    .foot-links { display: flex; flex-direction: column; gap: 11px; font-size: 13px; color: #b5c2b8; }
+    .foot-links a:hover { color: var(--lime); }
+    .foot-disclaimer {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      color: #7b8880;
+      line-height: 1.6;
+    }
+    .copyright {
+      margin-top: 25px;
+      color: #76837b;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Floating WhatsApp Button */
+    .float-wa {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      z-index: 999;
+      background: #00a884;
+      color: #ffffff;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 168, 132, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    .float-wa:hover {
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 168, 132, 0.6);
+      color: #ffffff;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+    .modal.open { display: flex; }
+    .modal-card {
+      background: #141e1a;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 26px;
+      border-radius: 24px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .modal-top strong { font: 800 18px var(--font-heading); color: white; }
+    .modal-close {
+      border: 0;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-card img { width: 100%; max-height: 440px; object-fit: cover; border-radius: 12px; margin-bottom: 14px; }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive Media Queries */
+    @media (max-width: 1100px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 145px; }
+      .hero-copy { text-align: center; margin: 0 auto; }
+      .hero-desc { margin: 0 auto; }
+      .actions, .industries, .karachi-wrap { justify-content: center; }
+      .hero-art { margin-top: 40px; max-width: 680px; width: 100%; margin-left: auto; margin-right: auto; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-banner { grid-template-columns: 1fr; padding: 40px; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .foot-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .wrap { width: calc(100% - 36px); }
+      .nav { height: 72px; }
+      .logo { font-size: 22px; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #0c1210;
+        padding: 24px;
+        flex-direction: column;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-links.open { display: flex; }
+      .menu { display: block; }
+      .navright .pill { display: none; }
+      .hero { padding: 130px 0 50px; min-height: 0; }
+      .hero h1 { font-size: clamp(38px, 9.5vw, 56px); }
+      .hero-art { height: 420px; }
+      .burger { height: 190px; }
+      .perfume { height: 190px; }
+      .food { height: 160px; top: 220px; }
+      .clinic { height: 210px; top: 170px; }
+      .wa-chatcard { width: 220px; top: 160px; left: 28%; }
+      .service-grid, .demo-grid, .process-grid { grid-template-columns: 1fr; }
+      .project, .project.third, .project.fullwidth { grid-column: span 12; min-height: 300px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .foot-top { grid-template-columns: 1fr; }
+      .trusted-title { border-right: none; padding-right: 0; width: 100%; }
+    }
+  </style>
+<style>html{scroll-padding-top:100px}
+body{background:#080c0a}
+a,button{ -webkit-tap-highlight-color:transparent }
+:focus-visible{outline:2px solid var(--lime);outline-offset:4px}
+section.content{padding:100px 0}
+.section-head{margin-bottom:34px}
+.section-head p{max-width:390px}
+.solution-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:17px}
+.solution-tab{padding:13px 17px;border:1px solid #35453a;border-radius:100px;color:#cbd9cd;background:#111b15;font-size:12px;font-weight:700;transition:.2s}
+.solution-tab:hover{border-color:#a6dc47}
+.solution-tab.is-active{border-color:var(--lime);background:var(--lime);color:#10160e}
+.solution-feature{display:grid;grid-template-columns:52% 48%;min-height:430px;overflow:hidden;background:linear-gradient(140deg,#17251b,#101713);border:1px solid #364b39;border-radius:24px}
+.solution-photo{position:relative;min-height:420px;overflow:hidden}
+.solution-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:brightness(1);transition:transform .4s cubic-bezier(0.16, 1, 0.3, 1);}
+.solution-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 82%,#101713);pointer-events:none}
+.solution-photo-label{position:absolute;left:25px;bottom:22px;z-index:1;font-size:10px;letter-spacing:.15em;color:#fff;border:1px solid #ffffff77;border-radius:100px;background:#08120abb;padding:9px 13px}
+.solution-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:44px 46px}
+.solution-copy h3{font:800 clamp(28px,3.2vw,49px)/1.12 var(--font-heading);letter-spacing:-.055em;margin:15px 0}
+.solution-copy p{color:#b4c5b7;font-size:14px;line-height:1.8}
+.solution-benefits{list-style:none;display:grid;gap:12px;margin:25px 0 28px;padding:0}
+.solution-benefits li{color:#e0ebdf;font-size:13px}
+.solution-benefits li:before{content:"✓";color:#111;background:var(--lime);font-weight:900;border-radius:50%;padding:0 4px;margin-right:11px}
+.projects{gap:16px}
+.project{border-radius:18px}
+.project:hover{transform:translateY(-3px)}
+.project-info h3{font-size:20px}
+.demo-panel{border-radius:20px}
+.comp-container{max-width:700px;aspect-ratio:1/1}
+.process-card{padding:27px 22px}
+.cta-banner{border-radius:24px}
+.contact-card,.form-panel{border-radius:24px;height:100%}
+.form-grid{gap:15px}
+.form-input,.form-select,.form-textarea{width:100%}
+.form-panel .form-notice{font-size:12px}
+.industry-demo{padding:15px 20px 6px;border-top:1px solid #ffffff12}
+.industry-demo>span{display:block;color:var(--lime);font-size:10px;font-weight:800;letter-spacing:.13em;margin-bottom:10px}
+.industry-demo-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.industry-demo-tabs button{border:1px solid #41574a;border-radius:99px;padding:8px 12px;color:#d4e2d6;font-size:11px;font-weight:700}
+.industry-demo-tabs button.chosen{background:var(--lime);color:#10150c;border-color:var(--lime)}
+
+
+@media (max-width:1100px){.solution-copy{padding:30px}.solution-feature{grid-template-columns:48% 52%}}
+@media (max-width:768px){section.content{padding:68px 0}.solution-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:8px}.solution-tab{white-space:nowrap;flex-shrink:0}.solution-feature{grid-template-columns:1fr}.solution-photo{min-height:280px}.solution-photo:after{background:linear-gradient(0deg,#111a14,transparent 65%)}.solution-copy{padding:26px 26px 32px}.project-info h3{font-size:17px}}
+@media (max-width:450px){.solution-photo{min-height:230px}.industry-demo-tabs button{padding:7px 9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}</style></head>
+<body>
+<!-- Accessible Skip Link -->
+<a data-i18n="skip_to_content" href="#home" onblur="this.style.top='-100px'" onfocus="this.style.top='20px'" style="position:absolute;top:-100px;left:20px;background:var(--lime);color:#111;padding:10px 18px;font-weight:700;z-index:9999;border-radius:6px;transition:top .2s">Skip to content</a>
+<!-- Header Navigation -->
+<header class="header">
+<div class="wrap nav">
+<a class="logo" href="#home">
+<span>M<span>Λ</span>TRIX</span>
+<small>STUDIO</small>
+</a>
+<!-- Desktop Navigation Links (6 Concise Links) -->
+<nav class="nav-links" id="navlinks">
+<a class="active" data-i18n="nav_home" href="#home">Home</a>
+<a data-i18n="nav_solutions" href="#solutions">Solutions</a>
+<a data-i18n="nav_work" href="#portfolio">Our Work</a>
+<a data-i18n="nav_comparison" href="#comparison">Before &amp; After</a>
+<a data-i18n="nav_demo" href="#demo">Live Demo</a>
+<a data-i18n="nav_faq" href="#faq">FAQ</a>
+<a data-i18n="nav_contact" href="#contact">Contact</a>
+</nav>
+<!-- Right Nav Buttons & Desktop Language Switcher -->
+<div class="navright">
+<div class="lang-switcher">
+<button class="lang-btn active" data-lang="en" type="button">EN</button>
+<button class="lang-btn" data-lang="ur" type="button">Roman Urdu</button>
+</div>
+<a class="pill" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20free%20consultation%20chahiye." rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+<span data-i18n="cta_consultation">Free Consultation</span>
+</a>
+<button aria-expanded="false" aria-label="Toggle menu" class="menu" id="menu">☰</button>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION (Balanced 51%/49% Grid) -->
+<section class="hero" id="home">
+<div class="wrap">
+<div class="hero-grid">
+<!-- Hero Copy (Left) -->
+<div class="hero-copy">
+<div class="eyebrow" data-i18n="hero_eyebrow">Creative Branding  /  AI Automation  /  Digital Solutions</div>
+<h1>
+<span data-i18n="hero_title_1">Your Business.</span><br/>
+<span data-i18n="hero_title_2">Our</span> <em data-i18n="hero_title_3">Creative<br/>Edge.</em>
+</h1>
+<p class="hero-subhead" data-i18n="hero_subhead">
+              We don't just make your business look better. We help it work smarter.
+            </p>
+<p class="hero-desc" data-i18n="hero_desc">
+              Helping traditional businesses across Pakistan build their digital presence, automate repetitive customer inquiries, save valuable time, and unlock real sales growth.
+            </p>
+<div class="actions">
+<a class="primary" href="#solutions">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#10150c;color:var(--lime);font-size:11px">➔</span>
+<span data-i18n="hero_cta_solutions">Explore Our Solutions</span>
+</a>
+<a class="outline" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20free%20consultation%20chahiye." rel="noopener noreferrer" target="_blank">
+<span>✦</span>
+<span data-i18n="hero_cta_consultation">Get a Free Consultation</span>
+</a>
+</div>
+<!-- Target Industries Row -->
+<div class="industries">
+<div class="industry">
+<span style="font-size:16px">🍴</span>
+<span data-i18n="ind_restaurants">Restaurants<br/>&amp; Cafés</span>
+</div>
+<div class="industry">
+<span style="font-size:16px">🛍️</span>
+<span data-i18n="ind_retail">Retail<br/>Brands</span>
+</div>
+<div class="industry">
+<span style="font-size:16px">🌸</span>
+<span data-i18n="ind_salons">Salons<br/>&amp; Spas</span>
+</div>
+<div class="industry">
+<span style="font-size:16px">➕</span>
+<span data-i18n="ind_clinics">Clinics<br/>&amp; Health</span>
+</div>
+</div>
+<!-- Karachi Landmark & Handwritten Sketch -->
+<div class="karachi-wrap">
+<div class="karachi-label handwritten" data-i18n="karachi_label">
+                Built for<br/>Karachi Businesses   ↳
+              </div>
+<svg class="mazar-svg" fill="none" stroke="#e0e8e2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" viewbox="0 0 200 110">
+<line x1="10" x2="190" y1="102" y2="102"></line>
+<line x1="22" x2="178" y1="96" y2="96"></line>
+<line x1="34" x2="166" y1="90" y2="90"></line>
+<path d="M48 90 L54 38 L146 38 L152 90 Z" fill="#ffffff08"></path>
+<path d="M82 90 L82 52 Q100 42 118 52 L118 90 Z"></path>
+<path d="M88 90 L88 56 Q100 48 112 56 L112 90 Z" stroke-dasharray="2 2"></path>
+<path d="M58 84 L58 58 Q66 52 74 58 L74 84 Z" opacity="0.6"></path>
+<path d="M126 84 L126 58 Q134 52 142 58 L142 84 Z" opacity="0.6"></path>
+<path d="M68 38 Q68 12 100 12 Q132 12 132 38 Z" fill="#ffffff12" stroke-width="1.6"></path>
+<line stroke-width="1.8" x1="100" x2="100" y1="12" y2="4"></line>
+<circle cx="100" cy="3" fill="#e0e8e2" r="1.5"></circle>
+<line stroke-width="1.8" x1="54" x2="146" y1="38" y2="38"></line>
+</svg>
+</div>
+</div>
+<!-- Hero Art Showcase (Right) -->
+<div aria-label="Showcase of brand visuals and AI automation" class="hero-art">
+<div class="lime-slash"></div>
+<!-- Handwritten Annotation with Curved Arrow -->
+<div style="position:absolute;z-index:9;right:34%;top:180px;pointer-events:none;transform:rotate(-4deg)">
+<div class="handwritten" data-i18n="wa_annotation" style="color:var(--lime);font-size:20px;line-height:1;white-space:nowrap;text-shadow:0 2px 10px rgba(0,0,0,0.8)">
+                WhatsApp AI<br/>   Automation
+              </div>
+<svg fill="none" height="45" style="margin-left:35px;margin-top:2px" viewbox="0 0 50 50" width="45">
+<path d="M10 5 Q 35 15 28 42" fill="none" stroke="var(--lime)" stroke-linecap="round" stroke-width="2"></path>
+<path d="M22 36 L 28 42 L 35 37" stroke="var(--lime)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Card 1: The Burger Co -->
+<div class="showcard burger">
+<img alt="The Burger Co — Real Flavors Bigger Cravings" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" src="images/burger_deal.webp"/>
+<div class="card-badge-top">
+<span style="font-size:15px">🍔</span>
+<span>THE BURGER CO.</span>
+</div>
+<div class="label" style="max-width:260px">
+                REAL FLAVORS.<br/>
+<span style="color:#ffc436">BIGGER CRAVINGS.</span>
+<div style="font-size:10px;font-weight:600;letter-spacing:0.04em;color:#cfd6d1;margin-top:4px">
+                  • Fresh Ingredients • Better Burgers
+                </div>
+<span class="card-btn-pill">ORDER NOW</span>
+</div>
+</div>
+<!-- Card 2: Noir Perfume -->
+<div class="showcard perfume">
+<img alt="Noir Fragrance — Premium Fragrance For Modern Souls" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" src="images/perfume_ad.webp"/>
+<div class="card-badge-right">
+                PREMIUM FRAGRANCES<br/>FOR MODERN SOULS.
+              </div>
+<div class="label" style="bottom:22px;left:22px">
+                NOIR<br/>
+<span style="font-size:10px;font-weight:600;letter-spacing:0.25em;color:#d5dfd7">EAU DE PARFUM</span>
+</div>
+</div>
+<!-- Card 3: The Green Garden Kitchen -->
+<div class="showcard food">
+<img alt="The Green Garden Kitchen" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" src="images/qr_menu.webp"/>
+<div class="card-badge-top">
+<span style="font-size:14px">🌿</span>
+<span style="font-size:9px">THE GREEN GARDEN KITCHEN</span>
+</div>
+<div class="label">
+                GOOD FOOD.<br/>GOOD MOOD.
+                <div style="font-size:10px;font-weight:600;letter-spacing:0.04em;color:var(--lime);margin-top:4px">
+                  Fresh • Healthy • Delicious
+                </div>
+</div>
+</div>
+<!-- Card 4: Al Noor Clinic -->
+<div class="showcard clinic">
+<img alt="Al Noor Clinic — Better Health Brighter Tomorrow" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" src="images/clinic_ad.webp"/>
+<div class="card-badge-top" style="top:22px;left:22px">
+<span style="font-size:14px;color:var(--lime)">✚</span>
+<span style="font-size:12px;font-weight:800">AL NOOR CLINIC</span>
+</div>
+<div class="label" style="bottom:45px">
+                Better Health<br/>
+<span class="lime" style="font-size:20px">Brighter Tomorrow</span>
+</div>
+<div style="position:absolute;bottom:14px;left:20px;right:20px;display:flex;justify-content:space-between;font-size:9px;color:#cbd5ce;z-index:3;border-top:1px solid #ffffff22;padding-top:8px">
+<span>⚕ Consultation</span>
+<span>🔬 Diagnostics</span>
+<span>✚ Treatment</span>
+</div>
+</div>
+<!-- Center Floating WhatsApp Dark Mode Card -->
+<div class="wa-chatcard">
+<div class="wa-head">
+<div class="wa-head-user">
+<span style="font-size:12px;color:#8696a0">←</span>
+<div class="wa-avatar">🤖</div>
+<div class="wa-meta">
+<strong>Smart Assistant <span style="color:#00a884;font-size:11px">✔</span></strong>
+<small>online</small>
+</div>
+</div>
+<div class="wa-actions">
+<span>📞</span>
+<span>📹</span>
+<span>⋮</span>
+</div>
+</div>
+<div class="wa-body">
+<div class="wa-msg wa-out">
+                  Assalamualaikum, aaj restaurant open hai?
+                  <span class="wa-time">10:24 AM <span style="color:#53bdeb">✓✓</span></span>
+</div>
+<div class="wa-msg wa-in">
+                  Waalaikum Salam! 👋<br/>
+                  Ji haan, aaj hum open hain.<br/>
+                  Aapka order kis liye hai?<br/><br/>
+<span style="color:var(--lime);font-weight:700">🍔 Dine-in</span><br/>
+<span style="color:#53bdeb;font-weight:700">🛍️ Takeaway</span><br/>
+<span style="color:#00a884;font-weight:700">🛵 Delivery</span>
+<span class="wa-time">10:24 AM</span>
+</div>
+</div>
+<div class="wa-input-bar">
+<span style="font-size:14px;color:#8696a0">😊</span>
+<div class="wa-input-fake">Type a message...</div>
+<span style="font-size:13px;color:#8696a0">🎤</span>
+<div class="wa-mic-btn">➤</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Bottom Bar -->
+<div class="hero-bottom">
+<a aria-label="Scroll to explore solutions" class="scrollmark" href="#solutions">
+<span class="scroll-badge">
+<svg fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 16 16" width="12">
+<path d="M8 2v11M3 9l5 5 5-5"></path>
+</svg>
+</span>
+<span data-i18n="scroll_to_explore">SCROLL TO EXPLORE</span>
+</a>
+<div class="trusted-bar">
+<div class="trusted-title" data-i18n="tailored_for">TAILORED FOR LOCAL BUSINESSES IN PAKISTAN</div>
+<div class="trusted-logos">
+<div class="t-logo">
+<span style="font-size:16px">🍔</span>
+<div>THE BURGER CO.<small>FAST FOOD</small></div>
+</div>
+<div class="t-logo">
+<div class="cursive-brand" style="font-size:16px;color:#f0f5f1">Bella's<small style="font-family:'DM Sans';letter-spacing:0.18em;font-style:normal">SALON &amp; SPA</small></div>
+</div>
+<div class="t-logo">
+<span style="color:var(--lime);font-size:16px">✚</span>
+<div>AL NOOR CLINIC<small>HEALTHCARE</small></div>
+</div>
+<div class="t-logo">
+<div><span style="font-family:'Playfair Display',serif">Cafe Aroma</span><small>RESTAURANT</small></div>
+</div>
+<div class="t-logo">
+<div>Style Zone<small>RETAIL</small></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infinite Marquee Ticker -->
+<div class="ticker">
+<div class="ticker-inner">
+<span>DIGITAL STOREFRONTS <b>✳</b></span>
+<span>WHATSAPP AI AUTOMATION <b>✳</b></span>
+<span>CREATIVE BRANDING <b>✳</b></span>
+<span>LOCAL MARKETING <b>✳</b></span>
+<span>OPERATIONS DASHBOARDS <b>✳</b></span>
+<span>CUSTOMER RETENTION <b>✳</b></span>
+<span>DIGITAL STOREFRONTS <b>✳</b></span>
+<span>WHATSAPP AI AUTOMATION <b>✳</b></span>
+<span>CREATIVE BRANDING <b>✳</b></span>
+<span>LOCAL MARKETING <b>✳</b></span>
+<span>OPERATIONS DASHBOARDS <b>✳</b></span>
+<span>CUSTOMER RETENTION <b>✳</b></span>
+</div>
+</div>
+<!-- SECTION 01: SOLUTIONS (Interactive Accordion Drawers) -->
+<section class="content" id="solutions">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow lime" data-i18n="services_eyebrow">01 / Solutions &amp; Services</div>
+<h2 data-i18n="services_title">Everything your business needs to <span class="lime">work smarter &amp; grow.</span></h2>
+</div>
+<p data-i18n="services_desc">Websites, branding, WhatsApp assistance and practical business systems — designed around the problems you want to solve.</p>
+</div>
+<!-- 6 Interactive Accordion Drawers (Click to Open / Close & Explore Details) -->
+<div aria-label="Explore solutions" class="solution-tabs" id="solutionTabs" role="tablist">
+<button aria-selected="true" class="solution-tab is-active" data-solution="0" role="tab" type="button">01 · Digital Presence</button>
+<button aria-selected="false" class="solution-tab" data-solution="1" role="tab" type="button">02 · AI &amp; Automation</button>
+<button aria-selected="false" class="solution-tab" data-solution="2" role="tab" type="button">03 · Creative Branding</button>
+<button aria-selected="false" class="solution-tab" data-solution="3" role="tab" type="button">04 · Digital Marketing</button>
+<button aria-selected="false" class="solution-tab" data-solution="4" role="tab" type="button">05 · Business Management</button>
+<button aria-selected="false" class="solution-tab" data-solution="5" role="tab" type="button">06 · Growth Solutions</button></div>
+<div aria-live="polite" class="solution-feature reveal" id="solutionFeature" role="tabpanel">
+<div class="solution-photo"><img alt="Digital Presence concept visual" id="solutionPhoto" src="images/solution_web.jpg"/><span class="solution-photo-label">MATRIX STUDIO &middot; CONCEPT</span></div>
+<div class="solution-copy"><div class="eyebrow lime" id="solutionEyebrow">01 / DIGITAL PRESENCE</div><h3 id="solutionHeadline">From local shop to online presence.</h3><p id="solutionDescription">Give customers an easier way to discover your business online.</p><ul class="solution-benefits" id="solutionBenefits"><li>Business websites &amp; online stores</li><li>Digital menus &amp; product catalogs</li><li>Google Business Profile</li></ul><a class="primary" href="https://wa.me/923022053002" id="solutionContact" rel="noopener noreferrer" target="_blank">Discuss this solution ↗</a></div></div>
+</div>
+</section>
+<!-- SECTION 02: PORTFOLIO -->
+<section class="content portfolio" id="portfolio">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow lime" data-i18n="portfolio_eyebrow">02 / Illustrative Demo Concepts</div>
+<h2 data-i18n="portfolio_title">Work that does <span class="lime">the talking.</span></h2>
+</div>
+<p data-i18n="portfolio_desc">
+            Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.
+          </p>
+</div>
+<div class="filters">
+<button class="filter active" data-filter="all" data-i18n="filter_all">All Concepts</button>
+<button class="filter" data-filter="food" data-i18n="filter_food">Food &amp; Beverage</button>
+<button class="filter" data-filter="retail" data-i18n="filter_retail">Retail &amp; Luxury</button>
+<button class="filter" data-filter="clinic" data-i18n="filter_clinic">Clinics &amp; Health</button>
+</div>
+<div class="projects">
+<article aria-label="View concept project: Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster" class="project reveal" data-category="food" data-desc="High-impact Meta/Instagram feed creative featuring studio lighting, bold typography, and dynamic promotional badges designed to trigger immediate midnight orders." data-title="Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Flame &amp; Crust Midnight Deal Poster" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/burger_deal.webp"/>
+<div class="project-info">
+<small>Food &amp; Beverage / 4:5 Social Ad</small>
+<h3>Midnight Deal Campaign <span>↗</span></h3>
+</div>
+</article>
+<article aria-label="View concept project: Oud Royal — Luxury Commercial Perfume Ad" class="project reveal" data-category="retail" data-desc="Commercial product photography and editorial visual grading for high-end fragrance brands, focusing on luxury aesthetic and premium positioning." data-title="Oud Royal — Luxury Commercial Perfume Ad" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Oud Royal Luxury Fragrance" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/perfume_ad.webp"/>
+<div class="project-info">
+<small>Retail &amp; Luxury / Product Shoot</small>
+<h3>Oud Royal Fragrance <span>↗</span></h3>
+</div>
+</article>
+<article aria-label="View concept project: Flame &amp; Crust — Digital QR &amp; WhatsApp Menu Card" class="project third reveal" data-category="food" data-desc="Interactive smartphone-first digital menu allowing customers to scan, browse fresh items, and place WhatsApp orders with zero app downloads." data-title="Flame &amp; Crust — Digital QR &amp; WhatsApp Menu Card" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Digital QR &amp; WhatsApp Menu Card" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/qr_menu.webp"/>
+<div class="project-info">
+<small>Restaurant / Smart QR Menu</small>
+<h3>Digital QR Menu <span>↗</span></h3>
+</div>
+</article>
+<article aria-label="View concept project: Pearl Smile Dental Studio — Laser Whitening Campaign" class="project third reveal" data-category="clinic" data-desc="Clean, clinical, and reassuring healthcare creative emphasizing professional trust, modern technology, and clear consultation offers." data-title="Pearl Smile Dental Studio — Laser Whitening Campaign" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Pearl Smile Dental Studio Poster" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/clinic_ad.webp"/>
+<div class="project-info">
+<small>Healthcare / High-Ticket Offer</small>
+<h3>Pearl Smile Clinic <span>↗</span></h3>
+</div>
+</article>
+<article aria-label="View concept project: Flame &amp; Crust — Minimalist Vector Brand Logo" class="project third reveal" data-category="food" data-desc="Scalable, modern vector logo design crafted for versatility across restaurant storefront signage, digital menus, packaging, and staff uniforms." data-title="Flame &amp; Crust — Minimalist Vector Brand Logo" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Flame &amp; Crust Vector Logo" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/brand_logo.webp"/>
+<div class="project-info">
+<small>Brand Identity / Vector Logo</small>
+<h3>Brand Vector Logo <span>↗</span></h3>
+</div>
+</article>
+<article aria-label="View concept project: Flame &amp; Crust — Facebook &amp; Website Shop Cover Banner" class="project fullwidth reveal" data-category="food" data-desc="Panoramic 16:9 digital storefront banner optimized for Facebook pages, Google Business Profiles, and high-impact website hero headers." data-title="Flame &amp; Crust — Facebook &amp; Website Shop Cover Banner" role="button" tabindex="0">
+<span class="project-badge">DEMO CONCEPT</span>
+<img alt="Wide Shop Cover Banner" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/shop_banner.webp"/>
+<div class="project-info">
+<small>Social &amp; Signage / 16:9 Cover</small>
+<h3>Wide Shop Banner <span>↗</span></h3>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 03: BEFORE & AFTER SLIDER -->
+<section class="content" id="comparison">
+<div class="wrap">
+<div class="section-head reveal" style="text-align:center;display:block;max-width:750px;margin:0 auto 45px">
+<div class="eyebrow lime" data-i18n="comp_eyebrow">03 / Creative Transformation</div>
+<h2 data-i18n="comp_title">From Raw Smartphone Photo <br/>to <span class="lime">High-Impact Campaign Creative.</span></h2>
+<p data-i18n="comp_desc" style="margin:14px auto 0">
+            Drag the interactive slider below to see the difference professional creative direction makes. We turn flat everyday phone pictures into mouth-watering, revenue-driving advertising visuals.
+          </p>
+</div>
+<div aria-label="Interactive before and after comparison slider" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="comp-container reveal" id="compContainer" role="slider" tabindex="0">
+<div class="comp-badge badge-before" data-i18n="badge_before">BEFORE • RAW PHONE SHOT</div>
+<div class="comp-badge badge-after" data-i18n="badge_after">AFTER • MATRIX STUDIO CREATIVE</div>
+<img alt="After: Matrix Studio creative ad" class="comp-after-img" id="compAfterImg" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/burger_deal.webp"/>
+<div class="comp-before-layer" id="compBeforeLayer">
+<img alt="Before: Raw smartphone camera photo" class="comp-before-img" id="compBeforeImg" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/burger_before.svg" style="filter: grayscale(.55) brightness(.62) saturate(.55) contrast(.85)"/>
+</div>
+<div class="comp-handle" id="compHandle">
+<div class="comp-handle-btn">⟷</div>
+</div>
+</div>
+<p data-i18n="comp_note" style="text-align:center;margin-top:18px;font-size:13px;color:var(--muted)">
+          💡 Use your mouse, finger, or keyboard arrow keys (← / →) to slide between the raw capture and finished ad.
+        </p>
+</div>
+</section>
+<!-- SECTION 04: WHATSAPP SIMULATOR DEMO -->
+<section class="content" id="demo" style="background:#0b110f">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow lime" data-i18n="demo_eyebrow">04 / Interactive Automation Demo</div>
+<h2 data-i18n="demo_title">Don't just watch.<br/><span class="lime">Experience the automation.</span></h2>
+</div>
+<p data-i18n="demo_desc">Try a scripted example of how an assistant could answer common questions for different businesses. This is a demonstration, not a live AI system.</p>
+</div>
+<div class="demo-grid">
+<div class="demo-panel reveal">
+<div class="demo-title">
+<strong>
+<span style="color:#00a884;font-size:16px">●</span>
+<span data-i18n="bot_title">WhatsApp Smart Assistant</span>
+</strong>
+<div style="display:flex;align-items:center;gap:10px">
+<span class="status" data-i18n="bot_badge">SIMULATION DEMO</span>
+<button class="chat-reset-btn" data-i18n="bot_reset" id="chatResetBtn" type="button">↺ Reset</button>
+</div>
+</div>
+<div class="messages" id="messages">
+<div class="msg bot">
+<span data-i18n="bot_welcome">Assalam-o-Alaikum! 👋 Welcome to Matrix Studio's interactive restaurant demo. You can ask about our menu, special deals, delivery coverage, or opening hours.</span>
+<span class="msg-time">10:24 AM</span>
+</div>
+</div>
+<div class="typing-indicator" id="typingIndicator">
+<span></span><span></span><span></span>
+</div>
+<div class="industry-demo"><span id="industryLabel">CHOOSE YOUR BUSINESS</span><div aria-label="Demo business type" class="industry-demo-tabs" role="group"><button class="chosen" data-industry="restaurant" type="button">Restaurant</button><button data-industry="salon" type="button">Salon</button><button data-industry="clinic" type="button">Clinic</button><button data-industry="retail" type="button">Retail</button></div></div><div class="chips">
+<button data-i18n="chip_menu" data-query="menu" type="button">🍔 View Menu</button>
+<button data-i18n="chip_deals" data-query="deals" type="button">💰 Deals &amp; Pricing</button>
+<button data-i18n="chip_order" data-query="order" type="button">🛍️ Place Example Order</button>
+<button data-i18n="chip_delivery" data-query="delivery" type="button">🛵 Delivery Area</button>
+<button data-i18n="chip_support" data-query="support" type="button">👤 Human Support</button>
+</div>
+<form class="chat-form" id="chatForm">
+<input data-i18n-placeholder="chat_placeholder" id="chatInput" maxlength="200" placeholder="Ask in English or Roman Urdu..." required="" type="text"/>
+<button aria-label="Send" type="submit">➤</button>
+</form>
+</div>
+<!-- Right Side: Flow Architecture -->
+<div class="demo-panel reveal">
+<div class="demo-title">
+<strong data-i18n="flow_title">↗ How This Automation Powers Local Businesses</strong>
+<span class="status">EXAMPLE WORKFLOW</span>
+</div>
+<div class="flow">
+<div class="flow-step">
+<b>01</b>
+<div>
+<strong data-i18n="flow_1_title">Customer Messages on WhatsApp</strong>
+<span data-i18n="flow_1_desc">A visitor finds your Instagram ad or QR menu and clicks to start a WhatsApp chat anytime, day or night.</span>
+</div>
+</div>
+<div class="arrow-down">↓</div>
+<div class="flow-step">
+<b>02</b>
+<div>
+<strong data-i18n="flow_2_title">AI Assistant Replies in Seconds</strong>
+<span data-i18n="flow_2_desc">Understands inquiries in natural Roman Urdu and English, displays menus, clarifies pricing, and guides the customer.</span>
+</div>
+</div>
+<div class="arrow-down">↓</div>
+<div class="flow-step">
+<b>03</b>
+<div>
+<strong data-i18n="flow_3_title">Orders &amp; Leads Synced Instantly</strong>
+<span data-i18n="flow_3_desc">Order details, delivery addresses, or booking requests are automatically organized and forwarded to your phone or team sheet.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 05: HOW WE WORK -->
+<section class="content" id="process">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow lime" data-i18n="process_eyebrow">05 / Our Work Process</div>
+<h2 data-i18n="process_title">Simple, transparent, and <span class="lime">built around your goals.</span></h2>
+</div>
+<p data-i18n="process_desc">
+            No confusing tech jargon. We follow a clear, battle-tested four-step roadmap to take your traditional business into a high-performing digital brand.
+          </p>
+</div>
+<div class="process-grid">
+<div class="process-card reveal">
+<div class="process-num">01</div>
+<h3 data-i18n="step_1_title">Discover</h3>
+<p data-i18n="step_1_desc">We listen closely to understand your business model, customer journey, daily operational bottlenecks, and realistic growth goals.</p>
+</div>
+<div class="process-card reveal">
+<div class="process-num">02</div>
+<h3 data-i18n="step_2_title">Plan</h3>
+<p data-i18n="step_2_desc">We recommend the most practical, cost-effective digital solutions and automation flows tailored specifically to your budget and niche.</p>
+</div>
+<div class="process-card reveal">
+<div class="process-num">03</div>
+<h3 data-i18n="step_3_title">Build</h3>
+<p data-i18n="step_3_desc">Our team crafts the visual brand assets, configures the WhatsApp automation chatbots, develops the web pages, and thoroughly tests every single flow.</p>
+</div>
+<div class="process-card reveal">
+<div class="process-num">04</div>
+<h3 data-i18n="step_4_title">Launch &amp; Support</h3>
+<p data-i18n="step_4_desc">We deliver your completed digital systems, provide a clear walkthrough to your team, and offer reliable ongoing maintenance whenever agreed.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 06: PRICING STRATEGY -->
+<section class="content" id="pricing" style="background:#0d1411">
+<div class="wrap">
+<div class="cta-banner reveal">
+<div>
+<div class="eyebrow lime" data-i18n="quote_eyebrow">06 / Tailored Solutions</div>
+<h2>
+<span data-i18n="quote_h1">Every Business Is Different.</span><br/>
+<span class="lime" data-i18n="quote_h2">Your Solution Should Be Too.</span>
+</h2>
+<p data-i18n="quote_desc">
+              Tell us about your business, goals, and challenges. We don't push generic, bloated packages — we help you explore the exact digital solutions that fit your specific operational needs and budget.
+            </p>
+<div class="guarantees">
+<div><span>✔</span> <span data-i18n="guarantee_1"><strong>No Forced Packages:</strong> Pay only for the systems that actually benefit your business.</span></div>
+<div><span>✔</span> <span data-i18n="guarantee_2"><strong>Practical Implementation:</strong> Straightforward setups designed to start delivering value fast.</span></div>
+<div><span>✔</span> <span data-i18n="guarantee_3"><strong>Transparent Discussion:</strong> Upfront scope and clear quotation before any commitment.</span></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<a class="primary" href="#contact" style="justify-content:center;padding:17px 28px;font-size:14px">
+<span data-i18n="cta_quote">Get a Custom Quote</span>
+<span>➔</span>
+</a>
+<a class="outline" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20pricing%20aur%20custom%20quote%20chahiye." rel="noopener noreferrer" style="justify-content:center" target="_blank">
+<span>💬</span>
+<span data-i18n="cta_quote_wa">Direct WhatsApp Inquiry</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 07: CONTACT FORM -->
+<section class="content" id="contact">
+<div class="wrap">
+<div class="section-head reveal">
+<div>
+<div class="eyebrow lime" data-i18n="contact_eyebrow">07 / Connect With Us</div>
+<h2 data-i18n="contact_title">Start Your Digital Transformation <span class="lime">Today.</span></h2>
+</div>
+<p data-i18n="contact_desc">
+            Fill out the inquiry form below or message our official WhatsApp business number directly. We will review your requirements and get back to you promptly.
+          </p>
+</div>
+<div class="contact-layout">
+<div class="contact-card reveal">
+<h3 data-i18n="contact_h3">Matrix Studio Official Contact</h3>
+<p data-i18n="contact_p">We work with traditional restaurants, salons, healthcare clinics, retail shops, and growing SMBs across Karachi and all major cities in Pakistan.</p>
+<div class="contact-meta">
+<div class="contact-meta-row">
+<div class="contact-meta-icon">💬</div>
+<div>
+<small data-i18n="meta_wa_label">Official WhatsApp Business</small>
+<strong>+92 302 2053002</strong>
+</div>
+</div>
+<div class="contact-meta-row">
+<div class="contact-meta-icon">📍</div>
+<div>
+<small data-i18n="meta_loc_label">Primary Headquarters</small>
+<strong data-i18n="meta_loc_val">Karachi, Sindh, Pakistan</strong>
+</div>
+</div>
+<div class="contact-meta-row">
+<div class="contact-meta-icon">🌐</div>
+<div>
+<small data-i18n="meta_cov_label">Service Coverage</small>
+<strong data-i18n="meta_cov_val">Serving Businesses Across All Cities in Pakistan</strong>
+</div>
+</div>
+</div>
+<a class="outline" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20maloomat%20chahiye." rel="noopener noreferrer" style="width:100%;justify-content:center" target="_blank">
+<span>💬</span>
+<span data-i18n="btn_instant_wa">Message on WhatsApp Instantly</span>
+</a>
+</div>
+<div class="form-panel reveal">
+<form id="quoteInquiryForm" novalidate="">
+<div class="form-grid">
+<div class="form-group">
+<label for="custName"><span data-i18n="lbl_name">Your Full Name</span> <span class="req">*</span></label>
+<input class="form-input" id="custName" placeholder="e.g. Tariq Mehmood" required="" type="text"/>
+<span class="form-error" data-i18n="err_name" id="errName">Please enter your full name.</span>
+</div>
+<div class="form-group">
+<label for="bizName"><span data-i18n="lbl_biz_name">Business / Brand Name (optional)</span> </label>
+<input class="form-input" id="bizName" placeholder="e.g. Flame &amp; Crust Diner" type="text"/>
+<span class="form-error" data-i18n="err_biz" id="errBiz">Please enter your business or shop name.</span>
+</div>
+<div class="form-group">
+<label for="bizCategory"><span data-i18n="lbl_category">Business Category</span> <span class="req">*</span></label>
+<select class="form-select" id="bizCategory" required="">
+<option data-i18n="opt_select_cat" disabled="" selected="" value="">Select business category...</option>
+<option value="Restaurant / Café">Restaurant / Café</option>
+<option value="Clothing &amp; Fashion Retail">Clothing &amp; Fashion Retail</option>
+<option value="Salon &amp; Beauty Spa">Salon &amp; Beauty Spa</option>
+<option value="Medical &amp; Dental Clinic">Medical &amp; Dental Clinic</option>
+<option value="E-Commerce &amp; Online Store">E-Commerce &amp; Online Store</option>
+<option value="Real Estate &amp; Property">Real Estate &amp; Property</option>
+<option value="Other Small/Medium Business">Other Small/Medium Business</option>
+</select>
+<span class="form-error" data-i18n="err_cat" id="errCat">Please choose your business category.</span>
+</div>
+<div class="form-group full">
+<label for="reqService"><span data-i18n="lbl_service">Primary Solution Required</span> <span class="req">*</span></label>
+<select class="form-select" id="reqService" required="">
+<option data-i18n="opt_select_svc" disabled="" selected="" value="">Select required service...</option>
+<option value="Digital Presence (Website / QR Menu / Landing Page)">Digital Presence (Website / QR Menu / Landing Page)</option>
+<option value="AI &amp; Automation (WhatsApp Bot / CRM / Orders)">AI &amp; Automation (WhatsApp Bot / CRM / Orders)</option>
+<option value="Creative Branding (Logo / Product Shoot / Visuals)">Creative Branding (Logo / Product Shoot / Visuals)</option>
+<option value="Digital Marketing (Meta Ads / Video Reels)">Digital Marketing (Meta Ads / Video Reels)</option>
+<option value="Business Management (Inventory / Dashboards / Sheets)">Business Management (Inventory / Dashboards / Sheets)</option>
+<option value="Growth Solutions (Loyalty / Reviews / Retention)">Growth Solutions (Loyalty / Reviews / Retention)</option>
+<option value="Complete Digital Transformation (Full Suite)">Complete Digital Transformation (Full Suite)</option>
+</select>
+<span class="form-error" data-i18n="err_svc" id="errSvc">Please select the service you need.</span>
+</div>
+<div class="form-group full">
+<label for="projDetails"><span data-i18n="lbl_details">Project Requirements &amp; Goals</span> <span class="req">*</span></label>
+<textarea class="form-textarea" data-i18n-placeholder="details_placeholder" id="projDetails" placeholder="Describe what you want to achieve, your current challenges, or specific features you need..." required=""></textarea>
+<span class="form-error" data-i18n="err_details" id="errDetails">Please describe your project requirements.</span>
+</div>
+<div class="form-notice" data-i18n="form_notice">Your inquiry opens in WhatsApp for you to review and send. This page does not submit or store your details.</div>
+<div class="form-group full" style="margin-top:6px">
+<button class="primary" style="justify-content:center;width:100%;padding:16px 28px;font-size:14px" type="submit">
+<span data-i18n="btn_submit_quote">Send Inquiry via WhatsApp</span>
+<span>💬</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 08: FAQ -->
+<section class="content" id="faq" style="background:#0c1210">
+<div class="wrap">
+<div class="section-head reveal" style="text-align:center;display:block;max-width:750px;margin:0 auto 45px">
+<div class="eyebrow lime" data-i18n="faq_eyebrow">08 / Got Questions?</div>
+<h2 data-i18n="faq_title">Frequently Asked <span class="lime">Questions.</span></h2>
+<p data-i18n="faq_desc" style="margin:14px auto 0">
+            Clear, honest answers about our services, process, and how we help Pakistani businesses grow.
+          </p>
+</div>
+<div class="faq-list">
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_1_q">What does Matrix Studio do?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_1_a">Matrix Studio is a digital transformation agency. We help traditional Pakistani businesses modernise their operations, establish high-converting online storefronts, automate customer inquiries on WhatsApp, and build premium visual branding.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_2_q">Can you help a small local business with a modest budget?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_2_a">Yes! We specialise in practical, modular digital solutions. You do not need to purchase an expensive full-scale enterprise system — you can begin with a targeted solution like a digital QR menu, an automated WhatsApp inquiry assistant, or high-converting ad visuals.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_3_q">Do I need an existing website or technical knowledge to work with you?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_3_a">No technical background is required. We take care of the entire design, configuration, and setup process, and then provide a clear, simple walkthrough on how to manage your new digital assets or chatbot flows.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_4_q">How does WhatsApp automation actually work for my customers?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_4_a">When a customer sends a message on your WhatsApp business account, an automated smart assistant replies within seconds. It answers common questions (like timing, location, pricing, and menus), captures order or appointment details, and organizes them so your staff never misses a lead.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_5_q">Can you create a digital QR menu and ordering flow for my restaurant?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_5_a">Absolutely. We create mobile-first digital menus that diners can scan from table QR stands. Diners can easily browse categories, view appetizing product photography, and send their order directly to your WhatsApp counter with zero app downloads.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_6_q">How much does a typical project cost?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_6_a">Because every business has unique needs, we provide tailored quotes based on your specific requirements rather than rigid packages. We offer transparent pricing upfront with clear project deliverables so you always know what to expect.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_7_q">How long does implementation take?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_7_a">Standard digital setups (such as branding creatives, QR menus, or focused WhatsApp assistants) typically take between 5 to 14 working days. Comprehensive custom websites or complex multi-channel automation workflows are scheduled based on exact project scope.</p>
+</div>
+</div>
+<div class="faq-item reveal">
+<button aria-expanded="false" class="faq-question" type="button">
+<span data-i18n="faq_8_q">Do you provide support and maintenance after delivery?</span>
+<span class="faq-icon">+</span>
+</button>
+<div class="faq-answer">
+<p data-i18n="faq_8_a">Yes. We explain how everything operates, hand over complete control, and provide post-launch support. Ongoing maintenance, menu updates, and new campaign creatives can also be scheduled on a flexible support arrangement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<div class="wrap">
+<div class="foot-top">
+<div>
+<a class="logo" href="#home">
+<span>M<span>Λ</span>TRIX</span>
+<small>STUDIO</small>
+</a>
+<p data-i18n="foot_desc">
+            Creative branding, intelligent AI automation, and digital storefront solutions designed specifically for businesses across Karachi and Pakistan.
+          </p>
+</div>
+<div class="foot-col">
+<h4 data-i18n="foot_h_solutions">Solutions</h4>
+<div class="foot-links">
+<a data-i18n="svc_1_title" href="#solutions">Digital Presence</a>
+<a data-i18n="svc_2_title" href="#solutions">AI &amp; Automation</a>
+<a data-i18n="svc_3_title" href="#solutions">Creative Branding</a>
+<a data-i18n="svc_4_title" href="#solutions">Digital Marketing</a>
+<a data-i18n="svc_5_title" href="#solutions">Business Management</a>
+<a data-i18n="svc_6_title" href="#solutions">Growth Solutions</a>
+</div>
+</div>
+<div class="foot-col">
+<h4 data-i18n="foot_h_connect">Connect</h4>
+<div class="foot-links">
+<a href="https://wa.me/923022053002" rel="noopener noreferrer" target="_blank">WhatsApp: +92 302 2053002</a>
+<a data-i18n="nav_contact" href="#contact">Inquiry Form</a>
+<a data-i18n="nav_faq" href="#faq">Frequently Asked Questions</a>
+<span data-i18n="foot_loc" style="color:#78867e">Karachi, Pakistan (Nationwide Coverage)</span>
+</div>
+</div>
+</div>
+<div class="foot-disclaimer" data-i18n="foot_disclaimer">
+        Notice: Matrix Studio is an independent digital transformation agency based in Karachi, Pakistan. All brand mockups, campaign visuals, and chatbot simulations displayed in our portfolio section are conceptual demonstration designs created to illustrate our creative and technical capabilities.
+      </div>
+<div class="copyright">
+<span>© <span id="currentYear">2026</span> Matrix Studio. Karachi, Pakistan. All rights reserved.</span>
+<span data-i18n="foot_tagline">Made to stand out. Built to work smarter.</span>
+</div>
+</div>
+</footer>
+<!-- Floating WhatsApp Quick Button -->
+<a aria-label="WhatsApp" class="float-wa" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20maloomat%20chahiye." rel="noopener noreferrer" target="_blank">
+<svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+<!-- Project Modal Preview -->
+<div class="modal" id="projectModal">
+<div class="modal-card">
+<div class="modal-top">
+<strong id="modalTitle">Project Title</strong>
+<button class="modal-close" id="closeModal">×</button>
+</div>
+<img alt="Project Preview" id="modalImg" src=""/>
+<p id="modalDesc" style="color:#c5d2c8;font-size:14px;line-height:1.6;margin-bottom:16px"></p>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px">
+<span style="font-size:11px;color:var(--lime);font-weight:700">ILLUSTRATIVE DEMO CONCEPT</span>
+<a class="primary" href="https://wa.me/923022053002" id="modalWaBtn" rel="noopener noreferrer" style="padding:10px 20px;font-size:12px" target="_blank">
+<span>Inquire on WhatsApp 💬</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    const translations = {
+  "en": {
+    "skip_to_content": "Skip to content",
+    "nav_home": "Home",
+    "nav_solutions": "Solutions",
+    "nav_work": "Our Work",
+    "nav_comparison": "Before & After",
+    "nav_demo": "Live Demo",
+    "nav_faq": "FAQ",
+    "nav_contact": "Contact",
+    "cta_consultation": "Free Consultation",
+    "hero_eyebrow": "Creative Branding &nbsp;/&nbsp; AI Automation &nbsp;/&nbsp; Digital Solutions",
+    "hero_title_1": "Your Business.",
+    "hero_title_2": "Our",
+    "hero_title_3": "Creative<br>Edge.",
+    "hero_subhead": "We don't just make your business look better. We help it work smarter.",
+    "hero_desc": "Helping traditional businesses across Pakistan build their digital presence, automate repetitive customer inquiries, save valuable time, and unlock real sales growth.",
+    "hero_cta_solutions": "Explore Our Solutions",
+    "hero_cta_consultation": "Get a Free Consultation",
+    "pillar_time": "Save Time",
+    "pillar_cost": "Reduce Costs",
+    "pillar_growth": "Increase Sales",
+    "ind_restaurants": "Restaurants<br>&amp; Cafés",
+    "ind_retail": "Retail<br>Brands",
+    "ind_salons": "Salons<br>&amp; Spas",
+    "ind_clinics": "Clinics<br>&amp; Health",
+    "karachi_label": "Built for<br>Karachi Businesses &nbsp; ↳",
+    "wa_annotation": "WhatsApp AI<br>&nbsp;&nbsp;&nbsp;Automation",
+    "scroll_to_explore": "SCROLL TO EXPLORE",
+    "tailored_for": "TAILORED FOR LOCAL BUSINESSES IN PAKISTAN",
+    "acc_toggle_label": "Explore Details",
+    "whats_included": "✦ What's Included in This Service:",
+    "services_eyebrow": "01 / Solutions & Services",
+    "services_title": "Everything your business needs to <span class=\"lime\">work smarter & grow.</span>",
+    "services_desc": "From high-converting digital storefronts to 24/7 automated WhatsApp agents, we build practical systems that save time, cut costs, and bring in paying customers.",
+    "svc_1_title": "Digital Presence",
+    "svc_1_desc": "High-speed business websites, landing pages, e-commerce storefronts, and smart digital product catalogs.",
+    "svc_1_f1": "Custom Responsive Business Websites",
+    "svc_1_f2": "High-Converting Promotional Landing Pages",
+    "svc_1_f3": "Digital QR Menus & Online Catalogs",
+    "svc_1_f4": "Google Business Profile Local SEO Setup",
+    "svc_1_benefit": "Help local customers discover your business easily, build immediate credibility, and convert visits into sales.",
+    "svc_2_title": "AI & Automation",
+    "svc_2_desc": "Intelligent WhatsApp chatbots that respond in Roman Urdu and English, book appointments, and capture orders 24/7.",
+    "svc_2_f1": "24/7 WhatsApp AI Customer Support",
+    "svc_2_f2": "Automated Order-Taking & Menu Inquiries",
+    "svc_2_f3": "Clinic & Salon Appointment Booking",
+    "svc_2_f4": "Instant Lead Qualification & Follow-ups",
+    "svc_2_benefit": "Never leave a customer on 'Seen', eliminate hours of manual chat typing, and respond instantly 24/7.",
+    "svc_3_title": "Creative Branding",
+    "svc_3_desc": "Memorable visual brand identities, AI-assisted commercial product photography, and high-impact social media creatives.",
+    "svc_3_f1": "Vector Logo & Visual Brand Guidelines",
+    "svc_3_f2": "AI-Enhanced Commercial Product Shoots",
+    "svc_3_f3": "High-Converting Meta Ad & Deal Creatives",
+    "svc_3_f4": "Packaging Mockups & Store Signage",
+    "svc_3_benefit": "Stand out from local competitors with premium presentation that customers notice, trust, and pay more for.",
+    "svc_4_title": "Digital Marketing",
+    "svc_4_desc": "AI-assisted video ads, high-engagement promotional reels, and hyper-local advertising campaigns that drive customer footfall.",
+    "svc_4_f1": "AI-Assisted Video Ads & Social Reels",
+    "svc_4_f2": "Targeted Meta & Instagram Ad Campaigns",
+    "svc_4_f3": "Local Area Lead Generation Funnels",
+    "svc_4_f4": "Campaign Retargeting & Conversion Pages",
+    "svc_4_benefit": "Reach real paying customers in your specific neighborhood and convert online curiosity into actual store visits.",
+    "svc_5_title": "Business Management",
+    "svc_5_desc": "Streamline daily operations with lightweight CRM systems, inventory trackers, and automated sales reporting dashboards.",
+    "svc_5_f1": "Customer Inquiry CRM & Lead Tracker",
+    "svc_5_f2": "Real-Time Inventory & Stock Tracking",
+    "svc_5_f3": "Google Sheets & Cloud Workflow Automation",
+    "svc_5_f4": "Automated Invoice Generation & Reports",
+    "svc_5_benefit": "Gain clear daily visibility over revenue, inventory, and pending orders without messy manual paperwork.",
+    "svc_6_title": "Growth Solutions",
+    "svc_6_desc": "Customer retention systems, WhatsApp loyalty passes, automated review generation, and repeat-purchase triggers.",
+    "svc_6_f1": "Automated 5-Star Google Review Follow-ups",
+    "svc_6_f2": "WhatsApp Customer Loyalty & Rewards",
+    "svc_6_f3": "Repeat-Purchase Re-engagement Triggers",
+    "svc_6_f4": "Customer Retention & Lifetime Value Analytics",
+    "svc_6_benefit": "Turn one-time buyers into loyal repeat regulars and systematically grow positive word-of-mouth.",
+    "benefit_label": "Core Benefit:",
+    "btn_inquire": "Inquire on WhatsApp",
+    "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
+    "portfolio_title": "Work that does <span class=\"lime\">the talking.</span>",
+    "portfolio_desc": "Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.",
+    "filter_all": "All Concepts",
+    "filter_food": "Food & Beverage",
+    "filter_retail": "Retail & Luxury",
+    "filter_clinic": "Clinics & Health",
+    "comp_eyebrow": "03 / Creative Transformation",
+    "comp_title": "From Raw Smartphone Photo <br>to <span class=\"lime\">High-Impact Campaign Creative.</span>",
+    "comp_desc": "Drag the interactive slider below to see the difference professional creative direction makes. We turn flat everyday phone pictures into mouth-watering, revenue-driving advertising visuals.",
+    "badge_before": "BEFORE • RAW PHONE SHOT",
+    "badge_after": "AFTER • MATRIX STUDIO CREATIVE",
+    "comp_note": "💡 Use your mouse, finger, or keyboard arrow keys (← / →) to slide between the raw capture and finished ad.",
+    "demo_eyebrow": "04 / Interactive Automation Demo",
+    "demo_title": "Don't just watch.<br><span class=\"lime\">Experience the automation.</span>",
+    "demo_desc": "Test our interactive restaurant assistant demo below. See how your business could automatically answer customer questions, share menus, and take orders with less manual effort.",
+    "bot_title": "WhatsApp Smart Assistant",
+    "bot_badge": "SIMULATION DEMO",
+    "bot_reset": "↺ Reset",
+    "bot_welcome": "Assalam-o-Alaikum! 👋 Welcome to Matrix Studio's interactive restaurant demo. You can ask about our menu, special deals, delivery coverage, or opening hours.",
+    "chip_menu": "🍔 View Menu",
+    "chip_deals": "💰 Deals & Pricing",
+    "chip_order": "🛍️ Place Example Order",
+    "chip_delivery": "🛵 Delivery Area",
+    "chip_support": "👤 Human Support",
+    "chat_placeholder": "Ask in English or Roman Urdu...",
+    "flow_title": "↗ How This Automation Powers Local Businesses",
+    "flow_1_title": "Customer Messages on WhatsApp",
+    "flow_1_desc": "A visitor finds your Instagram ad or QR menu and clicks to start a WhatsApp chat anytime, day or night.",
+    "flow_2_title": "AI Assistant Replies in Seconds",
+    "flow_2_desc": "Understands inquiries in natural Roman Urdu and English, displays menus, clarifies pricing, and guides the customer.",
+    "flow_3_title": "Orders & Leads Synced Instantly",
+    "flow_3_desc": "Order details, delivery addresses, or booking requests are automatically organized and forwarded to your phone or team sheet.",
+    "process_eyebrow": "05 / Our Work Process",
+    "process_title": "Simple, transparent, and <span class=\"lime\">built around your goals.</span>",
+    "process_desc": "No confusing tech jargon. We follow a clear, battle-tested four-step roadmap to take your traditional business into a high-performing digital brand.",
+    "step_1_title": "Discover",
+    "step_1_desc": "We listen closely to understand your business model, customer journey, daily operational bottlenecks, and realistic growth goals.",
+    "step_2_title": "Plan",
+    "step_2_desc": "We recommend the most practical, cost-effective digital solutions and automation flows tailored specifically to your budget and niche.",
+    "step_3_title": "Build",
+    "step_3_desc": "Our team crafts the visual brand assets, configures the WhatsApp automation chatbots, develops the web pages, and thoroughly tests every single flow.",
+    "step_4_title": "Launch & Support",
+    "step_4_desc": "We deliver your completed digital systems, provide a clear walkthrough to your team, and offer reliable ongoing maintenance whenever agreed.",
+    "quote_eyebrow": "06 / Tailored Solutions",
+    "quote_h1": "Every Business Is Different.",
+    "quote_h2": "Your Solution Should Be Too.",
+    "quote_desc": "Tell us about your business, goals, and challenges. We don't push generic, bloated packages — we help you explore the exact digital solutions that fit your specific operational needs and budget.",
+    "guarantee_1": "<strong>No Forced Packages:</strong> Pay only for the systems that actually benefit your business.",
+    "guarantee_2": "<strong>Practical Implementation:</strong> Straightforward setups designed to start delivering value fast.",
+    "guarantee_3": "<strong>Transparent Discussion:</strong> Upfront scope and clear quotation before any commitment.",
+    "cta_quote": "Get a Custom Quote",
+    "cta_quote_wa": "Direct WhatsApp Inquiry",
+    "contact_eyebrow": "07 / Connect With Us",
+    "contact_title": "Start Your Digital Transformation <span class=\"lime\">Today.</span>",
+    "contact_desc": "Fill out the inquiry form below or message our official WhatsApp business number directly. We will review your requirements and get back to you promptly.",
+    "contact_h3": "Matrix Studio Official Contact",
+    "contact_p": "We work with traditional restaurants, salons, healthcare clinics, retail shops, and growing SMBs across Karachi and all major cities in Pakistan.",
+    "meta_wa_label": "Official WhatsApp Business",
+    "meta_loc_label": "Primary Headquarters",
+    "meta_loc_val": "Karachi, Sindh, Pakistan",
+    "meta_cov_label": "Service Coverage",
+    "meta_cov_val": "Serving Businesses Across All Cities in Pakistan",
+    "btn_instant_wa": "Message on WhatsApp Instantly",
+    "lbl_name": "Your Full Name",
+    "lbl_biz_name": "Business / Brand Name",
+    "lbl_category": "Business Category",
+    "opt_select_cat": "Select business category...",
+    "lbl_city": "City",
+    "lbl_service": "Primary Solution Required",
+    "opt_select_svc": "Select required service...",
+    "lbl_details": "Project Requirements & Goals",
+    "details_placeholder": "Describe what you want to achieve, your current challenges, or specific features you need...",
+    "lbl_budget": "Estimated Budget Range (Optional)",
+    "opt_budget_flex": "Flexible / Open for discussion",
+    "form_notice": "ℹ️ <strong>Direct WhatsApp Inquiry:</strong> Submitting this form prepares a formatted message and opens WhatsApp with your pre-filled inquiry. You can review and adjust everything before sending. (No data is stored on external servers).",
+    "btn_submit_quote": "Send Inquiry via WhatsApp",
+    "err_name": "Please enter your full name.",
+    "err_biz": "Please enter your business or shop name.",
+    "err_cat": "Please choose your business category.",
+    "err_city": "Please specify your city.",
+    "err_svc": "Please select the service you need.",
+    "err_details": "Please describe your project requirements.",
+    "faq_eyebrow": "08 / Got Questions?",
+    "faq_title": "Frequently Asked <span class=\"lime\">Questions.</span>",
+    "faq_desc": "Clear, honest answers about our services, process, and how we help Pakistani businesses grow.",
+    "faq_1_q": "What does Matrix Studio do?",
+    "faq_1_a": "Matrix Studio is a digital transformation agency. We help traditional Pakistani businesses modernise their operations, establish high-converting online storefronts, automate customer inquiries on WhatsApp, and build premium visual branding.",
+    "faq_2_q": "Can you help a small local business with a modest budget?",
+    "faq_2_a": "Yes! We specialise in practical, modular digital solutions. You do not need to purchase an expensive full-scale enterprise system — you can begin with a targeted solution like a digital QR menu, an automated WhatsApp inquiry assistant, or high-converting ad visuals.",
+    "faq_3_q": "Do I need an existing website or technical knowledge to work with you?",
+    "faq_3_a": "No technical background is required. We take care of the entire design, configuration, and setup process, and then provide a clear, simple walkthrough on how to manage your new digital assets or chatbot flows.",
+    "faq_4_q": "How does WhatsApp automation actually work for my customers?",
+    "faq_4_a": "When a customer sends a message on your WhatsApp business account, an automated smart assistant replies within seconds. It answers common questions (like timing, location, pricing, and menus), captures order or appointment details, and organizes them so your staff never misses a lead.",
+    "faq_5_q": "Can you create a digital QR menu and ordering flow for my restaurant?",
+    "faq_5_a": "Absolutely. We create mobile-first digital menus that diners can scan from table QR stands. Diners can easily browse categories, view appetizing product photography, and send their order directly to your WhatsApp counter with zero app downloads.",
+    "faq_6_q": "How much does a typical project cost?",
+    "faq_6_a": "Because every business has unique needs, we provide tailored quotes based on your specific requirements rather than rigid packages. We offer transparent pricing upfront with clear project deliverables so you always know what to expect.",
+    "faq_7_q": "How long does implementation take?",
+    "faq_7_a": "Standard digital setups (such as branding creatives, QR menus, or focused WhatsApp assistants) typically take between 5 to 14 working days. Comprehensive custom websites or complex multi-channel automation workflows are scheduled based on exact project scope.",
+    "faq_8_q": "Do you provide support and maintenance after delivery?",
+    "faq_8_a": "Yes. We explain how everything operates, hand over complete control, and provide post-launch support. Ongoing maintenance, menu updates, and new campaign creatives can also be scheduled on a flexible support arrangement.",
+    "foot_desc": "Creative branding, intelligent AI automation, and digital storefront solutions designed specifically for businesses across Karachi and Pakistan.",
+    "foot_h_solutions": "Solutions",
+    "foot_h_connect": "Connect",
+    "foot_loc": "Karachi, Pakistan (Nationwide Coverage)",
+    "foot_disclaimer": "Notice: Matrix Studio is an independent digital transformation agency based in Karachi, Pakistan. All brand mockups, campaign visuals, and chatbot simulations displayed in our portfolio section are conceptual demonstration designs created to illustrate our creative and technical capabilities.",
+    "foot_tagline": "Made to stand out. Built to work smarter."
+  },
+  "ur": {
+    "skip_to_content": "Content par jayein",
+    "nav_home": "Home",
+    "nav_solutions": "Solutions",
+    "nav_work": "Hamara Kaam",
+    "nav_comparison": "Before & After",
+    "nav_demo": "Live Demo",
+    "nav_faq": "Sawaalat",
+    "nav_contact": "Rabta",
+    "cta_consultation": "Muft Mashwara",
+    "hero_eyebrow": "Creative Branding &nbsp;/&nbsp; AI Automation &nbsp;/&nbsp; Digital Solutions",
+    "hero_title_1": "Aapka Business.",
+    "hero_title_2": "Hamara",
+    "hero_title_3": "Creative<br>Edge.",
+    "hero_subhead": "Hum sirf aapke business ka look behtar nahi banate — hum isko zyada smart aur munafa-bakhsh banate hain.",
+    "hero_desc": "Pakistani businesses ko unki digital pehchan banane, customer inquiries automate karne, keemti waqt bachane, aur real sales barhane mein madad dete hain.",
+    "hero_cta_solutions": "Hamare Solutions Dekhein",
+    "hero_cta_consultation": "Muft Mashwara Lein",
+    "pillar_time": "Waqt Bachayein",
+    "pillar_cost": "Ikhrajat Kam Karein",
+    "pillar_growth": "Sales Barhayein",
+    "ind_restaurants": "Restaurants<br>&amp; Cafés",
+    "ind_retail": "Retail<br>Brands",
+    "ind_salons": "Salons<br>&amp; Spas",
+    "ind_clinics": "Clinics<br>&amp; Doctors",
+    "karachi_label": "Karachi ke businesses<br>ke liye banaya gaya &nbsp; ↳",
+    "wa_annotation": "WhatsApp AI<br>&nbsp;&nbsp;&nbsp;Automation",
+    "scroll_to_explore": "SCROLL KAR KE DEKHEIN",
+    "tailored_for": "PAKISTANI BUSINESSES KE LIYE TAIYAR SHUDA",
+    "acc_toggle_label": "Kholein / Maloomat",
+    "whats_included": "✦ Is Service Mein Kya Shamil Hai:",
+    "services_eyebrow": "01 / Solutions & Services",
+    "services_title": "Har cheez jo aapke business ko <span class=\"lime\">smart aur tez banaye.</span>",
+    "services_desc": "Asr daar digital websites se le kar 24 ghantay kaam karne walay automated WhatsApp bots tak — hum practical systems banate hain jo waqt bachate hain aur sales barhate hain.",
+    "svc_1_title": "Digital Presence",
+    "svc_1_desc": "Tez tareen business websites, high-converting landing pages, e-commerce stores, aur smart QR menus.",
+    "svc_1_f1": "Custom Responsive Business Websites",
+    "svc_1_f2": "High-Converting Promotional Pages",
+    "svc_1_f3": "Digital QR Menus & Online Catalogs",
+    "svc_1_f4": "Google Business Profile Local Setup",
+    "svc_1_benefit": "Local customers aasani se aapki dukan ya service tak pohnchein aur online dekhte hi customer ban jayein.",
+    "svc_2_title": "AI & Automation",
+    "svc_2_desc": "Smart WhatsApp bots jo Roman Urdu aur English mein foran jawab dein, appointments book karein aur orders capture karein.",
+    "svc_2_f1": "24/7 WhatsApp AI Customer Support",
+    "svc_2_f2": "Automated Orders & Menu Jawab",
+    "svc_2_f3": "Clinic & Salon Appointment Booking",
+    "svc_2_f4": "Foran Customer Follow-ups",
+    "svc_2_benefit": "Customer ko kabhi 'Seen' par na chorein, ghanton ki manual chat typing se chutkara payein aur har waqt foran reply dein.",
+    "svc_3_title": "Creative Branding",
+    "svc_3_desc": "Yaadgar vector logos, mukammal brand identity, AI product shoots aur high-converting social media ads.",
+    "svc_3_f1": "Vector Logo & Brand Identity",
+    "svc_3_f2": "AI-Enhanced Product Shoots",
+    "svc_3_f3": "Meta Ads & Promotional Creatives",
+    "svc_3_f4": "Packaging Mockups & Shop Banners",
+    "svc_3_benefit": "Competitors se aagay niklein aur aisi premium look banayein jis par customers bharosa karein aur khushi se buy karein.",
+    "svc_4_title": "Digital Marketing",
+    "svc_4_desc": "AI video ads, engaging reels aur hyper-local marketing campaigns jo aapke area ke customers ko dukan tak layein.",
+    "svc_4_f1": "AI Video Ads & Viral Reels",
+    "svc_4_f2": "Targeted Meta & Instagram Ads",
+    "svc_4_f3": "Local Area Lead Generation",
+    "svc_4_f4": "Campaign Landing & Offer Pages",
+    "svc_4_benefit": "Apne ilaqay ke asli khareedaron tak pohnchein aur online visitors ko direct dukan ka customer banayein.",
+    "svc_5_title": "Business Management",
+    "svc_5_desc": "Roz marrah ki management asan banayein — CRM systems, stock trackers aur automated sales dashboards ke zariye.",
+    "svc_5_f1": "Customer Leads & Inquiries CRM",
+    "svc_5_f2": "Real-Time Stock & Inventory Tracking",
+    "svc_5_f3": "Google Sheets & Cloud Workflows",
+    "svc_5_f4": "Automated Invoices & Daily Reports",
+    "svc_5_benefit": "Rozana ki sales, inventory aur orders ka poora hisab kitab baghair kaghazi pareshani ke samne rakhein.",
+    "svc_6_title": "Growth Solutions",
+    "svc_6_desc": "Customer retention systems, WhatsApp loyalty programs, automated 5-star Google reviews aur repeat purchases.",
+    "svc_6_f1": "Automated Google Review Follow-ups",
+    "svc_6_f2": "WhatsApp Customer Loyalty Rewards",
+    "svc_6_f3": "Purane Customers Ko Dobara Bulana",
+    "svc_6_f4": "Customer Retention & Growth Analytics",
+    "svc_6_benefit": "Ek baar aane walay customer ko pakka permanent customer banayein aur word-of-mouth mazboot karein.",
+    "benefit_label": "Aham Faida:",
+    "btn_inquire": "WhatsApp Par Poochhein",
+    "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
+    "portfolio_title": "Kaam jo khud <span class=\"lime\">bolta hai.</span>",
+    "portfolio_desc": "Ye visual concepts dikhate hain ke Matrix Studio kis quality aur aesthetics ke sath kaam karta hai. Tamam projects illustrative demo ke tor par pesh kiye gaye hain.",
+    "filter_all": "Tamam Concepts",
+    "filter_food": "Food & Beverage",
+    "filter_retail": "Retail & Luxury",
+    "filter_clinic": "Clinics & Healthcare",
+    "comp_eyebrow": "03 / Visual Transformation",
+    "comp_title": "Aam Mobile Photo se <br><span class=\"lime\">Brand Ad Creative tak.</span>",
+    "comp_desc": "Neeche slider ko drag karke dekhein ke professional design se kitna farq parta hai. Hum aam smartphone tasweer ko sales barhane walay cinematic ad mein badal dete hain.",
+    "badge_before": "PEHLE • AAM MOBILE SHOT",
+    "badge_after": "BAAD MEIN • MATRIX STUDIO CREATIVE",
+    "comp_note": "💡 Apne mouse, ungli ya keyboard arrow keys (← / →) se pehle aur baad ka farq check karein.",
+    "demo_eyebrow": "04 / Interactive Automation Demo",
+    "demo_title": "Sirf suniye nahi.<br><span class=\"lime\">Khud chala kar dekhein.</span>",
+    "demo_desc": "Neeche hamare restaurant bot demo ko try karein aur dekhein ke aapka business 24 ghantay baghair kisi insani mehnat ke customer inquiries kaise handle kar sakta hai.",
+    "bot_title": "WhatsApp Smart Assistant",
+    "bot_badge": "SIMULATION DEMO",
+    "bot_reset": "↺ Reset Karein",
+    "bot_welcome": "Assalam-o-Alaikum! 👋 Matrix Studio ke demo assistant mein khush amdeed. Aap menu, deals, delivery area ya timings ke baare mein pooch sakte hain.",
+    "chip_menu": "🍔 Menu Dikhao",
+    "chip_deals": "💰 Deals & Prices",
+    "chip_order": "🛍️ Example Order Dein",
+    "chip_delivery": "🛵 Delivery Ki Maloomat",
+    "chip_support": "👤 Team Se Baat Karein",
+    "chat_placeholder": "Roman Urdu ya English mein poochhein...",
+    "flow_title": "↗ Yeh Automation Aapke Business Ko Kaise Chalati Hai",
+    "flow_1_title": "Customer WhatsApp Par Rabta Karta Hai",
+    "flow_1_desc": "Customer aapka ad ya QR menu scan karke direct WhatsApp par message bhejta hai — din ho ya raat.",
+    "flow_2_title": "AI Assistant Foran Jawab Deta Hai",
+    "flow_2_desc": "Roman Urdu aur English samajhta hai, menu dikhata hai, rates batata hai aur order details tayar karta hai.",
+    "flow_3_title": "Orders & Leads Direct Aapko Milti Hain",
+    "flow_3_desc": "Tamam order details aur customer address seedha aapke counter phone ya Google Sheet par organize ho jate hain.",
+    "process_eyebrow": "05 / Kaam Ka Tareeqa",
+    "process_title": "Asan, saaf aur <span class=\"lime\">aapke maqsad ke mutabiq.</span>",
+    "process_desc": "Koi mushkil technical baatein nahi. Hum 4 asan marhalon mein aapke traditional business ko digital powerhouse banate hain.",
+    "step_1_title": "Samajhna (Discover)",
+    "step_1_desc": "Hum aapke business model, daily challenges aur customer requirements ko achi tarah samajhte hain.",
+    "step_2_title": "Mansuba (Plan)",
+    "step_2_desc": "Aapke budget aur zaroorat ke mutabiq sab se practical aur saste digital tools aur bot flows plan karte hain.",
+    "step_3_title": "Tameer (Build)",
+    "step_3_desc": "Hamari team visual branding, WhatsApp bots aur web systems taiyar karti hai aur har flow ko check karti hai.",
+    "step_4_title": "Launch & Support",
+    "step_4_desc": "Mukammal system aapke hawalay karke poora tareeqa sikhate hain aur aage ke liye ongoing support faraham karte hain.",
+    "quote_eyebrow": "06 / Munasib Solutions",
+    "quote_h1": "Har Business Mukhtalif Hota Hai.",
+    "quote_h2": "Aapka Solution Bhi Mukhtalif Hona Chahiye.",
+    "quote_desc": "Humein apne business, targets aur maslay batayein. Hum zabardasti mehnge packages nahi bechte — balkay wahi solution tajweez karte hain jo aapke budget aur zaroorat ke mutabiq ho.",
+    "guarantee_1": "<strong>Koi Majboori Nahi:</strong> Sirf usi system ki payment karein jiski aapko waqayi zaroorat hai.",
+    "guarantee_2": "<strong>Practical Setup:</strong> Asan aur tez setups jo jaldi natijay dena shuru karein.",
+    "guarantee_3": "<strong>Saaf Baat Cheet:</strong> Har cheez aur pricing pehle se wazeh aur transparent hogi.",
+    "cta_quote": "Custom Quote Hasil Karein",
+    "cta_quote_wa": "Direct WhatsApp Par Rabta",
+    "contact_eyebrow": "07 / Rabta Karein",
+    "contact_title": "Apne Business Ki Transformation <span class=\"lime\">Aaj Shuru Karein.</span>",
+    "contact_desc": "Neeche form fill karein ya direct official WhatsApp par rabta karein. Hum aapki requirements dekh kar foran contact karenge.",
+    "contact_h3": "Matrix Studio Official Rabta",
+    "contact_p": "Hum Karachi aur pooray Pakistan ke restaurants, salons, clinics, retail shops aur small businesses ke sath kaam karte hain.",
+    "meta_wa_label": "Official WhatsApp Business",
+    "meta_loc_label": "Markazi Office",
+    "meta_loc_val": "Karachi, Sindh, Pakistan",
+    "meta_cov_label": "Services Ka Daira",
+    "meta_cov_val": "Pooray Pakistan Ke Tamam Shehron Mein",
+    "btn_instant_wa": "WhatsApp Par Foran Message Karein",
+    "lbl_name": "Aapka Poora Naam",
+    "lbl_biz_name": "Business / Dukan Ka Naam",
+    "lbl_category": "Business Ki Category",
+    "opt_select_cat": "Category select karein...",
+    "lbl_city": "Shehar (City)",
+    "lbl_service": "Kaunsa Solution Chahiye?",
+    "opt_select_svc": "Service select karein...",
+    "lbl_details": "Project Ki Tafseelat",
+    "details_placeholder": "Batayein aap kya banana chahte hain, kya masla hal karna hai, ya kya features chahiye...",
+    "lbl_budget": "Takhmeena Budget (Ikhtiyari)",
+    "opt_budget_flex": "Guftagu ke mutabiq / Flexible",
+    "form_notice": "ℹ️ <strong>Direct WhatsApp Inquiry:</strong> Yeh form submit karne par aapki likhi hui details WhatsApp par ready ho jayengi. Aap message dekh kar khud send kar sakte hain. (Koi data external database par save nahi hota).",
+    "btn_submit_quote": "WhatsApp Par Inquiry Bhejein",
+    "err_name": "Barahe karam apna naam darj karein.",
+    "err_biz": "Barahe karam apne business ka naam likhein.",
+    "err_cat": "Barahe karam business category muntakhib karein.",
+    "err_city": "Barahe karam apna shehar batayein.",
+    "err_svc": "Barahe karam matlooba service select karein.",
+    "err_details": "Barahe karam project ki tafseelat darj karein.",
+    "faq_eyebrow": "08 / Aam Sawaalat",
+    "faq_title": "Aksar Pooche Jane Walay <span class=\"lime\">Sawaalat.</span>",
+    "faq_desc": "Hamare kaam, services aur process ke baray mein seedhe aur saaf jawab.",
+    "faq_1_q": "Matrix Studio kya kaam karta hai?",
+    "faq_1_a": "Matrix Studio ek digital transformation agency hai. Hum Pakistani businesses ko modern banate hain — unki websites banate hain, WhatsApp AI bots se customer replies automate karte hain, aur premium visual branding taiyar karte hain.",
+    "faq_2_q": "Kya aap kam budget walay chotay business ki madad kar sakte hain?",
+    "faq_2_a": "Jee bilkul! Hamara kaam hi local businesses ke liye hai. Aapko koi bohot mehnga system lene ki zaroorat nahi — aap ek specific cheez jese WhatsApp bot, QR menu ya social media ads se shuru kar sakte hain.",
+    "faq_3_q": "Kya mujhe pehle se website ya coding aana zaroori hai?",
+    "faq_3_a": "Bilkul nahi! Tamam technical setup, design aur programming hamari team karegi. Kaam mukammal hone ke baad hum aapko asan tareeqay se chalanay ka walkthrough denge.",
+    "faq_4_q": "WhatsApp automation customers ke sath kaise kaam karti hai?",
+    "faq_4_a": "Jab koi customer aapke WhatsApp number par message bhejta hai, to smart assistant foran Roman Urdu ya English mein jawab deta hai. Menu dikhata hai, rates batata hai aur order details lekar aapko forward kar deta hai.",
+    "faq_5_q": "Kya aap mere restaurant ke liye digital QR menu bana sakte hain?",
+    "faq_5_a": "Jee haan. Hum mobile-friendly QR menus banate hain jinhein customer table par scan karke baghair koi app download kiye menu dekh sakta hai aur direct order de sakta hai.",
+    "faq_6_q": "Kisi project ka kharcha kitna hota hai?",
+    "faq_6_a": "Chunke har business ki zaroorat mukhtalif hoti hai, hum zabardasti ke fixed packages ke bajaye aapke kaam ke mutabiq munasib quote dete hain taake aapko pata ho ke aap kis cheez ki payment kar rahe hain.",
+    "faq_7_q": "Kaam mukammal hone mein kitna waqt lagta hai?",
+    "faq_7_a": "Aam tor par standard projects (jese branding, QR menu ya WhatsApp assistant) 5 se 14 working days mein deliver ho jate hain. Baray custom web systems ka schedule scope ke mutabiq tay hota hai.",
+    "faq_8_q": "Kya delivery ke baad bhi support milti hai?",
+    "faq_8_a": "Jee haan. Hum system chalanay ki poori training dete hain aur kaam shuru hone ke baad bhi updates aur maintenance ke liye dastiyab rehte hain.",
+    "foot_desc": "Creative branding, intelligent AI automation aur digital solutions jo khas taur par Karachi aur pooray Pakistan ke businesses ke liye banaye gaye hain.",
+    "foot_h_solutions": "Solutions",
+    "foot_h_connect": "Rabta",
+    "foot_loc": "Karachi, Pakistan (Nationwide Coverage)",
+    "foot_disclaimer": "Wazahat: Matrix Studio Karachi, Pakistan mein waqay ek independent agency hai. Portfolio mein mojood mockups aur chatbot demo concepts hamari technical aur design salahiyat dikhane ke liye taiyar kiye gaye hain.",
+    "foot_tagline": "Behtareen pehchan. Smart tareen kaarobar."
+  }
+};
+
+    let currentLang = localStorage.getItem('matrix_studio_lang') || 'en';
+
+        function toggleServiceAccordion(cardId) {
+      const targetCard = document.getElementById(cardId);
+      if (!targetCard) return;
+
+      const isCurrentlyActive = targetCard.classList.contains('active');
+
+      // Close all cards
+      document.querySelectorAll('.svc-acc-card').forEach(card => {
+        card.classList.remove('active');
+        const headerBtn = card.querySelector('.svc-acc-header');
+        if (headerBtn) headerBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      // If it wasn't active, open it (pure toggle behavior)
+      if (!isCurrentlyActive) {
+        targetCard.classList.add('active');
+        const headerBtn = targetCard.querySelector('.svc-acc-header');
+        if (headerBtn) headerBtn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // Hero Art 3D Interactive Perspective
+    function initHeroArtTilt() {
+      const heroArt = document.querySelector('.hero-art');
+      if (heroArt) {
+        heroArt.addEventListener('mousemove', (e) => {
+          const rect = heroArt.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width - 0.5) * 14;
+          const y = ((e.clientY - rect.top) / rect.height - 0.5) * 14;
+          heroArt.style.transform = `perspective(1000px) rotateY(${x * 0.4}deg) rotateX(${-y * 0.4}deg)`;
+        });
+        heroArt.addEventListener('mouseleave', () => {
+          heroArt.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+        });
+      }
+    }
+    
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('matrix_studio_lang', lang);
+      document.documentElement.lang = (lang === 'en' ? 'en' : 'ur-PK');
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    // Mobile Navigation Toggle
+    const navlinks = document.getElementById('navlinks');
+    const menu = document.getElementById('menu');
+    menu.addEventListener('click', () => {
+      let open = navlinks.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.textContent = open ? '✕' : '☰';
+    });
+    navlinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navlinks.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.textContent = '☰';
+      });
+    });
+
+    // Scroll Reveal Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Active Link Scroll Highlighting
+    const sections = document.querySelectorAll('main > section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + current) {
+          a.classList.add('active');
+        }
+      });
+    }, { passive: true });
+
+    // Portfolio Filters
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.project').forEach(p => {
+          if (filter === 'all' || p.dataset.category === filter) {
+            p.style.display = 'block';
+          } else {
+            p.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Project Modal Preview
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImg = document.getElementById('modalImg');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalWaBtn = document.getElementById('modalWaBtn');
+
+    document.querySelectorAll('.project').forEach(p => {
+      p.addEventListener('click', () => {
+        const title = p.dataset.title;
+        const desc = p.dataset.desc;
+        const img = p.querySelector('img');
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalImg.src = img.src;
+        modalImg.alt = title;
+        modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent('Salam Matrix Studio! Mujhe aapke project concept "' + title + '" ke baray mein baat karni hai.');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Before & After Interactive Comparison Slider (With Synchronized 1:1 Dimensions)
+    const compContainer = document.getElementById('compContainer');
+    const compBeforeLayer = document.getElementById('compBeforeLayer');
+    const compBeforeImg = document.getElementById('compBeforeImg');
+    const compHandle = document.getElementById('compHandle');
+    let isDragging = false;
+
+    function syncSliderDimensions() {
+      if (compContainer && compBeforeImg) {
+        compBeforeImg.style.width = compContainer.clientWidth + 'px';
+        compBeforeImg.style.height = compContainer.clientHeight + 'px';
+      }
+    }
+    window.addEventListener('resize', syncSliderDimensions);
+    window.addEventListener('load', syncSliderDimensions);
+    syncSliderDimensions();
+
+    function setSliderPosition(percentage) {
+      percentage = Math.max(0, Math.min(100, percentage));
+      if (compBeforeLayer) compBeforeLayer.style.width = percentage + '%';
+      if (compHandle) compHandle.style.left = percentage + '%';
+      if (compContainer) compContainer.setAttribute('aria-valuenow', Math.round(percentage));
+    }
+
+    function getPositionFromEvent(e) {
+      const rect = compContainer.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const x = clientX - rect.left;
+      return (x / rect.width) * 100;
+    }
+
+    compContainer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      setSliderPosition(getPositionFromEvent(e));
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      setSliderPosition(getPositionFromEvent(e));
+    });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    compContainer.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      setSliderPosition(getPositionFromEvent(e));
+    }, { passive: true });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      setSliderPosition(getPositionFromEvent(e));
+    }, { passive: true });
+    window.addEventListener('touchend', () => { isDragging = false; });
+
+    compContainer.addEventListener('keydown', (e) => {
+      let currentVal = parseInt(compContainer.getAttribute('aria-valuenow') || '50', 10);
+      if (e.key === 'ArrowLeft') {
+        currentVal -= 5;
+        setSliderPosition(currentVal);
+        e.preventDefault();
+      } else if (e.key === 'ArrowRight') {
+        currentVal += 5;
+        setSliderPosition(currentVal);
+        e.preventDefault();
+      } else if (e.key === 'Home') {
+        setSliderPosition(0);
+        e.preventDefault();
+      } else if (e.key === 'End') {
+        setSliderPosition(100);
+        e.preventDefault();
+      }
+    });
+
+    // WhatsApp Chatbot Simulator
+    const messages = document.getElementById('messages');
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const typingIndicator = document.getElementById('typingIndicator');
+    const chatResetBtn = document.getElementById('chatResetBtn');
+
+    function appendMessage(text, isUser = false) {
+      const bubble = document.createElement('div');
+      bubble.className = 'msg ' + (isUser ? 'user' : 'bot');
+      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      bubble.appendChild(document.createTextNode(text)); bubble.style.whiteSpace = 'pre-line'; const stamp = document.createElement('span'); stamp.className = 'msg-time'; stamp.textContent = timeStr; bubble.appendChild(stamp);
+      messages.appendChild(bubble);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function generateBotResponse(query) {
+      const q = query.toLowerCase();
+      const isUr = (currentLang === 'ur');
+
+      if (/menu|item|burger|pizza|khana|dish/.test(q)) {
+        return isUr
+          ? "🍔 **Flame & Crust Demo Menu:**\n• Classic Beef Smashed: Rs. 650\n• Double Melt Burger: Rs. 890\n• Loaded Crust Pizza: Rs. 1,350\n• Crisp Fries & Drink: Rs. 290\n\nKya aap kisi item ka order place karna chahte hain?"
+          : "🍔 **Flame & Crust Demo Menu:**\n• Classic Beef Smashed: Rs. 650\n• Double Melt Burger: Rs. 890\n• Loaded Crust Pizza: Rs. 1,350\n• Crisp Fries & Soft Drink: Rs. 290\n\nWould you like to place an example order?";
+      }
+
+      if (/deal|price|rate|cost|paisa|discount|off/.test(q)) {
+        return isUr
+          ? "🔥 **Aaj Ki Special Deals:**\n1. Midnight Deal: 2 Smashed Burgers + Loaded Fries + 2 Drinks = Rs. 1,499 (Save 25%)\n2. Family Combo: Large Pizza + 2 Burgers + 1.5L Drink = Rs. 2,699\n\nAapko kaunsi deal pasand aayi?"
+          : "🔥 **Today's Hot Deals:**\n1. Midnight Deal: 2 Smashed Burgers + Loaded Fries + 2 Drinks = Rs. 1,499 (Save 25%)\n2. Family Feast: Large Pizza + 2 Burgers + 1.5L Drink = Rs. 2,699\n\nWhich deal would you like to choose?";
+      }
+
+      if (/order|buy|kharid|mangwana/.test(q)) {
+        return isUr
+          ? "🛍️ **Example Order Confirmation:**\nAapka order:\n• 1x Midnight Deal (Rs. 1,499)\nBarahe karam delivery address aur contact number share karein! (Ye scripted demo hai jo real WhatsApp bot ka flow dikhata hai)."
+          : "🛍️ **Example Order Flow:**\nSelected item: 1x Midnight Deal (Rs. 1,499).\nPlease provide your delivery address and contact number! (This is an interactive simulation demonstrating real WhatsApp ordering).";
+      }
+
+      if (/delivery|area|rider|location|shehar|kahan/.test(q)) {
+        return isUr
+          ? "🛵 **Delivery Information:**\nHum Defence, Clifton, Gulshan, Johar aur Nazimabad mein delivery deliver karte hain. Average time 35 se 45 minutes hai. Delivery charges Rs. 150 hain."
+          : "🛵 **Delivery Information:**\nWe deliver across major neighborhoods in Karachi within 35 to 45 minutes. Flat delivery fee is Rs. 150.";
+      }
+
+      if (/human|agent|team|rabta|call|person|support/.test(q)) {
+        return isUr
+          ? "👤 **Matrix Studio Team:**\nHum aapko hamari live team se connect kar rahe hain. Aap directly WhatsApp par baat karne ke liye +92 302 2053002 par message kar sakte hain!"
+          : "👤 **Matrix Studio Live Team:**\nConnecting you to our team! You can message us directly anytime on WhatsApp at +92 302 2053002.";
+      }
+
+      if (/salam|hello|hi|hey|aaj/.test(q)) {
+        return isUr
+          ? "Walaikum Assalam! 👋 Main Flame & Crust ka automated smart assistant hoon. Main aapko menu dikhane, order lene aur location batane mein madad kar sakta hoon."
+          : "Hello & Welcome! 👋 I am the automated smart assistant for Flame & Crust. I can help you view our menu, browse deals, or take your order.";
+      }
+
+      return isUr
+        ? "Shukriya! 😊 Ye ek interactive simulation demo hai. Aap 'Menu', 'Deals', 'Order', ya 'Delivery' likh kar mazeed flows test kar sakte hain."
+        : "Thank you! 😊 This is an interactive demo simulation. Try asking for 'Menu', 'Deals', 'Delivery', or 'Order' to test automated replies.";
+    }
+
+    function handleChatUserMessage(userText) {
+      if (!userText.trim()) return;
+      appendMessage(userText, true);
+
+      typingIndicator.style.display = 'flex';
+      messages.scrollTop = messages.scrollHeight;
+
+      setTimeout(() => {
+        typingIndicator.style.display = 'none';
+        const botReply = generateBotResponse(userText);
+        appendMessage(botReply, false);
+      }, 550);
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = chatInput.value.trim();
+      if (!val) return;
+      handleChatUserMessage(val);
+      chatInput.value = '';
+    });
+
+    document.querySelectorAll('.chips button').forEach(chip => {
+      chip.addEventListener('click', () => {
+        handleChatUserMessage(chip.textContent.trim());
+      });
+    });
+
+    chatResetBtn.addEventListener('click', () => {
+      messages.innerHTML = '';
+      const welcome = (currentLang === 'ur') ? translations.ur.bot_welcome : translations.en.bot_welcome;
+      appendMessage(welcome, false);
+    });
+
+    // Streamlined, user-controlled WhatsApp quote form
+    const quoteForm = document.getElementById('quoteInquiryForm');
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = id => document.getElementById(id)?.value.trim() || '';
+      const required = [['custName','errName'],['bizCategory','errCat'],['reqService','errSvc'],['projDetails','errDetails']];
+      let firstInvalid = null;
+      required.forEach(([id,err]) => {
+        const bad = !val(id); document.getElementById(err)?.classList.toggle('visible',bad);
+        if(bad && !firstInvalid) firstInvalid = document.getElementById(id);
+      });
+      if(firstInvalid){firstInvalid.focus();return;}
+      const formattedMessage = ['Assalamualaikum Matrix Studio!','I would like a free consultation / custom quote.','',
+        'Name: '+val('custName'), 'Business: '+(val('bizName')||'Not specified'),
+        'Category: '+val('bizCategory'), 'Solution: '+val('reqService'),
+        'Project goals: '+val('projDetails')].join('\n');
+      const url='https://wa.me/923022053002?text='+encodeURIComponent(formattedMessage);
+      const opened=window.open(url,'_blank');
+      if(!opened) window.location.assign(url);
+    });
+
+    // Accordions
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    setLanguage(currentLang);
+  
+    document.querySelectorAll('.project').forEach(p=>p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();p.click()}}));
+
+    // Six focused, business-outcome-led solution showcases
+    const matrixSolutions = [
+      {name:'Digital Presence',en:'From local shop to online presence.',ur:'Local Dukaan Se Online Presence Tak.',desc:'Help customers find you, explore your products and contact you easily.',descUr:'Customers aapko online dhoond sakein, products dekh sakein aur asaani se contact karein.',benefits:['Business websites & online stores','QR menus & digital catalogs','Google Business Profile setup'],benefitsUr:['Business websites aur online stores','QR menus aur digital catalogs','Google Business Profile setup'],img:'images/solution_web.jpg'},
+      {name:'AI & Automation',en:'From missed messages to smarter replies.',ur:'Missed Messages Se Smart Replies Tak.',desc:'Handle common inquiries and routine tasks with practical automations.',descUr:'Customer inquiries aur roz ke kaam practical automation se manage karein.',benefits:['WhatsApp assistants','Booking & follow-up workflows','Lead capture automation'],benefitsUr:['WhatsApp assistants','Booking aur follow-up workflows','Leads capture automation'],img:'images/solution_ai.jpg'},
+      {name:'Creative Branding',en:'From ordinary to unforgettable.',ur:'Normal Se Yaadgar Brand Tak.',desc:'Make your brand and products look professional and consistent.',descUr:'Apne brand aur products ko professional aur consistent look dein.',benefits:['Logo & visual identity','Product creative concepts','Social posters & campaigns'],benefitsUr:['Logo aur visual identity','Product creative concepts','Social posters aur campaigns'],img:'images/perfume_ad.webp'},
+      {name:'Digital Marketing',en:'From quiet posts to wider reach.',ur:'Kam Reach Se Naye Logon Tak.',desc:'Creative content and campaigns that help people discover your business.',descUr:'Creative content aur campaigns jo logon ko aapke business tak laayein.',benefits:['Video ads & reels','Social campaign creatives','Landing pages'],benefitsUr:['Video ads aur reels','Social campaign creatives','Landing pages'],img:'images/burger_deal.webp'},
+      {name:'Business Management',en:'From scattered records to organized work.',ur:'Bikhre Records Se Organized Kaam Tak.',desc:'Simplify your operations with connected tools and useful reporting.',descUr:'Connected tools aur reporting se roz ka kaam asaan banayein.',benefits:['CRM & lead tracking','Inventory & invoicing','Dashboards & reports'],benefitsUr:['CRM aur leads tracking','Inventory aur invoicing','Dashboards aur reports'],img:'images/solution_ops.svg'},
+      {name:'Growth Solutions',en:'From one-time visitors to lasting connections.',ur:'Ek Baar Ke Customers Se Long-Term Rabta Tak.',desc:'Keep in touch with customers and create opportunities for repeat business.',descUr:'Customers se rabta barqarar rakhein aur repeat business ke mauqay paida karein.',benefits:['Follow-up systems','Reviews & loyalty programs','Customer insights'],benefitsUr:['Follow-up systems','Reviews aur loyalty programs','Customer insights'],img:'images/solution_growth.svg'}
+    ];
+    let selectedMatrixSolution=0;
+    function showMatrixSolution(index){
+      selectedMatrixSolution=index;const d=matrixSolutions[index],ur=currentLang==='ur';
+      document.querySelectorAll('.solution-tab').forEach((btn,i)=>{btn.classList.toggle('is-active',i===index);btn.setAttribute('aria-selected',String(i===index));btn.textContent=String(i+1).padStart(2,'0')+' · '+dummynames(i,ur)});
+      document.getElementById('solutionEyebrow').textContent=String(index+1).padStart(2,'0')+' / '+d.name.toUpperCase();
+      document.getElementById('solutionHeadline').textContent=ur?d.ur:d.en;
+      document.getElementById('solutionDescription').textContent=ur?d.descUr:d.desc;
+      const img=document.getElementById('solutionPhoto');img.src=d.img;img.alt=d.name+' concept illustration';
+      const list=document.getElementById('solutionBenefits');list.replaceChildren();(ur?d.benefitsUr:d.benefits).forEach(t=>{const li=document.createElement('li');li.textContent=t;list.appendChild(li)});
+      const a=document.getElementById('solutionContact');a.textContent=ur?'Is Solution Par Baat Karein ↗':'Discuss this solution ↗';a.href='https://wa.me/923022053002?text='+encodeURIComponent('Assalamualaikum Matrix Studio! I would like to discuss '+d.name+' for my business.');
+    }
+    function dummynames(i,ur){return (ur?['Digital Presence','AI & Automation','Creative Branding','Digital Marketing','Business Management','Growth Solutions']:matrixSolutions.map(s=>s.name))[i]}
+    document.querySelectorAll('.solution-tab').forEach(btn=>btn.addEventListener('click',()=>showMatrixSolution(Number(btn.dataset.solution))));
+    showMatrixSolution(0);
+    document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setTimeout(()=>{showMatrixSolution(selectedMatrixSolution);setIndustryDemo(currentIndustry)},0)));
+    // Business-specific scripted chatbot (not a live AI backend)
+    const industryDemo={
+      restaurant:{label:'Restaurant Demo',welcome:'Welcome! Ask about menu, delivery or orders.',menu:'Sample menu: burgers, pizza and drinks. A real bot would show your updated menu.',booking:'We can collect an order request and connect you to the team.',delivery:'Delivery areas and charges can be configured for your restaurant.'},
+      salon:{label:'Salon Demo',welcome:'Welcome! Ask about services, appointments or timings.',menu:'Sample services: haircut, styling and facials. Prices are set by your salon.',booking:'Please share your preferred date and time. A real bot can check available slots.',delivery:'This salon demo supports appointment scheduling, not delivery.'},
+      clinic:{label:'Clinic Demo',welcome:'Welcome! Ask about clinic hours, appointments or location. No medical advice is provided.',menu:'We can share available clinic services and consultation details.',booking:'Please share your preferred appointment day. A real system can confirm availability.',delivery:'We can provide clinic address and opening hours.'},
+      retail:{label:'Retail Demo',welcome:'Welcome! Ask about products, availability or order status.',menu:'A real store assistant can share your current product catalog and prices.',booking:'We can collect an order inquiry and send it to the store team.',delivery:'A real assistant can show shipping areas, charges and estimated delivery.'}
+    };
+    let currentIndustry='restaurant';
+    function setIndustryDemo(ind){
+      currentIndustry=ind;document.querySelectorAll('[data-industry]').forEach(b=>b.classList.toggle('chosen',b.dataset.industry===ind));
+      document.getElementById('industryLabel').textContent=(currentLang==='ur'?'BUSINESS DEMO CHUNEIN · ':'CHOOSE YOUR BUSINESS · ')+industryDemo[ind].label.toUpperCase();
+      messages.replaceChildren();appendMessage(industryDemo[ind].welcome);
+    }
+    document.querySelectorAll('[data-industry]').forEach(b=>b.addEventListener('click',()=>setIndustryDemo(b.dataset.industry)));
+    const originalResponse=generateBotResponse;
+    generateBotResponse=function(q){
+      if(currentIndustry==='restaurant')return originalResponse(q);
+      const d=industryDemo[currentIndustry],text=q.toLowerCase();
+      if(/appointment|book|slot|time|order|reserve|booking/.test(text))return d.booking;
+      if(/delivery|location|address|shipping|hours|timing/.test(text))return d.delivery;
+      if(/price|menu|product|service|catalog|available|cost/.test(text))return d.menu;
+      return d.welcome+' You can ask about services, booking or availability.';
+    };
+    setIndustryDemo('restaurant');
+</script>
+</body>
+</html>

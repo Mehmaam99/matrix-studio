@@ -1,0 +1,10 @@
+# Logs and temporary files
+*.log
+*.tmp
+__pycache__/
+*.pyc
+
+# Local environments / agent scratchpad
+.gemini/
+.env*
+.vercel

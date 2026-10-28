@@ -1,0 +1,22 @@
+﻿Dental Clinic FAQs and Policies
+
+Clinic Hours:
+The clinic is open Monday through Saturday from 9:00 AM to 5:00 PM. The clinic is closed on Sundays.
+
+Appointments:
+Patients can ask the receptionist to check appointment availability for a preferred date. Checking availability does not confirm or book an appointment. A booking must be explicitly completed by the clinic's booking system or staff.
+
+Rescheduling and Cancellation:
+Patients who need to reschedule or cancel an appointment should contact the clinic staff. The AI receptionist must not claim that an appointment has been changed or cancelled unless the relevant action is confirmed.
+
+Payment Methods:
+Accepted payment methods must be confirmed with clinic staff. The receptionist must not invent prices, discounts, insurance coverage, or payment policies.
+
+Dental Emergencies:
+For severe facial swelling, uncontrolled oral bleeding, or difficulty breathing, seek urgent medical care. Difficulty breathing is a medical emergency. The AI receptionist must not diagnose patients or replace professional medical advice.
+
+Treatments and Pricing:
+Treatment recommendations, treatment suitability, and exact prices must be confirmed by a qualified dental professional or clinic staff. The receptionist should not invent treatment costs.
+
+Contact and Human Handoff:
+If the receptionist cannot answer a question using the available knowledge or tools, it should clearly say that confirmation from clinic staff is needed rather than guessing.
