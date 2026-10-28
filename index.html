@@ -1703,10 +1703,179 @@ section.content{padding:100px 0}
 .industry-demo-tabs button.chosen{background:var(--lime);color:#10150c;border-color:var(--lime)}
 
 
-@media (max-width:1100px){.solution-copy{padding:30px}.solution-feature{grid-template-columns:48% 52%}}
-@media (max-width:768px){section.content{padding:68px 0}.solution-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:8px}.solution-tab{white-space:nowrap;flex-shrink:0}.solution-feature{grid-template-columns:1fr}.solution-photo{min-height:280px}.solution-photo:after{background:linear-gradient(0deg,#111a14,transparent 65%)}.solution-copy{padding:26px 26px 32px}.project-info h3{font-size:17px}}
-@media (max-width:450px){.solution-photo{min-height:230px}.industry-demo-tabs button{padding:7px 9px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}</style></head>
+/* ========================================================
+   COMPREHENSIVE MOBILE & TABLET RESPONSIVENESS
+   ======================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Tablet & Smaller Desktops (<= 1100px) */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero { padding-top: 135px; }
+  .hero-copy { text-align: center; margin: 0 auto; max-width: 700px; }
+  .hero-desc { margin: 0 auto; }
+  .actions, .industries, .karachi-wrap { justify-content: center; }
+  .hero-art { margin-top: 30px; max-width: 640px; width: 100%; margin-left: auto; margin-right: auto; }
+  .solution-feature { grid-template-columns: 48% 52%; }
+  .solution-copy { padding: 32px; }
+  .contact-layout { grid-template-columns: 1fr; gap: 28px; }
+  .contact-card, .form-panel { height: auto; }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .wrap { width: calc(100% - 32px); }
+  
+  /* Header & Navigation */
+  .header { z-index: 1000; }
+  .nav { height: 68px; }
+  .logo { font-size: 21px; }
+  .logo small { font-size: 8px; letter-spacing: .4em; margin-top: 3px; }
+  .navright { gap: 10px; }
+  .lang-switcher { padding: 2px; }
+  .lang-btn { padding: 4px 8px; font-size: 10px; }
+  .menu { display: block; font-size: 24px; padding: 4px 6px; }
+  .navright .pill { display: none; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #0b120f;
+    padding: 24px 20px 32px;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 15px; font-weight: 700; padding: 4px 0; }
+
+  /* Hero Section */
+  .hero { padding: 110px 0 45px; min-height: 0; }
+  .hero-copy { text-align: left; }
+  .actions, .industries, .karachi-wrap { justify-content: flex-start; }
+  .hero h1 { font-size: clamp(34px, 8.5vw, 48px); line-height: 1.08; letter-spacing: -.05em; margin: 16px 0 12px; }
+  .hero-subhead { font-size: 15px; line-height: 1.5; margin-bottom: 8px; }
+  .hero-desc { font-size: 13px; line-height: 1.65; }
+  .actions { flex-direction: column; width: 100%; gap: 10px; margin-top: 22px; }
+  .actions .primary, .actions .outline { width: 100%; justify-content: center; padding: 14px 20px; font-size: 13px; }
+  .industries { gap: 10px 14px; margin-top: 22px; }
+  .industry { border-right: none; padding-right: 0; font-size: 11px; }
+  .karachi-wrap { margin-top: 20px; gap: 10px; }
+  .karachi-label { font-size: 15px; }
+  .mazar-svg { width: 105px; }
+
+  /* Hero Art Showcase on Mobile */
+  .hero-art { height: 380px; max-width: 100%; margin-top: 10px; perspective: none; }
+  .lime-slash { display: none; }
+  .hero-art > div[style*="handwritten"] { display: none; }
+  .burger { width: 60%; height: 175px; left: 0; top: 8px; }
+  .perfume { width: 52%; height: 175px; right: 0; top: 0; }
+  .food { width: 46%; height: 155px; left: 0; top: 200px; }
+  .clinic { width: 44%; height: 175px; right: 0; top: 185px; }
+  .wa-chatcard { width: min(240px, 80%); left: 50%; top: 140px; transform: translateX(-50%) rotate(-1deg); }
+
+  /* Section Headings (Fixing the 2-column squash bug) */
+  section.content { padding: 60px 0; }
+  .section-head { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 26px; }
+  .section-head h2 { font-size: clamp(26px, 7.2vw, 36px); line-height: 1.15; margin-top: 6px; }
+  .section-head p { max-width: 100%; font-size: 13px; line-height: 1.65; }
+
+  /* Section 01: Solutions */
+  .solution-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+  .solution-tabs::-webkit-scrollbar { display: none; }
+  .solution-tab { white-space: nowrap; flex-shrink: 0; padding: 10px 14px; font-size: 11px; }
+  .solution-feature { grid-template-columns: 1fr; border-radius: 20px; min-height: 0; }
+  .solution-photo { min-height: 220px; max-height: 280px; }
+  .solution-photo:after { background: linear-gradient(0deg, #101713 18%, transparent 75%); }
+  .solution-photo-label { left: 16px; bottom: 14px; font-size: 9px; padding: 6px 10px; }
+  .solution-copy { padding: 24px 20px 28px; }
+  .solution-copy h3 { font-size: clamp(21px, 6vw, 28px); margin: 10px 0; line-height: 1.2; }
+  .solution-copy p { font-size: 13px; line-height: 1.6; }
+  .solution-benefits { gap: 9px; margin: 18px 0 22px; }
+  .solution-benefits li { font-size: 12px; }
+  #solutionContact { width: 100%; justify-content: center; text-align: center; padding: 14px 20px; }
+
+  /* Section 02: Portfolio */
+  .filters { flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .filter { padding: 8px 14px; font-size: 11px; }
+  .projects { gap: 14px; }
+  .project, .project.third, .project.fullwidth { grid-column: span 12; min-height: 280px; border-radius: 18px; }
+  .project-info { bottom: 16px; left: 16px; right: 16px; }
+  .project-info h3 { font-size: 17px; }
+
+  /* Section 03: Comparison Slider */
+  .comp-container { border-radius: 18px; aspect-ratio: 1 / 1; max-width: 100%; }
+  .comp-badge { top: 14px; padding: 5px 10px; font-size: 9px; letter-spacing: .08em; }
+  .badge-before { left: 14px; }
+  .badge-after { right: 14px; }
+  .comp-handle-btn { width: 36px; height: 36px; font-size: 14px; }
+
+  /* Section 04: Demo Chatbot */
+  .demo-grid { grid-template-columns: 1fr; gap: 20px; }
+  .demo-panel { border-radius: 18px; }
+  .demo-title { padding: 16px 18px; }
+  .demo-title strong { font-size: 14px; }
+  .messages { height: 270px; padding: 16px; gap: 10px; }
+  .msg { max-width: 90%; padding: 9px 13px; font-size: 12px; }
+  .industry-demo { padding: 10px 14px 4px; }
+  .industry-demo-tabs { gap: 5px; }
+  .industry-demo-tabs button { padding: 6px 9px; font-size: 10px; }
+  .chips { padding: 0 14px 10px; gap: 6px; }
+  .chips button { padding: 5px 9px; font-size: 10px; }
+  .chat-form { padding: 12px 14px; }
+  .chat-form input { font-size: 12px; padding: 8px 12px; }
+
+  /* Section 05: Process */
+  .process-grid { grid-template-columns: 1fr; gap: 14px; }
+  .process-card { padding: 22px 18px; border-radius: 18px; }
+
+  /* Section 07: Contact Form */
+  .contact-layout { grid-template-columns: 1fr; gap: 22px; }
+  .contact-card, .form-panel { padding: 26px 18px; border-radius: 20px; height: auto; }
+  .contact-card h3 { font-size: 21px; }
+  .contact-card p { font-size: 13px; margin-bottom: 20px; }
+  .form-grid { grid-template-columns: 1fr; gap: 12px; }
+  .form-group.full { grid-column: span 1; }
+  .form-input, .form-select, .form-textarea { font-size: 13px; padding: 11px 13px; }
+
+  /* Footer */
+  .foot-top { grid-template-columns: 1fr; gap: 28px; }
+  .copyright { flex-direction: column; gap: 8px; text-align: center; }
+  .float-wa { bottom: 18px; right: 18px; width: 50px; height: 50px; }
+}
+
+/* Very Small Phones (<= 450px) */
+@media (max-width: 450px) {
+  .wrap { width: calc(100% - 24px); }
+  .nav { height: 62px; }
+  .logo { font-size: 18px; }
+  .logo small { font-size: 7.5px; letter-spacing: .35em; }
+  .lang-btn { padding: 3px 6px; font-size: 9.5px; }
+  .nav-links { top: 62px; }
+  .hero h1 { font-size: clamp(30px, 8.2vw, 38px); }
+  .solution-photo { min-height: 200px; }
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}}</style></head>
 <body>
 <!-- Accessible Skip Link -->
 <a data-i18n="skip_to_content" href="#home" onblur="this.style.top='-100px'" onfocus="this.style.top='20px'" style="position:absolute;top:-100px;left:20px;background:var(--lime);color:#111;padding:10px 18px;font-weight:700;z-index:9999;border-radius:6px;transition:top .2s">Skip to content</a>
@@ -2694,9 +2863,9 @@ section.content{padding:100px 0}
     "nav_contact": "Rabta",
     "cta_consultation": "Muft Mashwara",
     "hero_eyebrow": "Creative Branding &nbsp;/&nbsp; AI Automation &nbsp;/&nbsp; Digital Solutions",
-    "hero_title_1": "Aapka Business.",
-    "hero_title_2": "Hamara",
-    "hero_title_3": "Creative<br>Edge.",
+    "hero_title_1": "Kaarobar Aapka.",
+    "hero_title_2": "Brand Banane Ka",
+    "hero_title_3": "Hunar<br>Hamara.",
     "hero_subhead": "Hum sirf aapke business ka look behtar nahi banate — hum isko zyada smart aur munafa-bakhsh banate hain.",
     "hero_desc": "Pakistani businesses ko unki digital pehchan banane, customer inquiries automate karne, keemti waqt bachane, aur real sales barhane mein madad dete hain.",
     "hero_cta_solutions": "Hamare Solutions Dekhein",
