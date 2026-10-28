@@ -1,8 +1,16 @@
+# Python & AI Receptionist backend (kept local only)
+ai-receptionist/
+*.py
+__pycache__/
+*.pyc
+
+# Docs & unused assets
+assets.js
+MATRIX_STUDIO_PLAYBOOK.md
+
 # Logs and temporary files
 *.log
 *.tmp
-__pycache__/
-*.pyc
 
 # Local environments / agent scratchpad
 .gemini/
