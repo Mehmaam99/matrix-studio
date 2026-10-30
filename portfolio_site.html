@@ -1652,11 +1652,12 @@
       position: fixed;
       inset: 0;
       background: rgba(8, 11, 11, 0.98);
-      z-index: 210;
+      z-index: 2000;
       display: none;
       flex-direction: column;
       overflow-y: auto;
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       padding: 36px 0 60px;
       box-sizing: border-box;
       -webkit-overflow-scrolling: touch;
@@ -1792,12 +1793,15 @@
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.88);
-      z-index: 200;
+      z-index: 2200;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 24px;
       backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .modal.open { display: flex; }
     .modal-card {
@@ -2020,7 +2024,8 @@
       transition: transform .25s ease;
     }
     @media (max-width: 768px) {
-      .modal-card { padding: 20px 16px; border-radius: 20px; }
+      .modal { padding: 16px 12px; align-items: flex-start; }
+      .modal-card { padding: 20px 16px; border-radius: 20px; margin-top: 10px; margin-bottom: 24px; }
       .modal-footer-actions { flex-direction: column; align-items: stretch; }
       .modal-footer-actions button, .modal-footer-actions a { width: 100%; justify-content: center; text-align: center; }
       .lightbox-scroll-area {
@@ -4208,12 +4213,25 @@
           history.pushState({ view: 'collection' }, '', '#branding-collection');
         }
       } else {
+        isFromCollection = false;
         if (!collectionViewOverlay.classList.contains('open') && !fullscreenLightbox.classList.contains('open')) {
           document.body.style.overflow = '';
         }
         if (pushHistory && window.location.hash.startsWith('#case-study-')) {
           history.pushState({ view: 'home' }, '', '#portfolio');
         }
+      }
+    }
+
+    function closeAllModals(pushHistory = true) {
+      modal.classList.remove('open');
+      collectionViewOverlay.classList.remove('open');
+      fullscreenLightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      isFromCollection = false;
+      activeModalProjectId = null;
+      if (pushHistory && (window.location.hash.startsWith('#case-study-') || window.location.hash === '#branding-collection')) {
+        history.pushState({ view: 'home' }, '', '#portfolio');
       }
     }
 
@@ -4275,15 +4293,27 @@
 
     // Homepage Collection Card trigger
     if (openCollectionCard) {
-      openCollectionCard.addEventListener('click', () => openCollectionView(true));
+      openCollectionCard.addEventListener('click', (e) => {
+        openCollectionView(true);
+      });
       openCollectionCard.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCollectionView(true); }
       });
+      const ctaBtn = openCollectionCard.querySelector('.case-study-btn');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openCollectionView(true);
+        });
+      }
     }
 
     // Collection View Back button
     if (collectionBackBtn) {
-      collectionBackBtn.addEventListener('click', () => closeCollectionView(true));
+      collectionBackBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeCollectionView(true);
+      });
     }
 
     // Collection cards click triggers
@@ -4299,11 +4329,22 @@
           if (id) openCaseStudy(id, true, true);
         }
       });
+      const cta = card.querySelector('.case-study-btn');
+      if (cta) {
+        cta.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const id = card.dataset.projectId;
+          if (id) openCaseStudy(id, true, true);
+        });
+      }
     });
 
     // Modal Back to Collection button
     if (modalBackToCollectionBtn) {
-      modalBackToCollectionBtn.addEventListener('click', () => closeCaseStudy(true));
+      modalBackToCollectionBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeCaseStudy(true);
+      });
     }
 
     // Modal Close button
@@ -4311,14 +4352,22 @@
       if (isFromCollection) {
         closeCaseStudy(true);
       } else {
-        modal.classList.remove('open');
-        if (!fullscreenLightbox.classList.contains('open')) {
-          document.body.style.overflow = '';
-        }
+        closeAllModals(true);
       }
     }
-    document.getElementById('closeModal').addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    const closeModalBtn = document.getElementById('closeModal');
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeAllModals(true);
+      });
+    }
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        if (isFromCollection) closeCaseStudy(true);
+        else closeAllModals(true);
+      }
+    });
 
     // Non-collection homepage projects
     document.querySelectorAll('.project:not(#openCollectionCard)').forEach(p => {
@@ -4335,12 +4384,17 @@
         modal.classList.remove('open');
         openCollectionView(false);
       } else {
-        modal.classList.remove('open');
-        fullscreenLightbox.classList.remove('open');
-        collectionViewOverlay.classList.remove('open');
-        document.body.style.overflow = '';
+        closeAllModals(false);
       }
     });
+
+    // Handle initial URL hash on page load
+    if (window.location.hash.startsWith('#case-study-')) {
+      const initId = window.location.hash.replace('#case-study-', '');
+      openCaseStudy(initId, true, false);
+    } else if (window.location.hash === '#branding-collection') {
+      openCollectionView(false);
+    }
 
     // Fullscreen Image Zoom / Lightbox
     function openFullscreenLightbox() {
