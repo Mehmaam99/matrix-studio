@@ -1634,6 +1634,159 @@
       transform: translateX(3px);
     }
 
+    /* Portfolio Collection View Overlay & Cards */
+    .collection-card {
+      border: 1px solid rgba(200, 255, 57, 0.35) !important;
+      background: linear-gradient(135deg, #14221a, #0c1511) !important;
+    }
+    .collection-card:hover {
+      border-color: var(--lime) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(200, 255, 57, 0.18) !important;
+    }
+    .collection-card .project-badge {
+      background: rgba(12, 20, 15, 0.9);
+      border-color: var(--lime);
+      color: var(--lime);
+    }
+    .collection-view-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 11, 11, 0.98);
+      z-index: 210;
+      display: none;
+      flex-direction: column;
+      overflow-y: auto;
+      backdrop-filter: blur(20px);
+      padding: 36px 0 60px;
+      box-sizing: border-box;
+      -webkit-overflow-scrolling: touch;
+    }
+    .collection-view-overlay.open {
+      display: flex;
+    }
+    .collection-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .collection-back-btn, .modal-back-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #f4f7f3;
+      padding: 9px 18px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+    .collection-back-btn:hover, .modal-back-btn:hover {
+      background: var(--lime);
+      color: #080b0b;
+      border-color: var(--lime);
+      transform: translateX(-3px);
+    }
+    .collection-intro {
+      margin-bottom: 34px;
+    }
+    .collection-intro .eyebrow {
+      margin-bottom: 8px;
+    }
+    .collection-intro h2 {
+      font: 800 clamp(28px, 4vw, 44px)/1.15 var(--font-heading);
+      letter-spacing: -.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .collection-intro p {
+      color: #a5aeaa;
+      font-size: 15px;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .brand-collection-card {
+      background: #111a15;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+    .brand-collection-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--lime);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(200, 255, 57, 0.15);
+    }
+    .brand-card-img-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #080d0a;
+    }
+    .brand-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: block;
+    }
+    .brand-collection-card:hover .brand-card-img-wrap img {
+      transform: scale(1.06);
+    }
+    .brand-card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .brand-card-industry {
+      color: var(--lime);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 10.5px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .brand-card-content h3 {
+      font: 800 22px var(--font-heading);
+      letter-spacing: -.03em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .brand-card-tagline {
+      color: #b5c2b7;
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 960px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .brand-card-img-wrap {
+        height: 200px;
+      }
+      .collection-view-overlay {
+        padding: 24px 0 50px;
+      }
+    }
+
     /* Modal (Case Study Presentation) */
     .modal {
       position: fixed;
@@ -2660,33 +2813,16 @@
 <button class="filter" data-filter="clinic" data-i18n="filter_clinic">Clinics &amp; Health</button>
 </div>
 <div class="projects">
-<!-- NEW CASE STUDY 1: BEAN HOUSE -->
-<article aria-label="View case study: Bean House — Coffee, Comfort &amp; Community" class="project third reveal" data-category="food" data-project-id="bean-house" role="button" tabindex="0">
-<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
-<img alt="Bean House Coffee Shop Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/bean-house.webp'" referrerpolicy="no-referrer" src="images/bean-house.webp"/>
+<!-- FEATURED BRANDING COLLECTION CARD (EXPLORE PROJECTS) -->
+<article aria-label="Explore collection: Restaurant Brand Identity — 3 Creative Branding Concepts" class="project fullwidth collection-card reveal" data-category="food" id="openCollectionCard" role="button" tabindex="0">
+<span class="project-badge" data-i18n="collection_badge">FEATURED COLLECTION · 3 CONCEPTS</span>
+<img alt="Restaurant Brand Identity Collection Preview" loading="lazy" onerror="this.onerror=null;this.src='images/zaiqa.webp'" referrerpolicy="no-referrer" src="images/zaiqa.webp"/>
 <div class="project-info">
-<small><span data-i18n="proj_bean_meta">Creative Branding · Coffee Shop</span></small>
-<h3><span data-i18n="proj_bean_name">Bean House</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
-</div>
-</article>
-
-<!-- NEW CASE STUDY 2: ZAIQA -->
-<article aria-label="View case study: ZAIQA — Tradition Meets Elegance" class="project third reveal" data-category="food" data-project-id="zaiqa" role="button" tabindex="0">
-<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
-<img alt="ZAIQA Pakistani Cuisine Restaurant Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/zaiqa.webp'" referrerpolicy="no-referrer" src="images/zaiqa.webp"/>
-<div class="project-info">
-<small><span data-i18n="proj_zaiqa_meta">Creative Branding · Pakistani Restaurant</span></small>
-<h3><span data-i18n="proj_zaiqa_name">ZAIQA</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
-</div>
-</article>
-
-<!-- NEW CASE STUDY 3: THE BURGER YARD -->
-<article aria-label="View case study: The Burger Yard — Bold Branding for Bold Flavors" class="project third reveal" data-category="food" data-project-id="burger-yard" role="button" tabindex="0">
-<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
-<img alt="The Burger Yard Fast Food Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/burger-yard.webp'" referrerpolicy="no-referrer" src="images/burger-yard.webp"/>
-<div class="project-info">
-<small><span data-i18n="proj_burger_meta">Creative Branding · Fast Food Restaurant</span></small>
-<h3><span data-i18n="proj_burger_name">The Burger Yard</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
+<small><span data-i18n="collection_card_subtitle">3 Creative Branding Concepts</span></small>
+<h3>
+<span data-i18n="collection_card_title">Restaurant Brand Identity</span>
+<span class="case-study-btn" data-i18n="collection_card_cta">Explore Projects ↗</span>
+</h3>
 </div>
 </article>
 
@@ -3150,17 +3286,88 @@
 <a aria-label="WhatsApp" class="float-wa" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20maloomat%20chahiye." rel="noopener noreferrer" target="_blank">
 <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
 </a>
+<!-- DEDICATED PORTFOLIO COLLECTION VIEW -->
+<div aria-label="Restaurant Brand Identity Collection" class="collection-view-overlay" id="collectionViewOverlay" role="dialog">
+<div class="wrap">
+<div class="collection-header-bar">
+<button aria-label="Back to Homepage Portfolio" class="collection-back-btn" id="collectionBackBtn" type="button">
+<span>←</span> <span data-i18n="btn_back_home">Back to Homepage</span>
+</button>
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECTS</span>
+</div>
+<div class="collection-intro">
+<div class="eyebrow lime" data-i18n="collection_eyebrow">Creative Branding Showcase</div>
+<h2 data-i18n="collection_view_title">Restaurant Brand Identity</h2>
+<p data-i18n="collection_view_subtitle">Three curated creative branding and visual identity concepts designed for modern dining and hospitality brands.</p>
+</div>
+<div class="collection-grid">
+<!-- COLLECTION CARD 1: BEAN HOUSE -->
+<div class="brand-collection-card" data-project-id="bean-house" role="button" tabindex="0">
+<div class="brand-card-img-wrap">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="Bean House Coffee Shop Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/bean-house.webp'" src="images/bean-house.webp"/>
+</div>
+<div class="brand-card-content">
+<small class="brand-card-industry" data-i18n="proj_bean_meta">Creative Branding · Coffee Shop</small>
+<h3 data-i18n="proj_bean_name">Bean House</h3>
+<p class="brand-card-tagline" data-i18n="proj_bean_tagline">Good Coffee. Good Food. Great Vibes.</p>
+<div style="margin-top:auto;padding-top:16px">
+<span class="case-study-btn" data-i18n="btn_view_case_study">View Case Study ↗</span>
+</div>
+</div>
+</div>
+
+<!-- COLLECTION CARD 2: ZAIQA -->
+<div class="brand-collection-card" data-project-id="zaiqa" role="button" tabindex="0">
+<div class="brand-card-img-wrap">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="ZAIQA Pakistani Cuisine Restaurant Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/zaiqa.webp'" src="images/zaiqa.webp"/>
+</div>
+<div class="brand-card-content">
+<small class="brand-card-industry" data-i18n="proj_zaiqa_meta">Creative Branding · Pakistani Restaurant</small>
+<h3 data-i18n="proj_zaiqa_name">ZAIQA</h3>
+<p class="brand-card-tagline" data-i18n="proj_zaiqa_tagline">Asli Pakistani Zaiqa, Har Bite Mein.</p>
+<div style="margin-top:auto;padding-top:16px">
+<span class="case-study-btn" data-i18n="btn_view_case_study">View Case Study ↗</span>
+</div>
+</div>
+</div>
+
+<!-- COLLECTION CARD 3: THE BURGER YARD -->
+<div class="brand-collection-card" data-project-id="burger-yard" role="button" tabindex="0">
+<div class="brand-card-img-wrap">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="The Burger Yard Fast Food Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/burger-yard.webp'" src="images/burger-yard.webp"/>
+</div>
+<div class="brand-card-content">
+<small class="brand-card-industry" data-i18n="proj_burger_meta">Creative Branding · Fast Food Restaurant</small>
+<h3 data-i18n="proj_burger_name">The Burger Yard</h3>
+<p class="brand-card-tagline" data-i18n="proj_burger_tagline">Good Food. Good Vibes.</p>
+<div style="margin-top:auto;padding-top:16px">
+<span class="case-study-btn" data-i18n="btn_view_case_study">View Case Study ↗</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <!-- Project Modal Preview & Case Study Presentation -->
 <div aria-labelledby="modalTitle" aria-modal="true" class="modal" id="projectModal" role="dialog">
 <div class="modal-card">
+<div class="modal-nav-bar" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<button aria-label="Back to collection" class="modal-back-btn" id="modalBackToCollectionBtn" style="display:none" type="button">
+<span>←</span> <span data-i18n="btn_back_collection">Back to Collection</span>
+</button>
+<div style="display:flex;align-items:center;gap:10px;margin-left:auto">
+<span class="project-badge" id="modalBadge" style="position:static;display:inline-block">CONCEPT PROJECT</span>
+<button aria-label="Close project preview" class="modal-close" id="closeModal">×</button>
+</div>
+</div>
 <div class="modal-top">
 <div>
 <span class="modal-category" id="modalCategory">Creative Branding · Concept</span>
 <strong id="modalTitle">Project Title</strong>
-</div>
-<div style="display:flex;align-items:center;gap:12px">
-<span class="project-badge" id="modalBadge" style="position:static;display:inline-block">CONCEPT PROJECT</span>
-<button aria-label="Close project preview" class="modal-close" id="closeModal">×</button>
 </div>
 </div>
 <div class="modal-img-wrap" id="modalImgWrap" title="Click to view full screen">
@@ -3282,7 +3489,20 @@
     "btn_inquire": "Inquire on WhatsApp",
     "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
     "portfolio_title": "Work that does <span class=\"lime\">the talking.</span>",
-        "portfolio_desc": "Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.",
+            "portfolio_desc": "Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.",
+    "collection_badge": "FEATURED COLLECTION · 3 CONCEPTS",
+    "collection_card_title": "Restaurant Brand Identity",
+    "collection_card_subtitle": "3 Creative Branding Concepts",
+    "collection_card_cta": "Explore Projects ↗",
+    "collection_eyebrow": "Creative Branding Showcase",
+    "collection_view_title": "Restaurant Brand Identity",
+    "collection_view_subtitle": "Three curated creative branding and visual identity concepts designed for modern dining and hospitality brands.",
+    "btn_back_home": "Back to Homepage",
+    "btn_back_collection": "Back to Collection",
+    "btn_view_case_study": "View Case Study ↗",
+    "proj_bean_tagline": "Good Coffee. Good Food. Great Vibes.",
+    "proj_zaiqa_tagline": "Asli Pakistani Zaiqa, Har Bite Mein.",
+    "proj_burger_tagline": "Good Food. Good Vibes.",
     "badge_concept": "CONCEPT PROJECT",
     "btn_case_study": "View Case Study ↗",
     "modal_zoom_hint": "Click to Enlarge / Fullscreen Zoom",
@@ -3481,7 +3701,20 @@
     "btn_inquire": "WhatsApp Par Poochhein",
     "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
     "portfolio_title": "Kaam jo khud <span class=\"lime\">bolta hai.</span>",
-        "portfolio_desc": "Ye visual concepts dikhate hain ke Matrix Studio kis quality aur aesthetics ke sath kaam karta hai. Tamam projects illustrative demo ke tor par pesh kiye gaye hain.",
+            "portfolio_desc": "Ye visual concepts dikhate hain ke Matrix Studio kis quality aur aesthetics ke sath kaam karta hai. Tamam projects illustrative demo ke tor par pesh kiye gaye hain.",
+    "collection_badge": "FEATURED COLLECTION · 3 CONCEPTS",
+    "collection_card_title": "Restaurant Brand Identity",
+    "collection_card_subtitle": "3 Creative Branding Concepts",
+    "collection_card_cta": "Projects Explore Karein ↗",
+    "collection_eyebrow": "Creative Branding Showcase",
+    "collection_view_title": "Restaurant Brand Identity",
+    "collection_view_subtitle": "Dining aur food brands ke liye 3 mutasir-kun visual identity concepts.",
+    "btn_back_home": "Wapis Homepage Par",
+    "btn_back_collection": "Wapis Collection Par",
+    "btn_view_case_study": "Case Study Dekhein ↗",
+    "proj_bean_tagline": "Behtareen Coffee. Lazeez Khana. Zabardast Mahol.",
+    "proj_zaiqa_tagline": "Asli Pakistani Zaiqa, Har Bite Mein.",
+    "proj_burger_tagline": "Good Food. Good Vibes.",
     "badge_concept": "CONCEPT PROJECT",
     "btn_case_study": "Case Study Dekhein ↗",
     "modal_zoom_hint": "Bada Karke Dekhein (Zoom)",
@@ -3675,9 +3908,8 @@
         setIndustryDemo(currentIndustry);
       }
       if (typeof activeModalProjectId !== 'undefined' && activeModalProjectId) {
-        const activeProjEl = document.querySelector(`.project[data-project-id="${activeModalProjectId}"]`);
-        if (activeProjEl && typeof renderModalContent === 'function') {
-          renderModalContent(activeProjEl);
+        if (typeof renderCaseStudyContent === 'function') {
+          renderCaseStudyContent(activeModalProjectId);
         }
       }
     }
@@ -3902,7 +4134,12 @@
       }
     };
 
-    // Project Modal & Fullscreen Lightbox Presentation
+    // Project Modal, Collection View & Fullscreen Lightbox Presentation
+    const collectionViewOverlay = document.getElementById('collectionViewOverlay');
+    const collectionBackBtn = document.getElementById('collectionBackBtn');
+    const openCollectionCard = document.getElementById('openCollectionCard');
+    const modalBackToCollectionBtn = document.getElementById('modalBackToCollectionBtn');
+
     const modal = document.getElementById('projectModal');
     const modalCategory = document.getElementById('modalCategory');
     const modalTitle = document.getElementById('modalTitle');
@@ -3924,12 +4161,64 @@
     const lightboxScrollArea = document.getElementById('lightboxScrollArea');
 
     let activeModalProjectId = null;
+    let isFromCollection = false;
 
-    function renderModalContent(p) {
+    // --- NAVIGATION CONTROLLERS (Supports Browser Back & State History) ---
+    function openCollectionView(pushHistory = true) {
+      collectionViewOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      if (pushHistory) {
+        history.pushState({ view: 'collection' }, '', '#branding-collection');
+      }
+    }
+
+    function closeCollectionView(pushHistory = true) {
+      collectionViewOverlay.classList.remove('open');
+      if (!modal.classList.contains('open') && !fullscreenLightbox.classList.contains('open')) {
+        document.body.style.overflow = '';
+      }
+      if (pushHistory && window.location.hash === '#branding-collection') {
+        history.pushState({ view: 'home' }, '', '#portfolio');
+      }
+    }
+
+    function openCaseStudy(projId, fromCollection = true, pushHistory = true) {
+      activeModalProjectId = projId;
+      isFromCollection = fromCollection;
+      renderCaseStudyContent(projId);
+
+      modalBackToCollectionBtn.style.display = fromCollection ? 'inline-flex' : 'none';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      if (pushHistory) {
+        history.pushState({ view: 'case-study', id: projId, fromCollection }, '', '#case-study-' + projId);
+      }
+    }
+
+    function closeCaseStudy(pushHistory = true) {
+      modal.classList.remove('open');
+      const wasFromCollection = isFromCollection;
+      activeModalProjectId = null;
+
+      if (wasFromCollection) {
+        collectionViewOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        if (pushHistory && window.location.hash.startsWith('#case-study-')) {
+          history.pushState({ view: 'collection' }, '', '#branding-collection');
+        }
+      } else {
+        if (!collectionViewOverlay.classList.contains('open') && !fullscreenLightbox.classList.contains('open')) {
+          document.body.style.overflow = '';
+        }
+        if (pushHistory && window.location.hash.startsWith('#case-study-')) {
+          history.pushState({ view: 'home' }, '', '#portfolio');
+        }
+      }
+    }
+
+    function renderCaseStudyContent(projId) {
       const isUr = (currentLang === 'ur');
-      const projId = p.dataset.projectId;
-      activeModalProjectId = projId || null;
-
       if (projId && caseStudyData[projId]) {
         const data = caseStudyData[projId];
         modalCategory.textContent = data.category[isUr ? 'ur' : 'en'];
@@ -3939,7 +4228,7 @@
         modalDesc.textContent = data.desc[isUr ? 'ur' : 'en'];
         modalImg.src = data.images[0].src;
         modalImg.alt = data.title[isUr ? 'ur' : 'en'];
-        
+
         modalDeliverablesWrap.style.display = 'block';
         modalDeliverablesList.replaceChildren();
         data.deliverables[isUr ? 'ur' : 'en'].forEach(item => {
@@ -3951,45 +4240,107 @@
         const waMsg = data.waMessage[isUr ? 'ur' : 'en'];
         modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent(waMsg);
         modalWaBtnText.textContent = isUr ? 'WhatsApp Par Rabta Karein 💬' : 'Discuss Branding on WhatsApp 💬';
-      } else {
-        const title = p.dataset.title || 'Concept Showcase';
-        const desc = p.dataset.desc || '';
-        const img = p.querySelector('img');
-        const meta = p.querySelector('small')?.textContent || 'Illustrative Demo Concept';
-
-        modalCategory.textContent = meta;
-        modalTitle.textContent = title;
-        modalBadge.textContent = 'DEMO CONCEPT';
-        modalTagline.textContent = '';
-        modalDesc.textContent = desc;
-        modalImg.src = img ? img.src : '';
-        modalImg.alt = title;
-        modalDeliverablesWrap.style.display = 'none';
-
-        const waMsg = isUr
-          ? ('Salam Matrix Studio! Mujhe aapke project concept "' + title + '" ke baray mein baat karni hai.')
-          : ('Salam Matrix Studio! I would like to inquire about your project concept "' + title + '".');
-        modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent(waMsg);
-        modalWaBtnText.textContent = isUr ? 'WhatsApp Par Rabta Karein 💬' : 'Inquire on WhatsApp 💬';
       }
     }
 
-    document.querySelectorAll('.project').forEach(p => {
-      p.addEventListener('click', () => {
-        renderModalContent(p);
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
+    function renderStandardProjectModal(p) {
+      activeModalProjectId = null;
+      isFromCollection = false;
+      modalBackToCollectionBtn.style.display = 'none';
+
+      const title = p.dataset.title || 'Concept Showcase';
+      const desc = p.dataset.desc || '';
+      const img = p.querySelector('img');
+      const meta = p.querySelector('small')?.textContent || 'Illustrative Demo Concept';
+      const isUr = (currentLang === 'ur');
+
+      modalCategory.textContent = meta;
+      modalTitle.textContent = title;
+      modalBadge.textContent = 'DEMO CONCEPT';
+      modalTagline.textContent = '';
+      modalDesc.textContent = desc;
+      modalImg.src = img ? img.src : '';
+      modalImg.alt = title;
+      modalDeliverablesWrap.style.display = 'none';
+
+      const waMsg = isUr
+        ? ('Salam Matrix Studio! Mujhe aapke project concept "' + title + '" ke baray mein baat karni hai.')
+        : ('Salam Matrix Studio! I would like to inquire about your project concept "' + title + '".');
+      modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent(waMsg);
+      modalWaBtnText.textContent = isUr ? 'WhatsApp Par Rabta Karein 💬' : 'Inquire on WhatsApp 💬';
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Homepage Collection Card trigger
+    if (openCollectionCard) {
+      openCollectionCard.addEventListener('click', () => openCollectionView(true));
+      openCollectionCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCollectionView(true); }
+      });
+    }
+
+    // Collection View Back button
+    if (collectionBackBtn) {
+      collectionBackBtn.addEventListener('click', () => closeCollectionView(true));
+    }
+
+    // Collection cards click triggers
+    document.querySelectorAll('.brand-collection-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.projectId;
+        if (id) openCaseStudy(id, true, true);
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const id = card.dataset.projectId;
+          if (id) openCaseStudy(id, true, true);
+        }
       });
     });
 
+    // Modal Back to Collection button
+    if (modalBackToCollectionBtn) {
+      modalBackToCollectionBtn.addEventListener('click', () => closeCaseStudy(true));
+    }
+
+    // Modal Close button
     function closeModal() {
-      modal.classList.remove('open');
-      if (!fullscreenLightbox.classList.contains('open')) {
-        document.body.style.overflow = '';
+      if (isFromCollection) {
+        closeCaseStudy(true);
+      } else {
+        modal.classList.remove('open');
+        if (!fullscreenLightbox.classList.contains('open')) {
+          document.body.style.overflow = '';
+        }
       }
     }
     document.getElementById('closeModal').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // Non-collection homepage projects
+    document.querySelectorAll('.project:not(#openCollectionCard)').forEach(p => {
+      p.addEventListener('click', () => renderStandardProjectModal(p));
+    });
+
+    // Browser Back/Forward navigation listener
+    window.addEventListener('popstate', (e) => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#case-study-')) {
+        const id = hash.replace('#case-study-', '');
+        openCaseStudy(id, true, false);
+      } else if (hash === '#branding-collection') {
+        modal.classList.remove('open');
+        openCollectionView(false);
+      } else {
+        modal.classList.remove('open');
+        fullscreenLightbox.classList.remove('open');
+        collectionViewOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
 
     // Fullscreen Image Zoom / Lightbox
     function openFullscreenLightbox() {
@@ -4001,7 +4352,7 @@
     }
     function closeFullscreenLightbox() {
       fullscreenLightbox.classList.remove('open');
-      if (!modal.classList.contains('open')) {
+      if (!modal.classList.contains('open') && !collectionViewOverlay.classList.contains('open')) {
         document.body.style.overflow = '';
       }
     }
@@ -4021,6 +4372,8 @@
           closeFullscreenLightbox();
         } else if (modal.classList.contains('open')) {
           closeModal();
+        } else if (collectionViewOverlay.classList.contains('open')) {
+          closeCollectionView(true);
         }
       }
     });
