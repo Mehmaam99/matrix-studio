@@ -1611,31 +1611,75 @@
       color: #ffffff;
     }
 
-    /* Modal */
+    /* Case Study Card Button */
+    .case-study-btn {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--lime);
+      background: rgba(200, 255, 57, 0.12);
+      border: 1px solid rgba(200, 255, 57, 0.35);
+      padding: 6px 13px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all .25s ease;
+      white-space: nowrap;
+      text-transform: none;
+    }
+    .project:hover .case-study-btn {
+      background: var(--lime);
+      color: #080b0b;
+      transform: translateX(3px);
+    }
+
+    /* Modal (Case Study Presentation) */
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.88);
       z-index: 200;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 24px;
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
     }
     .modal.open { display: flex; }
     .modal-card {
-      background: #141e1a;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 26px;
+      background: #111a16;
+      border: 1px solid rgba(200, 255, 57, 0.25);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      padding: 28px;
       border-radius: 24px;
-      max-width: 680px;
+      max-width: 960px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
+      box-sizing: border-box;
     }
-    .modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-    .modal-top strong { font: 800 18px var(--font-heading); color: white; }
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .modal-category {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 4px;
+    }
+    .modal-top strong {
+      font: 800 clamp(18px, 2.4vw, 24px) var(--font-heading);
+      color: #ffffff;
+      line-height: 1.25;
+    }
     .modal-close {
       border: 0;
       background: rgba(255, 255, 255, 0.1);
@@ -1647,8 +1691,195 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background .2s, color .2s;
     }
-    .modal-card img { width: 100%; max-height: 440px; object-fit: cover; border-radius: 12px; margin-bottom: 14px; }
+    .modal-close:hover {
+      background: var(--lime);
+      color: #080b0b;
+    }
+    .modal-img-wrap {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #080d0a;
+      margin-bottom: 18px;
+      cursor: zoom-in;
+    }
+    .modal-img-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      display: block;
+      transition: transform .3s ease;
+    }
+    .modal-img-wrap:hover img {
+      transform: scale(1.015);
+    }
+    .zoom-trigger-btn {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(8, 12, 10, 0.88);
+      color: var(--lime);
+      border: 1px solid rgba(200, 255, 57, 0.35);
+      backdrop-filter: blur(8px);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      transition: all .2s;
+    }
+    .zoom-trigger-btn:hover {
+      background: var(--lime);
+      color: #080b0b;
+    }
+    .modal-body-content {
+      margin-bottom: 20px;
+    }
+    .modal-tagline {
+      font-weight: 700;
+      color: var(--lime);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .modal-desc-p {
+      color: #c5d2c8;
+      font-size: 14px;
+      line-height: 1.68;
+      margin-bottom: 16px;
+    }
+    .modal-deliverables-wrap {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-top: 14px;
+    }
+    .modal-deliverables-wrap h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 10px;
+    }
+    .modal-deliverables-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .modal-deliverables-list li {
+      background: #16241c;
+      color: #e2ede4;
+      border: 1px solid #283e30;
+      padding: 5px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .modal-deliverables-list li:before {
+      content: '✓';
+      color: var(--lime);
+      font-weight: 900;
+    }
+    .modal-footer-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Fullscreen Lightbox Zoom Overlay */
+    .fullscreen-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 7, 6, 0.96);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      backdrop-filter: blur(16px);
+    }
+    .fullscreen-lightbox.open {
+      display: flex;
+    }
+    .lightbox-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 22px;
+      background: rgba(8, 12, 10, 0.85);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+    .lightbox-title {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .lightbox-close {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 100px;
+      padding: 7px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lightbox-close:hover {
+      background: var(--lime);
+      color: #080b0b;
+    }
+    .lightbox-scroll-area {
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .lightbox-img {
+      max-width: 96%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+      cursor: zoom-out;
+      transition: transform .25s ease;
+    }
+    @media (max-width: 768px) {
+      .modal-card { padding: 20px 16px; border-radius: 20px; }
+      .modal-footer-actions { flex-direction: column; align-items: stretch; }
+      .modal-footer-actions button, .modal-footer-actions a { width: 100%; justify-content: center; text-align: center; }
+      .lightbox-scroll-area {
+        padding: 8px;
+        align-items: flex-start;
+      }
+      .lightbox-img {
+        max-width: none;
+        width: 180%;
+        max-height: none;
+      }
+    }
 
     /* Scroll Reveal */
     .reveal {
@@ -2429,7 +2660,37 @@
 <button class="filter" data-filter="clinic" data-i18n="filter_clinic">Clinics &amp; Health</button>
 </div>
 <div class="projects">
-<article aria-label="View concept project: Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster" class="project reveal" data-category="food" data-desc="High-impact Meta/Instagram feed creative featuring studio lighting, bold typography, and dynamic promotional badges designed to trigger immediate midnight orders." data-title="Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster" role="button" tabindex="0">
+<!-- NEW CASE STUDY 1: BEAN HOUSE -->
+<article aria-label="View case study: Bean House — Coffee, Comfort &amp; Community" class="project third reveal" data-category="food" data-project-id="bean-house" role="button" tabindex="0">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="Bean House Coffee Shop Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/bean-house.webp'" referrerpolicy="no-referrer" src="images/bean-house.webp"/>
+<div class="project-info">
+<small><span data-i18n="proj_bean_meta">Creative Branding · Coffee Shop</span></small>
+<h3><span data-i18n="proj_bean_name">Bean House</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
+</div>
+</article>
+
+<!-- NEW CASE STUDY 2: ZAIQA -->
+<article aria-label="View case study: ZAIQA — Tradition Meets Elegance" class="project third reveal" data-category="food" data-project-id="zaiqa" role="button" tabindex="0">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="ZAIQA Pakistani Cuisine Restaurant Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/zaiqa.webp'" referrerpolicy="no-referrer" src="images/zaiqa.webp"/>
+<div class="project-info">
+<small><span data-i18n="proj_zaiqa_meta">Creative Branding · Pakistani Restaurant</span></small>
+<h3><span data-i18n="proj_zaiqa_name">ZAIQA</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
+</div>
+</article>
+
+<!-- NEW CASE STUDY 3: THE BURGER YARD -->
+<article aria-label="View case study: The Burger Yard — Bold Branding for Bold Flavors" class="project third reveal" data-category="food" data-project-id="burger-yard" role="button" tabindex="0">
+<span class="project-badge" data-i18n="badge_concept">CONCEPT PROJECT</span>
+<img alt="The Burger Yard Fast Food Creative Branding" loading="lazy" onerror="this.onerror=null;this.src='images/burger-yard.webp'" referrerpolicy="no-referrer" src="images/burger-yard.webp"/>
+<div class="project-info">
+<small><span data-i18n="proj_burger_meta">Creative Branding · Fast Food Restaurant</span></small>
+<h3><span data-i18n="proj_burger_name">The Burger Yard</span> <span class="case-study-btn" data-i18n="btn_case_study">View Case Study ↗</span></h3>
+</div>
+</article>
+
+<article aria-label="View concept project: Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster"  class="project reveal" data-category="food" data-desc="High-impact Meta/Instagram feed creative featuring studio lighting, bold typography, and dynamic promotional badges designed to trigger immediate midnight orders." data-title="Flame &amp; Crust — Midnight Deal 4:5 Meta Ad Poster" role="button" tabindex="0">
 <span class="project-badge">DEMO CONCEPT</span>
 <img alt="Flame &amp; Crust Midnight Deal Poster" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%2317231a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23c8ff39%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2232%22%3EMATRIX STUDIO%3C/text%3E%3C/svg%3E'" referrerpolicy="no-referrer" src="images/burger_deal.webp"/>
 <div class="project-info">
@@ -2889,21 +3150,52 @@
 <a aria-label="WhatsApp" class="float-wa" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20business%20ke%20liye%20maloomat%20chahiye." rel="noopener noreferrer" target="_blank">
 <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
 </a>
-<!-- Project Modal Preview -->
+<!-- Project Modal Preview & Case Study Presentation -->
 <div aria-labelledby="modalTitle" aria-modal="true" class="modal" id="projectModal" role="dialog">
 <div class="modal-card">
 <div class="modal-top">
+<div>
+<span class="modal-category" id="modalCategory">Creative Branding · Concept</span>
 <strong id="modalTitle">Project Title</strong>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span class="project-badge" id="modalBadge" style="position:static;display:inline-block">CONCEPT PROJECT</span>
 <button aria-label="Close project preview" class="modal-close" id="closeModal">×</button>
 </div>
+</div>
+<div class="modal-img-wrap" id="modalImgWrap" title="Click to view full screen">
 <img alt="Project Preview" id="modalImg" src=""/>
-<p id="modalDesc" style="color:#c5d2c8;font-size:14px;line-height:1.6;margin-bottom:16px"></p>
-<div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px">
-<span style="font-size:11px;color:var(--lime);font-weight:700">ILLUSTRATIVE DEMO CONCEPT</span>
-<a class="primary" href="https://wa.me/923022053002" id="modalWaBtn" rel="noopener noreferrer" style="padding:10px 20px;font-size:12px" target="_blank">
-<span>Inquire on WhatsApp 💬</span>
+<button aria-label="Enlarge image" class="zoom-trigger-btn" id="zoomTriggerBtn" type="button">
+<span>🔍</span> <span data-i18n="modal_zoom_hint">Click to Enlarge / Fullscreen Zoom</span>
+</button>
+</div>
+<div class="modal-body-content">
+<p class="modal-tagline" id="modalTagline"></p>
+<p class="modal-desc-p" id="modalDesc"></p>
+<div class="modal-deliverables-wrap" id="modalDeliverablesWrap">
+<h4 data-i18n="modal_deliverables_title">Branding Deliverables &amp; Assets:</h4>
+<ul class="modal-deliverables-list" id="modalDeliverablesList"></ul>
+</div>
+</div>
+<div class="modal-footer-actions">
+<button class="outline" id="modalEnlargeBtn" style="padding:11px 20px;font-size:12.5px;border-radius:100px;display:inline-flex;align-items:center;gap:6px" type="button">
+<span>🔍</span> <span data-i18n="modal_enlarge_btn">Fullscreen View</span>
+</button>
+<a class="primary" href="https://wa.me/923022053002" id="modalWaBtn" rel="noopener noreferrer" style="padding:12px 24px;font-size:13px;border-radius:100px" target="_blank">
+<span id="modalWaBtnText" data-i18n="modal_wa_discuss">Discuss Branding on WhatsApp 💬</span>
 </a>
 </div>
+</div>
+</div>
+
+<!-- Fullscreen Lightbox Zoom Overlay -->
+<div aria-label="Fullscreen image zoom viewer" class="fullscreen-lightbox" id="fullscreenLightbox" role="dialog">
+<div class="lightbox-toolbar">
+<span class="lightbox-title" id="lightboxTitle">Project Case Study</span>
+<button aria-label="Close fullscreen view" class="lightbox-close" id="lightboxClose">✕ Close</button>
+</div>
+<div class="lightbox-scroll-area" id="lightboxScrollArea" title="Click to close zoom">
+<img alt="Enlarged branding board" class="lightbox-img" id="lightboxImg" src=""/>
 </div>
 </div>
 <script>
@@ -2990,7 +3282,19 @@
     "btn_inquire": "Inquire on WhatsApp",
     "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
     "portfolio_title": "Work that does <span class=\"lime\">the talking.</span>",
-    "portfolio_desc": "Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.",
+        "portfolio_desc": "Visual concept showcases demonstrating the creative caliber and technical polish Matrix Studio builds. All items here are illustrative demo concepts crafted to show what is possible.",
+    "badge_concept": "CONCEPT PROJECT",
+    "btn_case_study": "View Case Study ↗",
+    "modal_zoom_hint": "Click to Enlarge / Fullscreen Zoom",
+    "modal_deliverables_title": "Branding Deliverables & Assets:",
+    "modal_enlarge_btn": "Fullscreen View",
+    "modal_wa_discuss": "Discuss Branding on WhatsApp 💬",
+    "proj_bean_meta": "Creative Branding · Coffee Shop",
+    "proj_bean_name": "Bean House",
+    "proj_zaiqa_meta": "Creative Branding · Pakistani Restaurant",
+    "proj_zaiqa_name": "ZAIQA",
+    "proj_burger_meta": "Creative Branding · Fast Food Restaurant",
+    "proj_burger_name": "The Burger Yard",
     "filter_all": "All Concepts",
     "filter_food": "Food & Beverage",
     "filter_retail": "Retail & Luxury",
@@ -3177,7 +3481,19 @@
     "btn_inquire": "WhatsApp Par Poochhein",
     "portfolio_eyebrow": "02 / Illustrative Demo Concepts",
     "portfolio_title": "Kaam jo khud <span class=\"lime\">bolta hai.</span>",
-    "portfolio_desc": "Ye visual concepts dikhate hain ke Matrix Studio kis quality aur aesthetics ke sath kaam karta hai. Tamam projects illustrative demo ke tor par pesh kiye gaye hain.",
+        "portfolio_desc": "Ye visual concepts dikhate hain ke Matrix Studio kis quality aur aesthetics ke sath kaam karta hai. Tamam projects illustrative demo ke tor par pesh kiye gaye hain.",
+    "badge_concept": "CONCEPT PROJECT",
+    "btn_case_study": "Case Study Dekhein ↗",
+    "modal_zoom_hint": "Bada Karke Dekhein (Zoom)",
+    "modal_deliverables_title": "Branding Deliverables Aur Assets:",
+    "modal_enlarge_btn": "Fullscreen View",
+    "modal_wa_discuss": "WhatsApp Par Rabta Karein 💬",
+    "proj_bean_meta": "Creative Branding · Coffee Shop",
+    "proj_bean_name": "Bean House",
+    "proj_zaiqa_meta": "Creative Branding · Pakistani Restaurant",
+    "proj_zaiqa_name": "ZAIQA",
+    "proj_burger_meta": "Creative Branding · Fast Food Restaurant",
+    "proj_burger_name": "The Burger Yard",
     "filter_all": "Tamam Concepts",
     "filter_food": "Food & Beverage",
     "filter_retail": "Retail & Luxury",
@@ -3358,6 +3674,12 @@
       if (typeof setIndustryDemo === 'function') {
         setIndustryDemo(currentIndustry);
       }
+      if (typeof activeModalProjectId !== 'undefined' && activeModalProjectId) {
+        const activeProjEl = document.querySelector(`.project[data-project-id="${activeModalProjectId}"]`);
+        if (activeProjEl && typeof renderModalContent === 'function') {
+          renderModalContent(activeProjEl);
+        }
+      }
     }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -3427,23 +3749,234 @@
       });
     });
 
-    // Project Modal Preview
+    // Structured Case Study Data (Supports Future Multi-Image Galleries)
+    const caseStudyData = {
+      'bean-house': {
+        title: {
+          en: 'Bean House — Coffee, Comfort & Community',
+          ur: 'Bean House — Coffee, Comfort Aur Community'
+        },
+        tagline: {
+          en: 'Good Coffee. Good Food. Great Vibes.',
+          ur: 'Behtareen Coffee. Lazeez Khana. Zabardast Mahol.'
+        },
+        category: {
+          en: 'Creative Branding · Coffee Shop',
+          ur: 'Creative Branding · Coffee Shop'
+        },
+        badge: {
+          en: 'CONCEPT PROJECT',
+          ur: 'CONCEPT PROJECT'
+        },
+        desc: {
+          en: 'Bean House is a contemporary coffee shop branding concept that combines a cozy atmosphere with a refined visual identity. The design uses forest green, warm beige and coffee-inspired tones to create a recognizable brand across menus, takeaway packaging, merchandise and digital promotions.',
+          ur: 'Bean House ek contemporary coffee shop branding concept hai jo pur-sakoon mahol ko nafees visual identity ke sath jorta hai. Iska design forest green, warm beige aur coffee tones ka istemal karta hai jo menus, takeaway packaging aur social promotions par numaya dikhta hai.'
+        },
+        deliverables: {
+          en: [
+            'Logo identity and variations',
+            'Color palette and typography',
+            'Coffee menu design',
+            'Takeaway cups, bags and packaging',
+            'Social media creatives',
+            'Uniforms and merchandise',
+            'Digital menu concept'
+          ],
+          ur: [
+            'Logo identity aur variations',
+            'Color palette aur typography',
+            'Coffee menu design',
+            'Takeaway cups, bags aur packaging',
+            'Social media creatives',
+            'Staff uniforms aur merchandise',
+            'Digital menu concept'
+          ]
+        },
+        images: [
+          { type: 'overview', label: 'Branding Overview', src: 'images/bean-house.webp' }
+        ],
+        waMessage: {
+          en: "Hi Matrix Studio, I saw your Bean House branding concept. I'd like to discuss branding for my business.",
+          ur: "Salam Matrix Studio, maine aapka Bean House branding concept dekha. Mujhe apne business ke liye branding discuss karni hai."
+        }
+      },
+      'zaiqa': {
+        title: {
+          en: 'ZAIQA — Tradition Meets Elegance',
+          ur: 'ZAIQA — Tradition Meets Elegance'
+        },
+        tagline: {
+          en: 'Asli Pakistani Zaiqa, Har Bite Mein.',
+          ur: 'Asli Pakistani Zaiqa, Har Bite Mein.'
+        },
+        category: {
+          en: 'Creative Branding · Pakistani Restaurant',
+          ur: 'Creative Branding · Pakistani Restaurant'
+        },
+        badge: {
+          en: 'CONCEPT PROJECT',
+          ur: 'CONCEPT PROJECT'
+        },
+        desc: {
+          en: 'ZAIQA is a premium Pakistani restaurant branding concept inspired by traditional hospitality and authentic cuisine. Its rich maroon and gold identity brings a sophisticated visual style to restaurant menus, food packaging, promotional designs and physical brand applications.',
+          ur: 'ZAIQA ek premium Pakistani restaurant branding concept hai jo riwayati mehmaan-nawazi aur authentic pakwanon se mutasir hai. Iski rich maroon aur gold identity restaurant menus, packaging, promotional ads aur signage ko shandar visual style deti hai.'
+        },
+        deliverables: {
+          en: [
+            'Restaurant logo and visual identity',
+            'Maroon and gold color palette',
+            'Traditional restaurant menu',
+            'Food packaging and takeaway bags',
+            'Social media promotions',
+            'Staff uniforms',
+            'Restaurant signage',
+            'Digital ordering interface concept'
+          ],
+          ur: [
+            'Restaurant logo aur visual identity',
+            'Maroon aur gold color palette',
+            'Riwayati restaurant menu',
+            'Food packaging aur takeaway bags',
+            'Social media promotions',
+            'Staff uniforms',
+            'Restaurant signage',
+            'Digital ordering interface concept'
+          ]
+        },
+        images: [
+          { type: 'overview', label: 'Branding Overview', src: 'images/zaiqa.webp' }
+        ],
+        waMessage: {
+          en: "Hi Matrix Studio, I saw your ZAIQA branding concept. I'd like to discuss branding for my business.",
+          ur: "Salam Matrix Studio, maine aapka ZAIQA branding concept dekha. Mujhe apne business ke liye branding discuss karni hai."
+        }
+      },
+      'burger-yard': {
+        title: {
+          en: 'The Burger Yard — Bold Branding for Bold Flavors',
+          ur: 'The Burger Yard — Bold Branding For Bold Flavors'
+        },
+        tagline: {
+          en: 'Good Food. Good Vibes.',
+          ur: 'Good Food. Good Vibes.'
+        },
+        category: {
+          en: 'Creative Branding · Fast Food Restaurant',
+          ur: 'Creative Branding · Fast Food Restaurant'
+        },
+        badge: {
+          en: 'CONCEPT PROJECT',
+          ur: 'CONCEPT PROJECT'
+        },
+        desc: {
+          en: 'The Burger Yard is an energetic fast-food branding concept built around bold orange and charcoal colors, expressive typography and attention-grabbing visuals. Its identity is designed to stand out across restaurant signage, menus, burger packaging, takeaway materials and social media campaigns.',
+          ur: 'The Burger Yard ek energetic fast-food branding concept hai jo bold orange aur charcoal colors, expressive typography aur attention-grabbing visuals par mabni hai. Iski pehchan restaurant signage, menus, burger packaging, takeaway packaging aur social media campaigns par numaya dikhti hai.'
+        },
+        deliverables: {
+          en: [
+            'Fast-food logo and identity',
+            'Bold orange and black color palette',
+            'Burger and drinks menu',
+            'Burger boxes and takeaway packaging',
+            'Social media promotional creatives',
+            'Staff uniforms and merchandise',
+            'Digital menu concept'
+          ],
+          ur: [
+            'Fast-food logo aur identity',
+            'Bold orange aur black color palette',
+            'Burger aur drinks menu',
+            'Burger boxes aur takeaway packaging',
+            'Social media promo creatives',
+            'Staff uniforms aur merchandise',
+            'Digital menu concept'
+          ]
+        },
+        images: [
+          { type: 'overview', label: 'Branding Overview', src: 'images/burger-yard.webp' }
+        ],
+        waMessage: {
+          en: "Hi Matrix Studio, I saw your The Burger Yard branding concept. I'd like to discuss branding for my business.",
+          ur: "Salam Matrix Studio, maine aapka The Burger Yard branding concept dekha. Mujhe apne business ke liye branding discuss karni hai."
+        }
+      }
+    };
+
+    // Project Modal & Fullscreen Lightbox Presentation
     const modal = document.getElementById('projectModal');
+    const modalCategory = document.getElementById('modalCategory');
     const modalTitle = document.getElementById('modalTitle');
+    const modalBadge = document.getElementById('modalBadge');
     const modalImg = document.getElementById('modalImg');
+    const modalImgWrap = document.getElementById('modalImgWrap');
+    const modalTagline = document.getElementById('modalTagline');
     const modalDesc = document.getElementById('modalDesc');
+    const modalDeliverablesWrap = document.getElementById('modalDeliverablesWrap');
+    const modalDeliverablesList = document.getElementById('modalDeliverablesList');
     const modalWaBtn = document.getElementById('modalWaBtn');
+    const modalWaBtnText = document.getElementById('modalWaBtnText');
+    const modalEnlargeBtn = document.getElementById('modalEnlargeBtn');
+
+    const fullscreenLightbox = document.getElementById('fullscreenLightbox');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxScrollArea = document.getElementById('lightboxScrollArea');
+
+    let activeModalProjectId = null;
+
+    function renderModalContent(p) {
+      const isUr = (currentLang === 'ur');
+      const projId = p.dataset.projectId;
+      activeModalProjectId = projId || null;
+
+      if (projId && caseStudyData[projId]) {
+        const data = caseStudyData[projId];
+        modalCategory.textContent = data.category[isUr ? 'ur' : 'en'];
+        modalTitle.textContent = data.title[isUr ? 'ur' : 'en'];
+        modalBadge.textContent = data.badge[isUr ? 'ur' : 'en'];
+        modalTagline.textContent = data.tagline[isUr ? 'ur' : 'en'];
+        modalDesc.textContent = data.desc[isUr ? 'ur' : 'en'];
+        modalImg.src = data.images[0].src;
+        modalImg.alt = data.title[isUr ? 'ur' : 'en'];
+        
+        modalDeliverablesWrap.style.display = 'block';
+        modalDeliverablesList.replaceChildren();
+        data.deliverables[isUr ? 'ur' : 'en'].forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          modalDeliverablesList.appendChild(li);
+        });
+
+        const waMsg = data.waMessage[isUr ? 'ur' : 'en'];
+        modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent(waMsg);
+        modalWaBtnText.textContent = isUr ? 'WhatsApp Par Rabta Karein 💬' : 'Discuss Branding on WhatsApp 💬';
+      } else {
+        const title = p.dataset.title || 'Concept Showcase';
+        const desc = p.dataset.desc || '';
+        const img = p.querySelector('img');
+        const meta = p.querySelector('small')?.textContent || 'Illustrative Demo Concept';
+
+        modalCategory.textContent = meta;
+        modalTitle.textContent = title;
+        modalBadge.textContent = 'DEMO CONCEPT';
+        modalTagline.textContent = '';
+        modalDesc.textContent = desc;
+        modalImg.src = img ? img.src : '';
+        modalImg.alt = title;
+        modalDeliverablesWrap.style.display = 'none';
+
+        const waMsg = isUr
+          ? ('Salam Matrix Studio! Mujhe aapke project concept "' + title + '" ke baray mein baat karni hai.')
+          : ('Salam Matrix Studio! I would like to inquire about your project concept "' + title + '".');
+        modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent(waMsg);
+        modalWaBtnText.textContent = isUr ? 'WhatsApp Par Rabta Karein 💬' : 'Inquire on WhatsApp 💬';
+      }
+    }
 
     document.querySelectorAll('.project').forEach(p => {
       p.addEventListener('click', () => {
-        const title = p.dataset.title;
-        const desc = p.dataset.desc;
-        const img = p.querySelector('img');
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modalImg.src = img.src;
-        modalImg.alt = title;
-        modalWaBtn.href = 'https://wa.me/923022053002?text=' + encodeURIComponent('Salam Matrix Studio! Mujhe aapke project concept "' + title + '" ke baray mein baat karni hai.');
+        renderModalContent(p);
         modal.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
@@ -3451,11 +3984,46 @@
 
     function closeModal() {
       modal.classList.remove('open');
-      document.body.style.overflow = '';
+      if (!fullscreenLightbox.classList.contains('open')) {
+        document.body.style.overflow = '';
+      }
     }
     document.getElementById('closeModal').addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Fullscreen Image Zoom / Lightbox
+    function openFullscreenLightbox() {
+      lightboxTitle.textContent = modalTitle.textContent;
+      lightboxImg.src = modalImg.src;
+      lightboxImg.alt = modalImg.alt;
+      fullscreenLightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFullscreenLightbox() {
+      fullscreenLightbox.classList.remove('open');
+      if (!modal.classList.contains('open')) {
+        document.body.style.overflow = '';
+      }
+    }
+
+    modalImgWrap.addEventListener('click', openFullscreenLightbox);
+    modalEnlargeBtn.addEventListener('click', openFullscreenLightbox);
+    lightboxClose.addEventListener('click', closeFullscreenLightbox);
+    lightboxScrollArea.addEventListener('click', (e) => {
+      if (e.target === lightboxScrollArea || e.target === lightboxImg) {
+        closeFullscreenLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (fullscreenLightbox.classList.contains('open')) {
+          closeFullscreenLightbox();
+        } else if (modal.classList.contains('open')) {
+          closeModal();
+        }
+      }
+    });
 
     // Before & After Interactive Comparison Slider (Unified Pointer + Touch Dragging)
     const compContainer = document.getElementById('compContainer');
