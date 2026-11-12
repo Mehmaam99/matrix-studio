@@ -24,6 +24,7 @@
 <style>
     /* CSS Variables & Reset */
     :root {
+      color-scheme: dark;
       --bg: #080b0b;
       --panel: #111717;
       --panel-card: #15201b;
@@ -1462,7 +1463,19 @@
       margin-top: auto;
     }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .visually-hidden {
+      position: absolute;
+      clip-path: inset(50%);
+      overflow: hidden;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      border: 0;
+      white-space: nowrap;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 7px; position: relative; }
+    .form-group.is-dropdown-open { z-index: 60; }
     .form-group.full { grid-column: span 2; }
     .form-group label { font-size: 12px; font-weight: 700; color: #c9d5cd; }
     .form-group label .req { color: var(--lime); }
@@ -1482,6 +1495,157 @@
     .form-textarea { resize: vertical; min-height: 95px; }
     .form-error { color: #ff6b6b; font-size: 11px; display: none; }
     .form-error.visible { display: block; }
+
+    /* Custom Branded Select (Replaces native Android/iOS OS radio dialog) */
+    .ms-select {
+      position: relative;
+      width: 100%;
+    }
+    .ms-select-trigger {
+      width: 100%;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: #090e0c;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      padding: 12px 14px 12px 16px;
+      font-size: 13.5px;
+      line-height: 1.35;
+      color: #ffffff;
+      text-align: left;
+      cursor: pointer;
+      transition: border-color .2s, background-color .2s, box-shadow .2s;
+      box-sizing: border-box;
+    }
+    .ms-select-trigger.is-placeholder {
+      color: #8b9a90;
+    }
+    .ms-select-trigger:hover {
+      border-color: rgba(200, 255, 57, 0.45);
+    }
+    .ms-select-trigger:focus-visible {
+      outline: 2px solid var(--lime);
+      outline-offset: 2px;
+      border-color: var(--lime);
+      background: #0c1411;
+    }
+    .ms-select.is-open .ms-select-trigger {
+      border-color: var(--lime);
+      background: #0c1411;
+      box-shadow: 0 0 0 3px rgba(200, 255, 57, 0.14);
+    }
+    .ms-select.is-invalid .ms-select-trigger {
+      border-color: #ff6b6b;
+    }
+    .ms-select-value {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .ms-select-chevron {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      color: var(--lime);
+      transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ms-select.is-open .ms-select-chevron {
+      transform: rotate(180deg);
+    }
+    .ms-select-menu {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 6px);
+      z-index: 70;
+      background: #0e1713;
+      border: 1px solid rgba(200, 255, 57, 0.38);
+      border-radius: 14px;
+      padding: 6px;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.92), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      max-height: min(270px, 46vh);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      display: none;
+      flex-direction: column;
+      gap: 3px;
+      scrollbar-color: rgba(200, 255, 57, 0.45) #0b110e;
+    }
+    .ms-select.open-up .ms-select-menu {
+      top: auto;
+      bottom: calc(100% + 6px);
+    }
+    .ms-select.is-open .ms-select-menu {
+      display: flex;
+      animation: msMenuPop .16s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes msMenuPop {
+      from { opacity: 0; transform: translateY(-4px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .ms-select.open-up .ms-select-menu {
+      animation-name: msMenuPopUp;
+    }
+    @keyframes msMenuPopUp {
+      from { opacity: 0; transform: translateY(4px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .ms-select-option {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      text-align: left;
+      color: #dbe5de;
+      font-size: 13.5px;
+      line-height: 1.35;
+      cursor: pointer;
+      transition: background-color .15s, color .15s;
+    }
+    .ms-select-option:hover,
+    .ms-select-option.is-focused {
+      background: rgba(200, 255, 57, 0.12);
+      color: #ffffff;
+    }
+    .ms-select-option.is-selected {
+      background: rgba(200, 255, 57, 0.18);
+      color: var(--lime);
+      font-weight: 700;
+    }
+    .ms-select-check {
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--lime);
+      opacity: 0;
+    }
+    .ms-select-option.is-selected .ms-select-check {
+      opacity: 1;
+    }
+    @media (pointer: coarse) {
+      .ms-select-trigger,
+      .form-input,
+      .form-select,
+      .form-textarea {
+        min-height: 52px;
+        font-size: max(1rem, 1em);
+      }
+      .ms-select-option {
+        min-height: 48px;
+        font-size: 15px;
+        padding: 11px 14px;
+      }
+    }
     .form-notice {
       grid-column: span 2;
       background: rgba(255, 255, 255, 0.03);
@@ -2430,7 +2594,8 @@
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        font-size: 13px !important;
+        font-size: max(1rem, 1em) !important;
+        min-height: 48px !important;
         padding: 12px 14px !important;
         border-radius: 10px !important;
         background: #090e0c !important;
@@ -2444,6 +2609,12 @@
         background-repeat: no-repeat !important;
         background-position: right 14px center !important;
         padding-right: 36px !important;
+      }
+      .ms-select-trigger {
+        min-height: 48px !important;
+        padding: 12px 14px !important;
+        border-radius: 10px !important;
+        font-size: max(1rem, 1em) !important;
       }
       .form-notice {
         font-size: 11px !important;
@@ -2469,7 +2640,8 @@
       /* Footer */
       .foot-top { grid-template-columns: 1fr; gap: 26px; }
       .copyright { flex-direction: column; gap: 8px; text-align: center; }
-      .float-wa { bottom: 18px; right: 18px; width: 50px; height: 50px; }
+      .float-wa { bottom: 14px; right: 14px; width: 46px; height: 46px; }
+      #contact { padding-bottom: 76px; }
     }
 
     /* Extra Small Screen adjustments (<= 450px) */
@@ -3103,17 +3275,17 @@
 <div class="form-grid">
 <div class="form-group">
 <label for="custName"><span data-i18n="lbl_name">Your Full Name</span> <span class="req">*</span></label>
-<input class="form-input" id="custName" placeholder="e.g. Tariq Mehmood" required="" type="text"/>
+<input autocomplete="name" class="form-input" enterkeyhint="next" id="custName" name="custName" placeholder="e.g. Tariq Mehmood" required="" type="text"/>
 <span class="form-error" data-i18n="err_name" id="errName">Please enter your full name.</span>
 </div>
 <div class="form-group">
 <label for="bizName"><span data-i18n="lbl_biz_name">Business / Brand Name (optional)</span> </label>
-<input class="form-input" id="bizName" placeholder="e.g. Flame &amp; Crust Diner" type="text"/>
+<input autocomplete="organization" class="form-input" enterkeyhint="next" id="bizName" name="bizName" placeholder="e.g. Flame &amp; Crust Diner" type="text"/>
 <span class="form-error" data-i18n="err_biz" id="errBiz">Please enter your business or shop name.</span>
 </div>
 <div class="form-group">
 <label for="bizCategory"><span data-i18n="lbl_category">Business Category</span> <span class="req">*</span></label>
-<select class="form-select" id="bizCategory" required="">
+<select class="form-select" id="bizCategory" name="bizCategory" required="">
 <option data-i18n="opt_select_cat" disabled="" selected="" value="">Select business category...</option>
 <option value="Restaurant / Café">Restaurant / Café</option>
 <option value="Clothing &amp; Fashion Retail">Clothing &amp; Fashion Retail</option>
@@ -3127,7 +3299,7 @@
 </div>
 <div class="form-group full">
 <label for="reqService"><span data-i18n="lbl_service">Primary Solution Required</span> <span class="req">*</span></label>
-<select class="form-select" id="reqService" required="">
+<select class="form-select" id="reqService" name="reqService" required="">
 <option data-i18n="opt_select_svc" disabled="" selected="" value="">Select required service...</option>
 <option value="Digital Presence (Website / QR Menu / Landing Page)">Digital Presence (Website / QR Menu / Landing Page)</option>
 <option value="AI &amp; Automation (WhatsApp Bot / CRM / Orders)">AI &amp; Automation (WhatsApp Bot / CRM / Orders)</option>
@@ -3141,7 +3313,7 @@
 </div>
 <div class="form-group full">
 <label for="projDetails"><span data-i18n="lbl_details">Project Requirements &amp; Goals</span> <span class="req">*</span></label>
-<textarea class="form-textarea" data-i18n-placeholder="details_placeholder" id="projDetails" placeholder="Describe what you want to achieve, your current challenges, or specific features you need..." required=""></textarea>
+<textarea class="form-textarea" data-i18n-placeholder="details_placeholder" id="projDetails" name="projDetails" placeholder="Describe what you want to achieve, your current challenges, or specific features you need..." required=""></textarea>
 <span class="form-error" data-i18n="err_details" id="errDetails">Please describe your project requirements.</span>
 </div>
 <div class="form-notice" data-i18n="form_notice">Your inquiry opens in WhatsApp for you to review and send. This page does not submit or store your details.</div>
@@ -3917,6 +4089,9 @@
           renderCaseStudyContent(activeModalProjectId);
         }
       }
+      if (typeof refreshCustomSelects === 'function') {
+        refreshCustomSelects();
+      }
     }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -4663,6 +4838,200 @@
       appendMessage(welcome, false);
     });
 
+    // Custom Accessible Dropdown Component (Replaces native Android/iOS OS select modal)
+    const customSelectInstances = [];
+    function closeAllCustomSelects(exceptInstance = null) {
+      customSelectInstances.forEach(inst => {
+        if (inst !== exceptInstance) inst.close(false);
+      });
+    }
+    function refreshCustomSelects() {
+      customSelectInstances.forEach(inst => inst.syncFromSelect());
+    }
+    function initCustomSelect(selectEl) {
+      if (!selectEl || selectEl.dataset.msEnhanced === '1') return null;
+      selectEl.dataset.msEnhanced = '1';
+
+      const groupEl = selectEl.closest('.form-group');
+      const labelEl = groupEl ? groupEl.querySelector(`label[for="${selectEl.id}"]`) : null;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'ms-select';
+
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'ms-select-trigger is-placeholder';
+      trigger.id = `${selectEl.id}Trigger`;
+      trigger.setAttribute('aria-haspopup', 'listbox');
+      trigger.setAttribute('aria-expanded', 'false');
+      if (labelEl) {
+        if (!labelEl.id) labelEl.id = `${selectEl.id}Label`;
+        trigger.setAttribute('aria-labelledby', `${labelEl.id} ${trigger.id}`);
+      }
+
+      const valueSpan = document.createElement('span');
+      valueSpan.className = 'ms-select-value';
+
+      const chevron = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      chevron.setAttribute('class', 'ms-select-chevron');
+      chevron.setAttribute('viewBox', '0 0 20 20');
+      chevron.setAttribute('fill', 'currentColor');
+      chevron.setAttribute('aria-hidden', 'true');
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('fill-rule', 'evenodd');
+      path.setAttribute('clip-rule', 'evenodd');
+      path.setAttribute('d', 'M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z');
+      chevron.appendChild(path);
+
+      trigger.appendChild(valueSpan);
+      trigger.appendChild(chevron);
+
+      const menu = document.createElement('div');
+      menu.className = 'ms-select-menu';
+      menu.setAttribute('role', 'listbox');
+      menu.id = `${selectEl.id}Menu`;
+      trigger.setAttribute('aria-controls', menu.id);
+
+      const optionButtons = [];
+      let focusedIdx = -1;
+
+      Array.from(selectEl.options).forEach((opt, idx) => {
+        if (opt.disabled && !opt.value) return;
+        const optBtn = document.createElement('button');
+        optBtn.type = 'button';
+        optBtn.className = 'ms-select-option';
+        optBtn.setAttribute('role', 'option');
+        optBtn.dataset.value = opt.value;
+        optBtn.setAttribute('aria-selected', 'false');
+
+        const textSpan = document.createElement('span');
+        textSpan.textContent = opt.textContent;
+        const checkSpan = document.createElement('span');
+        checkSpan.className = 'ms-select-check';
+        checkSpan.setAttribute('aria-hidden', 'true');
+        checkSpan.textContent = '✓';
+
+        optBtn.appendChild(textSpan);
+        optBtn.appendChild(checkSpan);
+        optBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectValue(opt.value);
+          instance.close(true);
+        });
+        menu.appendChild(optBtn);
+        optionButtons.push(optBtn);
+      });
+
+      selectEl.classList.add('visually-hidden');
+      selectEl.setAttribute('tabindex', '-1');
+      selectEl.setAttribute('aria-hidden', 'true');
+      selectEl.parentNode.insertBefore(wrapper, selectEl.nextSibling);
+      wrapper.appendChild(trigger);
+      wrapper.appendChild(menu);
+
+      if (labelEl) {
+        labelEl.addEventListener('click', (e) => {
+          e.preventDefault();
+          trigger.focus();
+        });
+      }
+
+      function syncFromSelect() {
+        const hasValue = Boolean(selectEl.value);
+        const selectedOpt = hasValue ? (Array.from(selectEl.options).find(o => o.value === selectEl.value) || selectEl.options[selectEl.selectedIndex]) : null;
+        if (hasValue && selectedOpt) {
+          valueSpan.textContent = selectedOpt.textContent;
+          trigger.classList.remove('is-placeholder');
+          wrapper.classList.remove('is-invalid');
+          trigger.setAttribute('aria-invalid', 'false');
+        } else {
+          const placeholderOpt = Array.from(selectEl.options).find(o => o.disabled && !o.value);
+          valueSpan.textContent = placeholderOpt ? placeholderOpt.textContent : '';
+          trigger.classList.add('is-placeholder');
+        }
+        optionButtons.forEach(btn => {
+          const isMatch = btn.dataset.value === selectEl.value && hasValue;
+          btn.classList.toggle('is-selected', isMatch);
+          btn.setAttribute('aria-selected', String(isMatch));
+        });
+      }
+
+      function selectValue(val) {
+        selectEl.value = val;
+        syncFromSelect();
+        selectEl.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      function setFocusIdx(nextIdx) {
+        if (!optionButtons.length) return;
+        focusedIdx = (nextIdx + optionButtons.length) % optionButtons.length;
+        optionButtons.forEach((btn, i) => btn.classList.toggle('is-focused', i === focusedIdx));
+        optionButtons[focusedIdx].focus();
+      }
+
+      const instance = {
+        selectEl,
+        wrapper,
+        trigger,
+        syncFromSelect,
+        open() {
+          closeAllCustomSelects(instance);
+          const rect = trigger.getBoundingClientRect();
+          const spaceBelow = window.innerHeight - rect.bottom;
+          const spaceAbove = rect.top;
+          wrapper.classList.toggle('open-up', spaceBelow < 260 && spaceAbove > spaceBelow);
+          wrapper.classList.add('is-open');
+          if (groupEl) groupEl.classList.add('is-dropdown-open');
+          trigger.setAttribute('aria-expanded', 'true');
+          const selectedIdx = optionButtons.findIndex(b => b.dataset.value === selectEl.value);
+          setFocusIdx(selectedIdx >= 0 ? selectedIdx : 0);
+        },
+        close(restoreFocus = false) {
+          if (!wrapper.classList.contains('is-open')) return;
+          wrapper.classList.remove('is-open', 'open-up');
+          if (groupEl) groupEl.classList.remove('is-dropdown-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          optionButtons.forEach(btn => btn.classList.remove('is-focused'));
+          focusedIdx = -1;
+          if (restoreFocus) trigger.focus();
+        }
+      };
+
+      trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (wrapper.classList.contains('is-open')) instance.close(false);
+        else instance.open();
+      });
+
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          instance.open();
+        }
+      });
+
+      menu.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); setFocusIdx(focusedIdx + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setFocusIdx(focusedIdx - 1); }
+        else if (e.key === 'Home') { e.preventDefault(); setFocusIdx(0); }
+        else if (e.key === 'End') { e.preventDefault(); setFocusIdx(optionButtons.length - 1); }
+        else if (e.key === 'Escape' || e.key === 'Tab') { instance.close(e.key === 'Escape'); }
+      });
+
+      syncFromSelect();
+      customSelectInstances.push(instance);
+      return instance;
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.ms-select')) closeAllCustomSelects();
+    });
+
+    const customSelectMap = {};
+    ['bizCategory', 'reqService'].forEach(id => {
+      const inst = initCustomSelect(document.getElementById(id));
+      if (inst) customSelectMap[id] = inst;
+    });
+
     // Streamlined, user-controlled WhatsApp quote form
     const quoteForm = document.getElementById('quoteInquiryForm');
     
@@ -4679,6 +5048,11 @@
         const clearErr = () => {
           if (el.value.trim()) {
             document.getElementById(err)?.classList.remove('visible');
+            el.setAttribute('aria-invalid', 'false');
+            if (customSelectMap[id]) {
+              customSelectMap[id].wrapper.classList.remove('is-invalid');
+              customSelectMap[id].trigger.setAttribute('aria-invalid', 'false');
+            }
           }
         };
         el.addEventListener('input', clearErr);
@@ -4694,7 +5068,15 @@
       required.forEach(([id,err]) => {
         const bad = !val(id);
         document.getElementById(err)?.classList.toggle('visible', bad);
-        if (bad && !firstInvalid) firstInvalid = document.getElementById(id);
+        const fieldEl = document.getElementById(id);
+        if (fieldEl) fieldEl.setAttribute('aria-invalid', String(bad));
+        if (customSelectMap[id]) {
+          customSelectMap[id].wrapper.classList.toggle('is-invalid', bad);
+          customSelectMap[id].trigger.setAttribute('aria-invalid', String(bad));
+        }
+        if (bad && !firstInvalid) {
+          firstInvalid = customSelectMap[id] ? customSelectMap[id].trigger : fieldEl;
+        }
       });
       if (firstInvalid) { firstInvalid.focus(); return; }
 
