@@ -3,41 +3,51 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="#080b0b" name="theme-color"/>
-<title>Dastarkhwan Restaurant — Digital Transformation Demo | Matrix Studio</title>
-<meta content="A complete demonstration of how Matrix Studio transforms traditional Pakistani dining: 24/7 AI WhatsApp ordering, digital QR menu, heritage packaging design, and high-converting food advertising." name="description"/>
-<meta content="Dastarkhwan Restaurant — Full Digital Transformation Demo" property="og:title"/>
-<meta content="From missed dinner-rush calls to automated WhatsApp orders, digital QR menus, and premium packaging." property="og:description"/>
-<meta content="images/burger_deal.webp" property="og:image"/>
+<meta content="#070b09" name="theme-color"/>
+<title>Dastarkhwan Restaurant — Full Digital Transformation & Branding Showcase | Matrix Studio</title>
+<meta content="Explore the complete Phase 1 restaurant digital transformation demo for Dastarkhwan Restaurant: royal emerald & antique gold branding, custom food packaging, 24/7 automated WhatsApp ordering, contactless QR menu, and viral billboard & social ad campaigns." name="description"/>
+<meta content="Dastarkhwan Restaurant — Full Digital Transformation & Branding Showcase" property="og:title"/>
+<meta content="Royal emerald & gold brand identity, 24/7 WhatsApp AI assistant, contactless QR menu, and highway billboards crafted by Matrix Studio." property="og:description"/>
+<meta content="images/dastarkhwan-hero-logo.webp" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta content="https://matrix-studio-ai-receptionist-ry3b.vercel.app/dastarkhwan-portfolio" property="og:url"/>
+
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
 <style>
     :root {
       color-scheme: dark;
-      --bg: #080b0b;
-      --panel: #0f1613;
-      --panel-card: #13201a;
-      --panel-maroon: #1a1012;
+      --bg: #070b09;
+      --panel: #0d1712;
+      --panel-card: #101e17;
+      --panel-elevated: #14261e;
+      --emerald-dark: #0B3D2E;
+      --emerald-mid: #105942;
+      --emerald-glow: rgba(11, 61, 46, 0.45);
+      --gold: #D4AF37;
+      --gold-light: #f3df95;
+      --gold-glow: rgba(212, 175, 55, 0.28);
+      --ivory: #F8F6ED;
+      --charcoal: #1A1A1A;
       --lime: #c8ff39;
       --lime-glow: rgba(200, 255, 57, 0.22);
-      --maroon: #851825;
-      --gold: #d4af37;
-      --muted: #a6b4ac;
-      --line: rgba(255, 255, 255, 0.1);
+      --muted: #a4b5aa;
+      --line: rgba(212, 175, 55, 0.16);
+      --line-subtle: rgba(255, 255, 255, 0.08);
       --font-heading: 'Manrope', sans-serif;
       --font-body: 'DM Sans', sans-serif;
-      --font-hand: 'Caveat', cursive;
       --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --font-hand: 'Caveat', cursive;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
-      color: #f4f7f3;
+      color: #f2f7f3;
       font-family: var(--font-body);
       overflow-x: hidden;
       line-height: 1.6;
@@ -46,10 +56,10 @@
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
     button { cursor: pointer; background: none; border: 0; }
-    ::selection { background: var(--lime); color: #111; }
+    ::selection { background: var(--gold); color: #070b09; }
 
     .wrap {
-      width: min(1360px, calc(100% - 8vw));
+      width: min(1360px, calc(100% - 7vw));
       margin: auto;
     }
     .eyebrow {
@@ -57,10 +67,11 @@
       letter-spacing: .22em;
       font-size: 11px;
       font-weight: 700;
-      color: #b5c0b8;
+      color: var(--gold);
     }
     .lime { color: var(--lime); }
     .gold { color: var(--gold); }
+    .serif { font-family: var(--font-serif); }
     .handwritten { font-family: var(--font-hand); letter-spacing: 0.04em; }
 
     /* Navigation Header */
@@ -68,8 +79,8 @@
       position: fixed;
       inset: 0 0 auto;
       z-index: 1000;
-      background: rgba(8, 11, 11, 0.94);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 11, 9, 0.94);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.18);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
     }
@@ -81,7 +92,7 @@
       gap: 20px;
     }
     .logo {
-      font: 800 24px/0.95 var(--font-heading);
+      font: 800 23px/0.95 var(--font-heading);
       letter-spacing: .18em;
       display: flex;
       flex-direction: column;
@@ -90,39 +101,44 @@
     .logo span span { color: var(--lime); }
     .logo small {
       font: 600 9px var(--font-body);
-      letter-spacing: .5em;
+      letter-spacing: .45em;
       margin-top: 5px;
-      color: #8c9790;
+      color: #8c9c91;
     }
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       font-size: 13px;
-      color: #d4dbd7;
+      color: #d1ded5;
       align-items: center;
     }
-    .nav-links a { transition: color 0.2s; position: relative; }
-    .nav-links a:hover { color: var(--lime); }
+    .nav-links a {
+      transition: color 0.2s;
+      position: relative;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--gold); }
     .nav-badge-pill {
-      font-size: 10.5px;
-      letter-spacing: .08em;
+      font-size: 10px;
+      letter-spacing: .1em;
       padding: 4px 10px;
       border-radius: 100px;
-      background: rgba(200, 255, 57, 0.12);
-      border: 1px solid rgba(200, 255, 57, 0.35);
-      color: var(--lime);
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      color: var(--gold);
       font-weight: 700;
+      text-transform: uppercase;
     }
     .navright {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-shrink: 0;
     }
     .lang-switcher {
       display: inline-flex;
       background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(212, 175, 55, 0.22);
       border-radius: 99px;
       padding: 3px;
     }
@@ -135,12 +151,12 @@
       transition: all 0.2s ease;
     }
     .lang-btn.active {
-      background: var(--lime);
-      color: #0c1410;
+      background: var(--gold);
+      color: #070b09;
     }
     .btn-wa-header {
-      background: var(--lime);
-      color: #090e0c;
+      background: var(--gold);
+      color: #070b09;
       font-weight: 800;
       font-size: 12.5px;
       padding: 10px 18px;
@@ -151,7 +167,8 @@
       transition: all 0.2s;
     }
     .btn-wa-header:hover {
-      box-shadow: 0 0 20px rgba(200, 255, 57, 0.4);
+      background: var(--gold-light);
+      box-shadow: 0 0 20px var(--gold-glow);
       transform: translateY(-1px);
     }
     .menu-toggle {
@@ -163,8 +180,8 @@
 
     /* Buttons */
     .primary-btn {
-      background: var(--lime);
-      color: #080d0b;
+      background: var(--gold);
+      color: #070b09;
       font-weight: 800;
       font-size: 14px;
       padding: 14px 28px;
@@ -175,13 +192,14 @@
       transition: all 0.25s;
     }
     .primary-btn:hover {
-      box-shadow: 0 10px 25px rgba(200, 255, 57, 0.35);
+      background: var(--gold-light);
+      box-shadow: 0 10px 25px var(--gold-glow);
       transform: translateY(-2px);
     }
     .secondary-btn {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(11, 61, 46, 0.35);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(212, 175, 55, 0.32);
       font-weight: 700;
       font-size: 14px;
       padding: 14px 26px;
@@ -192,39 +210,49 @@
       transition: all 0.25s;
     }
     .secondary-btn:hover {
-      border-color: var(--lime);
-      color: var(--lime);
-      background: rgba(200, 255, 57, 0.08);
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(212, 175, 55, 0.12);
       transform: translateY(-2px);
     }
 
     /* Hero Section */
     .hero-case {
-      padding: 150px 0 70px;
+      padding: 145px 0 70px;
       position: relative;
-      background: radial-gradient(circle at 50% 20%, rgba(133, 24, 37, 0.18), transparent 55%), radial-gradient(circle at 85% 60%, rgba(200, 255, 57, 0.06), transparent 50%), var(--bg);
+      background: radial-gradient(circle at 75% 20%, rgba(11, 61, 46, 0.55), transparent 60%), radial-gradient(circle at 20% 70%, rgba(212, 175, 55, 0.1), transparent 50%), var(--bg);
       border-bottom: 1px solid var(--line);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 48px;
     }
     .hero-top-badges {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .badge-client {
-      background: #7a1622;
-      color: #ffd8dd;
+      background: var(--emerald-dark);
+      color: var(--gold);
       font-weight: 800;
       font-size: 11px;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-transform: uppercase;
       padding: 6px 14px;
       border-radius: 100px;
-      border: 1px solid rgba(255, 216, 221, 0.25);
+      border: 1px solid var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .badge-demo {
-      background: rgba(200, 255, 57, 0.12);
+      background: rgba(200, 255, 57, 0.1);
       color: var(--lime);
       font-weight: 700;
       font-size: 11px;
@@ -235,33 +263,111 @@
       border: 1px solid rgba(200, 255, 57, 0.35);
     }
     .hero-title {
-      font: 800 clamp(34px, 5.2vw, 62px)/1.08 var(--font-heading);
-      letter-spacing: -.035em;
-      margin-bottom: 20px;
-      max-width: 980px;
+      font: 800 clamp(34px, 4.8vw, 56px)/1.1 var(--font-heading);
+      letter-spacing: -.03em;
+      margin-bottom: 18px;
+    }
+    .hero-tagline-quote {
+      display: inline-block;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 18px;
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
     }
     .hero-subtitle {
-      font-size: clamp(16px, 1.8vw, 19px);
+      font-size: clamp(15.5px, 1.7vw, 18px);
       line-height: 1.65;
-      color: #c4d2c8;
-      max-width: 780px;
-      margin-bottom: 34px;
+      color: #c9d8ce;
+      margin-bottom: 30px;
     }
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 45px;
     }
+
+    /* Hero Visual Card (Logo Mark Showcase) */
+    .hero-media-card {
+      background: #0d1913;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 35px var(--gold-glow);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+    }
+    .hero-media-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      border-color: var(--gold);
+    }
+    .hero-media-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .hero-media-card:hover .hero-media-img {
+      transform: scale(1.03);
+    }
+    .hero-media-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      background: linear-gradient(180deg, transparent, rgba(7, 11, 9, 0.95) 75%);
+      padding: 24px 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hero-media-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(11, 61, 46, 0.8);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      align-self: flex-start;
+    }
+    .hero-media-title {
+      font: 700 17px var(--font-heading);
+      color: #ffffff;
+    }
+    .hero-media-meta {
+      font-size: 12px;
+      color: #a7baa9;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .zoom-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    /* Hero Highlights Strip */
     .hero-highlights-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      background: rgba(14, 22, 18, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 16px;
+      background: rgba(13, 23, 18, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.2);
       border-radius: 20px;
-      padding: 24px 28px;
+      padding: 24px 26px;
       backdrop-filter: blur(10px);
     }
     .highlight-card {
@@ -273,43 +379,43 @@
       font-size: 10.5px;
       text-transform: uppercase;
       letter-spacing: .14em;
-      color: var(--lime);
+      color: var(--gold);
       font-weight: 700;
     }
     .highlight-card strong {
-      font-size: 16px;
+      font-size: 15.5px;
       color: #ffffff;
       font-family: var(--font-heading);
     }
     .highlight-card p {
       font-size: 12.5px;
-      color: #9ab0a2;
+      color: #a4b7ab;
       line-height: 1.45;
     }
 
     /* Section Global Styles */
     section.block {
       padding: 85px 0;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--line-subtle);
     }
     .section-head {
       margin-bottom: 44px;
     }
     .section-head.center {
       text-align: center;
-      max-width: 740px;
+      max-width: 780px;
       margin-left: auto;
       margin-right: auto;
     }
     .section-head h2 {
-      font: 800 clamp(26px, 3.8vw, 42px)/1.15 var(--font-heading);
+      font: 800 clamp(26px, 3.6vw, 42px)/1.15 var(--font-heading);
       letter-spacing: -.025em;
       margin-top: 10px;
       margin-bottom: 12px;
     }
     .section-head p {
       font-size: 15px;
-      color: #aebdb3;
+      color: #b0c2b5;
       line-height: 1.65;
     }
 
@@ -332,9 +438,9 @@
       border: 1px solid rgba(255, 107, 107, 0.25);
     }
     .compare-card.after {
-      background: #0f1c16;
-      border: 1px solid rgba(200, 255, 57, 0.35);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(200, 255, 57, 0.08);
+      background: #0f1f17;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px var(--gold-glow);
     }
     .compare-tag {
       display: inline-flex;
@@ -354,9 +460,9 @@
       border: 1px solid rgba(255, 107, 107, 0.3);
     }
     .compare-card.after .compare-tag {
-      background: rgba(200, 255, 57, 0.15);
-      color: var(--lime);
-      border: 1px solid rgba(200, 255, 57, 0.35);
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold);
+      border: 1px solid var(--gold);
     }
     .compare-card h3 {
       font: 700 22px var(--font-heading);
@@ -383,9 +489,360 @@
     }
     .compare-card.after .compare-list li::before {
       content: "✓";
-      color: var(--lime);
+      color: var(--gold);
       font-weight: 800;
       flex-shrink: 0;
+    }
+
+    /* Phase 1 Master Brand Grid */
+    .brand-master-banner {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .brand-master-banner:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.8), 0 0 30px var(--gold-glow);
+    }
+    .brand-master-banner img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .brand-master-banner:hover img {
+      transform: scale(1.02);
+    }
+    .brand-master-info {
+      padding: 26px 30px;
+      background: #0d1913;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand-master-title h3 {
+      font: 800 22px var(--font-heading);
+      color: #ffffff;
+    }
+    .brand-master-title p {
+      font-size: 13.5px;
+      color: #a8bbaa;
+      margin-top: 4px;
+    }
+
+    /* Brand Assets Gallery Cards */
+    .brand-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .brand-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .brand-asset-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .brand-asset-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow);
+    }
+    .brand-asset-media {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+      background: #09120e;
+    }
+    .brand-asset-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .brand-asset-card:hover .brand-asset-media img {
+      transform: scale(1.05);
+    }
+    .brand-asset-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(7, 11, 9, 0.85);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+    .brand-asset-hover-zoom {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 11, 9, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .brand-asset-card:hover .brand-asset-hover-zoom {
+      opacity: 1;
+    }
+    .brand-asset-hover-zoom span {
+      background: var(--gold);
+      color: #070b09;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-asset-content {
+      padding: 22px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .brand-asset-content small {
+      font-size: 10.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .brand-asset-content h3 {
+      font: 700 18px var(--font-heading);
+      margin-bottom: 8px;
+    }
+    .brand-asset-content p {
+      font-size: 13px;
+      color: #a3b5a7;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .brand-swatches {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--line-subtle);
+    }
+    .swatch-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      color: #c9dbcd;
+    }
+    .swatch-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Interactive WhatsApp Simulator */
+    .simulator-wrap {
+      display: grid;
+      grid-template-columns: 46% 54%;
+      gap: 36px;
+      align-items: center;
+      background: #0d1a14;
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      border-radius: 28px;
+      padding: 40px;
+      box-sizing: border-box;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px var(--gold-glow);
+    }
+    .sim-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .sim-info h3 {
+      font: 800 clamp(24px, 3.2vw, 36px)/1.2 var(--font-heading);
+    }
+    .sim-info p {
+      font-size: 14.5px;
+      color: #b7c7bc;
+      line-height: 1.65;
+    }
+    .sim-phone-frame {
+      background: #09120e;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 530px;
+    }
+    .sim-phone-header {
+      background: var(--emerald-dark);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sim-bot-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sim-bot-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #070b09;
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .sim-bot-text strong {
+      display: block;
+      font-size: 14px;
+      color: #ffffff;
+      font-family: var(--font-heading);
+    }
+    .sim-bot-text small {
+      font-size: 10.5px;
+      color: var(--gold);
+    }
+    .sim-reset-btn {
+      font-size: 11px;
+      color: #d1ded5;
+      padding: 5px 12px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 100px;
+      background: rgba(0, 0, 0, 0.3);
+      transition: all 0.2s;
+    }
+    .sim-reset-btn:hover { color: var(--gold); border-color: var(--gold); }
+    .sim-chat-body {
+      flex: 1;
+      padding: 18px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #070f0b;
+    }
+    .chat-msg {
+      max-width: 82%;
+      padding: 11px 14px;
+      border-radius: 14px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    .chat-msg.bot {
+      background: #112219;
+      color: #e4efe7;
+      border-top-left-radius: 4px;
+      align-self: flex-start;
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
+    .chat-msg.user {
+      background: var(--emerald-dark);
+      color: #ffffff;
+      border-top-right-radius: 4px;
+      align-self: flex-end;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .chat-time {
+      font-size: 9.5px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+      text-align: right;
+      display: block;
+    }
+    .sim-quick-chips {
+      padding: 10px 14px;
+      background: #0b1611;
+      border-top: 1px solid var(--line-subtle);
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .sim-quick-chips button {
+      white-space: nowrap;
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      color: #e2ede5;
+      font-weight: 600;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+    .sim-quick-chips button:hover {
+      background: var(--gold);
+      color: #070b09;
+    }
+    .sim-input-row {
+      padding: 12px 14px;
+      background: #0f1c16;
+      display: flex;
+      gap: 8px;
+    }
+    .sim-input-row input {
+      flex: 1;
+      background: #070d0a;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 100px;
+      padding: 9px 16px;
+      font-size: 12.5px;
+      color: #ffffff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .sim-input-row input:focus { border-color: var(--gold); }
+    .sim-input-row button {
+      background: var(--gold);
+      color: #070b09;
+      font-weight: 800;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 12.5px;
+      transition: all 0.2s;
+    }
+    .sim-input-row button:hover {
+      background: var(--gold-light);
     }
 
     /* Core Services Deep Dive Grid */
@@ -405,15 +862,15 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .service-box:hover {
-      border-color: var(--lime);
+      border-color: var(--gold);
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(200, 255, 57, 0.12);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--gold-glow);
     }
     .service-num {
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .12em;
-      color: var(--lime);
+      letter-spacing: .14em;
+      color: var(--gold);
       margin-bottom: 12px;
       display: block;
     }
@@ -436,261 +893,23 @@
     }
     .service-deliverables-pill span {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.2);
       padding: 4px 10px;
       border-radius: 100px;
       font-size: 11px;
       color: #d6e2d9;
     }
 
-    /* Interactive WhatsApp Simulator */
-    .simulator-wrap {
-      display: grid;
-      grid-template-columns: 48% 52%;
-      gap: 36px;
-      align-items: center;
-      background: #0f1915;
-      border: 1px solid rgba(200, 255, 57, 0.28);
-      border-radius: 28px;
-      padding: 40px;
-      box-sizing: border-box;
-    }
-    .sim-info {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .sim-info h3 {
-      font: 800 clamp(24px, 3.2vw, 36px)/1.2 var(--font-heading);
-    }
-    .sim-info p {
-      font-size: 14.5px;
-      color: #b7c7bc;
-      line-height: 1.65;
-    }
-    .sim-phone-frame {
-      background: #0b1411;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 520px;
-    }
-    .sim-phone-header {
-      background: #122119;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .sim-bot-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .sim-bot-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #7a1622;
-      border: 1px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-    }
-    .sim-bot-text strong {
-      display: block;
-      font-size: 13.5px;
-      color: #ffffff;
-    }
-    .sim-bot-text small {
-      font-size: 10.5px;
-      color: var(--lime);
-    }
-    .sim-reset-btn {
-      font-size: 11px;
-      color: #b0c0b5;
-      padding: 5px 10px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 100px;
-    }
-    .sim-reset-btn:hover { color: var(--lime); border-color: var(--lime); }
-    .sim-chat-body {
-      flex: 1;
-      padding: 18px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: #080f0c;
-    }
-    .chat-msg {
-      max-width: 82%;
-      padding: 11px 14px;
-      border-radius: 14px;
-      font-size: 12.5px;
-      line-height: 1.5;
-      position: relative;
-    }
-    .chat-msg.bot {
-      background: #15251e;
-      color: #e2ede5;
-      border-top-left-radius: 4px;
-      align-self: flex-start;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .chat-msg.user {
-      background: #005c4b;
-      color: #ffffff;
-      border-top-right-radius: 4px;
-      align-self: flex-end;
-    }
-    .chat-time {
-      font-size: 9.5px;
-      color: rgba(255, 255, 255, 0.5);
-      margin-top: 4px;
-      text-align: right;
-      display: block;
-    }
-    .sim-quick-chips {
-      padding: 10px 14px;
-      background: #0d1713;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .sim-quick-chips button {
-      white-space: nowrap;
-      font-size: 11px;
-      padding: 6px 12px;
-      border-radius: 100px;
-      background: rgba(200, 255, 57, 0.08);
-      border: 1px solid rgba(200, 255, 57, 0.25);
-      color: #d6e8dc;
-      font-weight: 600;
-      flex-shrink: 0;
-    }
-    .sim-quick-chips button:hover {
-      background: var(--lime);
-      color: #0c1410;
-    }
-    .sim-input-row {
-      padding: 12px 14px;
-      background: #111e18;
-      display: flex;
-      gap: 8px;
-    }
-    .sim-input-row input {
-      flex: 1;
-      background: #09120e;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 100px;
-      padding: 8px 14px;
-      font-size: 12.5px;
-      color: #ffffff;
-      outline: none;
-    }
-    .sim-input-row input:focus { border-color: var(--lime); }
-    .sim-input-row button {
-      background: var(--lime);
-      color: #080d0b;
-      font-weight: 800;
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-size: 12.5px;
-    }
-
-    /* Visual Showcase Cards (Branding & QR Menu) */
-    .showcase-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-    .showcase-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .showcase-media {
-      position: relative;
-      height: 320px;
-      overflow: hidden;
-      background: #0b120f;
-    }
-    .showcase-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .showcase-card:hover .showcase-media img {
-      transform: scale(1.05);
-    }
-    .showcase-content {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .showcase-content small {
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--lime);
-      font-weight: 800;
-      margin-bottom: 8px;
-    }
-    .showcase-content h3 {
-      font: 800 22px var(--font-heading);
-      margin-bottom: 10px;
-    }
-    .showcase-content p {
-      font-size: 14px;
-      color: #aebdb3;
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-    .showcase-specs {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: auto;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 14px;
-    }
-    .showcase-specs li {
-      font-size: 12.5px;
-      color: #d1ded5;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .showcase-specs li::before {
-      content: "•";
-      color: var(--lime);
-      font-size: 18px;
-    }
-
     /* Final Pitch & WhatsApp CTA Banner */
     .cta-banner-wrap {
-      background: linear-gradient(135deg, #18281f, #0d1712);
-      border: 1px solid rgba(200, 255, 57, 0.38);
+      background: linear-gradient(135deg, #0e2219, #070d0a);
+      border: 1px solid rgba(212, 175, 55, 0.38);
       border-radius: 30px;
-      padding: 60px 48px;
+      padding: 65px 48px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(200, 255, 57, 0.12);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px var(--gold-glow);
     }
     .cta-banner-wrap h2 {
       font: 800 clamp(28px, 4vw, 46px)/1.15 var(--font-heading);
@@ -700,7 +919,7 @@
     .cta-banner-wrap p {
       font-size: 16px;
       color: #c5d4c9;
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto 34px;
       line-height: 1.65;
     }
@@ -708,8 +927,8 @@
     /* Footer */
     .footer {
       padding: 50px 0 36px;
-      background: #060908;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #050806;
+      border-top: 1px solid var(--line-subtle);
       font-size: 13px;
       color: #8c9b91;
     }
@@ -743,23 +962,111 @@
       box-shadow: 0 12px 30px rgba(0, 168, 132, 0.6);
     }
 
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(5, 8, 7, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lightbox-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      color: #ffffff;
+      font-size: 32px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
+    }
+    .lightbox-close-btn:hover {
+      background: var(--gold);
+      color: #070b09;
+    }
+    .lightbox-content-box {
+      max-width: 1080px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #0d1712;
+      border: 1px solid var(--gold);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.95), 0 0 40px var(--gold-glow);
+    }
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      display: block;
+      background: #060907;
+    }
+    .lightbox-caption {
+      padding: 18px 24px;
+      width: 100%;
+      background: #0a130f;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .lightbox-caption strong {
+      color: #ffffff;
+      font-size: 15px;
+      font-family: var(--font-heading);
+    }
+    .lightbox-caption span {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
     /* Responsive Media Queries */
-    @media (max-width: 992px) {
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-media-card { max-width: 640px; margin: 0 auto; width: 100%; }
       .hero-highlights-strip { grid-template-columns: 1fr 1fr; }
+      .brand-grid-3 { grid-template-columns: 1fr 1fr; }
       .services-deep-grid { grid-template-columns: 1fr; }
       .simulator-wrap { grid-template-columns: 1fr; }
-      .showcase-grid-2 { grid-template-columns: 1fr; }
       .compare-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
       .nav { height: 68px; }
-      .hero-case { padding: 115px 0 50px; }
+      .hero-case { padding: 110px 0 50px; }
       .hero-highlights-strip { grid-template-columns: 1fr; gap: 14px; }
+      .brand-grid-3 { grid-template-columns: 1fr; }
+      .brand-grid-4 { grid-template-columns: 1fr; }
+      .brand-master-banner img { height: 280px; }
       .cta-banner-wrap { padding: 40px 22px; border-radius: 20px; }
       .simulator-wrap { padding: 24px 18px; }
-      .sim-phone-frame { height: 480px; }
+      .sim-phone-frame { height: 490px; }
+      .lightbox-content-box { max-height: 85vh; width: 95%; }
+      .lightbox-img { max-height: 55vh; }
     }
 </style>
 </head>
@@ -776,18 +1083,20 @@
     <nav class="nav-links">
       <a href="/" data-i18n="nav_home">Main Website</a>
       <a href="#overview" data-i18n="nav_overview">Executive Overview</a>
+      <a href="#branding" data-i18n="nav_branding">Phase 1 Branding</a>
       <a href="#simulator" data-i18n="nav_bot">WhatsApp Bot Demo</a>
+      <a href="#packaging" data-i18n="nav_packaging">Packaging & Stationery</a>
+      <a href="#advertising" data-i18n="nav_advertising">Social & Billboards</a>
       <a href="#services" data-i18n="nav_services">Core Services</a>
-      <a href="#branding" data-i18n="nav_branding">Branding & Packaging</a>
     </nav>
 
     <div class="navright">
-      <span class="nav-badge-pill" data-i18n="badge_top">RESTAURANT SHOWCASE</span>
+      <span class="nav-badge-pill" data-i18n="badge_top">RESTAURANT DEMO</span>
       <div class="lang-switcher">
         <button type="button" class="lang-btn active" data-lang="en">EN</button>
         <button type="button" class="lang-btn" data-lang="ur">Roman Urdu</button>
       </div>
-      <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20I%20saw%20your%20Dastarkhwan%20Restaurant%20demo.%20I%20want%20to%20discuss%20services%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer" class="btn-wa-header">
+      <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20I%20saw%20your%20Dastarkhwan%20Restaurant%20showcase.%20I%20want%20to%20discuss%20services%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer" class="btn-wa-header">
         <span>💬</span>
         <span data-i18n="btn_discuss_top">Discuss Restaurant ↗</span>
       </a>
@@ -798,30 +1107,55 @@
 <!-- Hero Section -->
 <section class="hero-case">
   <div class="wrap">
-    <div class="hero-top-badges">
-      <span class="badge-client" data-i18n="hero_client">DASTARKHWAN RESTAURANT</span>
-      <span class="badge-demo" data-i18n="hero_type">TURNKEY DIGITAL TRANSFORMATION DEMO</span>
+    <div class="hero-grid">
+      <!-- Left Column: Copy & Actions -->
+      <div>
+        <div class="hero-top-badges">
+          <span class="badge-client" data-i18n="hero_client">🍲 DASTARKHWAN RESTAURANT</span>
+          <span class="badge-demo" data-i18n="hero_type">PHASE 1 BRAND &amp; DIGITAL DEMO</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-i18n="hero_h1_main">Dastarkhwan Restaurant</span><br/>
+          <span class="gold" data-i18n="hero_h1_accent">Full-Stack Digital Transformation</span>
+        </h1>
+
+        <div class="hero-tagline-quote">
+          <span data-i18n="hero_tagline">"GOOD FOOD. GREAT MOMENTS."</span>
+        </div>
+
+        <p class="hero-subtitle" data-i18n="hero_sub">
+          A turnkey showcase of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — combining royal heritage visual identity (emerald green & antique gold), 24/7 automated WhatsApp ordering, digital QR menus, custom takeaway packaging, and high-converting billboard & social media campaigns.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#branding" class="primary-btn">
+            <span data-i18n="hero_cta_assets">Explore Phase 1 Brand Assets ↓</span>
+          </a>
+          <a href="#simulator" class="secondary-btn">
+            <span data-i18n="hero_cta_sim">Test Live WhatsApp Bot ↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Hero Visual Feature (Embossed Gold Logo on Emerald Leather) -->
+      <div>
+        <div class="hero-media-card" id="heroLogoTrigger" data-lightbox="images/dastarkhwan-hero-logo.webp" data-caption="Deliverable 01: Hero Metallic Gold Cloche Logo on Emerald Green Textured Leather" role="button" tabindex="0" aria-label="Enlarge Dastarkhwan Hero Logo">
+          <img src="images/dastarkhwan-hero-logo.webp" alt="Dastarkhwan Restaurant Hero Metallic Gold Logo" class="hero-media-img" loading="eager"/>
+          <div class="hero-media-overlay">
+            <span class="hero-media-badge" data-i18n="hero_card_badge">PHASE 1 HERO ASSET</span>
+            <div class="hero-media-title" data-i18n="hero_card_title">Metallic Gold Cloche Dome Logo Mark</div>
+            <div class="hero-media-meta">
+              <span>● Emerald Leather #0B3D2E</span>
+              <span>● Antique Gold #D4AF37</span>
+              <span class="zoom-hint" data-i18n="hint_zoom">🔍 Tap to Zoom</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h1 class="hero-title">
-      <span data-i18n="hero_h1_main">Dastarkhwan Restaurant</span><br/>
-      <span class="lime" data-i18n="hero_h1_accent">End-to-End Digital Transformation</span>
-    </h1>
-
-    <p class="hero-subtitle" data-i18n="hero_sub">
-      A complete demonstration of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — with 24/7 automated WhatsApp ordering, digital QR table menus, royal heritage packaging, and mouth-watering social ad campaigns.
-    </p>
-
-    <div class="hero-actions">
-      <a href="#simulator" class="primary-btn">
-        <span data-i18n="hero_cta_sim">Test WhatsApp Bot Simulation ↓</span>
-      </a>
-      <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20Dastarkhwan%20jesa%20digital%20system%20apne%20restaurant%20ke%20liye%20chahiye." target="_blank" rel="noopener noreferrer" class="secondary-btn">
-        <span>💬</span>
-        <span data-i18n="hero_cta_wa">Get This Setup For Your Food Brand</span>
-      </a>
-    </div>
-
+    <!-- 4 Core Pillars Strip -->
     <div class="hero-highlights-strip">
       <div class="highlight-card">
         <small data-i18n="hl1_tag">PILLAR 01</small>
@@ -836,12 +1170,12 @@
       <div class="highlight-card">
         <small data-i18n="hl3_tag">PILLAR 03</small>
         <strong data-i18n="hl3_val">Heritage Packaging</strong>
-        <p data-i18n="hl3_desc">Royal maroon & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.</p>
+        <p data-i18n="hl3_desc">Royal emerald & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.</p>
       </div>
       <div class="highlight-card">
         <small data-i18n="hl4_tag">PILLAR 04</small>
-        <strong data-i18n="hl4_val">Cinematic Food Ads</strong>
-        <p data-i18n="hl4_desc">Transforming flat phone shots into sizzling Meta reels and midnight deal campaigns.</p>
+        <strong data-i18n="hl4_val">Billboard & Social Ads</strong>
+        <p data-i18n="hl4_desc">Highway outdoor presence and sizzling Meta feed reels that trigger instant cravings.</p>
       </div>
     </div>
   </div>
@@ -851,7 +1185,7 @@
 <section class="block" id="overview">
   <div class="wrap">
     <div class="section-head center">
-      <div class="eyebrow lime" data-i18n="over_eyebrow">01 / The Operational Reality</div>
+      <div class="eyebrow gold" data-i18n="over_eyebrow">01 / The Operational Reality</div>
       <h2 data-i18n="over_title">Why Traditional Desi Restaurants Lose 30%+ Potential Revenue</h2>
       <p data-i18n="over_desc">Traditional Pakistani restaurants face massive call volumes between 8 PM to 12 AM. Counter staff cannot attend every phone call, take notes manually, or update paper menus quickly.</p>
     </div>
@@ -877,25 +1211,127 @@
           <li data-i18n="comp_a2">Contactless QR Menu allows diners to scan at tables, browse dish photos, and order instantly.</li>
           <li data-i18n="comp_a3">Automated table reservation flow captures party size, preferred time, and confirms slots.</li>
           <li data-i18n="comp_a4">Organized customer database enables automated Friday deals & birthday discount broadcasts.</li>
-          <li data-i18n="comp_a5">Custom royal maroon & gold packaging creates unforgettable unboxing for takeaway food.</li>
+          <li data-i18n="comp_a5">Custom royal emerald & gold packaging creates unforgettable unboxing for takeaway food.</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Section 2: Interactive WhatsApp Simulator -->
-<section class="block" id="simulator" style="background:#0a120e">
+<!-- Section 2: Phase 1 Brand Identity & Design System -->
+<section class="block" id="branding" style="background:#09120e">
   <div class="wrap">
     <div class="section-head center">
-      <div class="eyebrow lime" data-i18n="sim_eyebrow">02 / Live Interactive Simulator</div>
+      <div class="eyebrow gold" data-i18n="brand_eyebrow">02 / Phase 1 Brand Identity Deliverables</div>
+      <h2 data-i18n="brand_title">Royal Heritage Brand Identity &amp; Visual Guidelines</h2>
+      <p data-i18n="brand_desc">Every visual element was engineered to balance Pakistani royal culinary heritage with contemporary restaurant hospitality, establishing an unmistakable presence across dine-in, takeaway, and digital channels.</p>
+    </div>
+
+    <!-- Master Brand Banner (Full Architectural Facade, Interior & Packaging Overview) -->
+    <div class="brand-master-banner" data-lightbox="images/dastarkhwan-identity-overview.webp" data-caption="Deliverable 01: Complete Brand Identity Overview — Architectural Signage Facade, Packaging, Stationery & Dining Room">
+      <img src="images/dastarkhwan-identity-overview.webp" alt="Dastarkhwan Complete Brand Identity Overview" loading="lazy"/>
+      <div class="brand-master-info">
+        <div class="brand-master-title">
+          <div class="eyebrow gold" data-i18n="bm_tag">FULL BRAND OVERVIEW BOARD</div>
+          <h3 data-i18n="bm_h">Dastarkhwan Master Brand Architecture</h3>
+          <p data-i18n="bm_p">Outdoor building facade, gold cloche architectural signage, dining room ambience, kraft packaging, and luxury stationery.</p>
+        </div>
+        <div class="zoom-hint" data-i18n="hint_zoom_full">🔍 Click to Enlarge Overview</div>
+      </div>
+    </div>
+
+    <!-- 3 Core Foundation Boards -->
+    <div class="brand-grid-3">
+      <!-- Board 1: Color System -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-colors.webp" data-caption="Deliverable 02: Official Brand Color System — Emerald Green #0B3D2E, Antique Gold #D4AF37, Warm Ivory #F8F6ED, Charcoal #1A1A1A">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 02</span>
+          <img src="images/dastarkhwan-colors.webp" alt="Dastarkhwan Brand Color System" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Full Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="b1_tag">PALETTE ARCHITECTURE</small>
+          <h3 data-i18n="b1_h">Royal Color Harmony</h3>
+          <p data-i18n="b1_desc">Engineered around royal Pakistani dining: deep emerald green representing heritage, antique gold for luxury, warm ivory for clarity, and charcoal for depth.</p>
+          <div class="brand-swatches">
+            <div class="swatch-chip"><span class="swatch-dot" style="background:#0B3D2E"></span>#0B3D2E</div>
+            <div class="swatch-chip"><span class="swatch-dot" style="background:#D4AF37"></span>#D4AF37</div>
+            <div class="swatch-chip"><span class="swatch-dot" style="background:#F8F6ED"></span>#F8F6ED</div>
+            <div class="swatch-chip"><span class="swatch-dot" style="background:#1A1A1A"></span>#1A1A1A</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board 2: Typography System -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-typography.webp" data-caption="Deliverable 02: Typography System & Hierarchy — Playfair Display & Montserrat, Leather Menu Mockup">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 02</span>
+          <img src="images/dastarkhwan-typography.webp" alt="Dastarkhwan Typography System" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Full Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="b2_tag">EDITORIAL HIERARCHY</small>
+          <h3 data-i18n="b2_h">Typography &amp; Menu Book</h3>
+          <p data-i18n="b2_desc">Editorial serif <strong>Playfair Display</strong> brings regal sophistication to logo marks and titles; geometric <strong>Montserrat</strong> ensures effortless legibility on digital screens and physical menus.</p>
+          <div class="brand-swatches">
+            <div class="swatch-chip">Playfair Display (Headings)</div>
+            <div class="swatch-chip">Montserrat (Body)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board 3: Brand Guidelines Manual -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-guidelines.webp" data-caption="Deliverable 03: Comprehensive Brand Guidelines Manual Board — 7 Sections with Logo Clear Space, Minimum Size & Usage Rules">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 03</span>
+          <img src="images/dastarkhwan-guidelines.webp" alt="Dastarkhwan Brand Guidelines Manual" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Full Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="b3_tag">STANDARDS &amp; MANUAL</small>
+          <h3 data-i18n="b3_h">Brand Guidelines Board</h3>
+          <p data-i18n="b3_desc">A strict 7-section identity manual covering primary &amp; secondary lockups, minimum clear space, digital color values, print CMYK specs, and logo misuse restrictions.</p>
+          <div class="brand-swatches">
+            <div class="swatch-chip">Clear Space Rules</div>
+            <div class="swatch-chip">Print CMYK / Pantone</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Board 4: Logo Architecture & Variations -->
+    <div class="brand-master-banner" style="margin-bottom:0" data-lightbox="images/dastarkhwan-logo-system.webp" data-caption="Deliverable 01: Logo Variations & Architecture — Primary Cloche Mark, Wordmark, Vertical Lockups, Signage & Napkin Rings">
+      <img src="images/dastarkhwan-logo-system.webp" alt="Dastarkhwan Logo Architecture and System" style="height:380px" loading="lazy"/>
+      <div class="brand-master-info">
+        <div class="brand-master-title">
+          <div class="eyebrow gold" data-i18n="b4_tag">DELIVERABLE 01 — LOGO SYSTEM</div>
+          <h3 data-i18n="b4_h">Logo Variations &amp; Physical Applications</h3>
+          <p data-i18n="b4_desc">Horizontal wordmark, vertical emblem, monochrome stamps, metal napkin rings, and architectural outdoor signage.</p>
+        </div>
+        <div class="zoom-hint" data-i18n="hint_zoom_full">🔍 Click to Enlarge Logo System</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Interactive WhatsApp Simulator -->
+<section class="block" id="simulator">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow gold" data-i18n="sim_eyebrow">03 / Live Interactive Simulator</div>
       <h2 data-i18n="sim_title">Test Dastarkhwan's WhatsApp Smart Assistant</h2>
       <p data-i18n="sim_desc">Tap the quick buttons below or type a message to see how the automated assistant takes orders, shares prices, and books tables in real time.</p>
     </div>
 
     <div class="simulator-wrap">
       <div class="sim-info">
-        <div class="eyebrow lime" data-i18n="sim_sub_eye">24/7 AI Receptionist</div>
+        <div class="eyebrow gold" data-i18n="sim_sub_eye">24/7 AI Receptionist</div>
         <h3 data-i18n="sim_h3">Never Miss a Late-Night Karahi Order Again.</h3>
         <p data-i18n="sim_p1">
           When customers message Dastarkhwan on WhatsApp, they don't wait on hold. The assistant instantly presents the menu, active deals, delivery areas, or books a family hall table.
@@ -930,7 +1366,7 @@
           <button type="button" class="sim-chip" data-prompt="Menu">📜 Dastarkhwan Menu</button>
           <button type="button" class="sim-chip" data-prompt="Special Deals">🔥 Family Deals</button>
           <button type="button" class="sim-chip" data-prompt="Table Booking">🪑 Table Booking</button>
-          <button type="button" class="sim-chip" data-prompt="Delivery Areas">🛵 Delivery & Timing</button>
+          <button type="button" class="sim-chip" data-prompt="Delivery Areas">🛵 Delivery &amp; Timing</button>
           <button type="button" class="sim-chip" data-prompt="Manager">👤 Talk to Manager</button>
         </div>
 
@@ -943,11 +1379,146 @@
   </div>
 </section>
 
-<!-- Section 3: Core Services Breakdown -->
-<section class="block" id="services">
+<!-- Section 4: Physical Touchpoints (Food Packaging & Stationery) -->
+<section class="block" id="packaging" style="background:#09120e">
   <div class="wrap">
     <div class="section-head center">
-      <div class="eyebrow lime" data-i18n="svc_eyebrow">03 / Complete Restaurant Suite</div>
+      <div class="eyebrow gold" data-i18n="pack_eyebrow">04 / Physical Touchpoints</div>
+      <h2 data-i18n="pack_title">Custom Food Packaging &amp; Corporate Stationery</h2>
+      <p data-i18n="pack_desc">Extending the royal dining experience from restaurant tables to home dining unboxing and executive corporate correspondence.</p>
+    </div>
+
+    <div class="brand-grid-3" style="grid-template-columns: 1fr 1fr; margin-bottom: 0;">
+      <!-- Deliverable 04: Food Packaging -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-packaging.webp" data-caption="Deliverable 04: Premium Food Packaging Suite — Leak-Proof Karahi/Handi Meal Boxes, Gold Foil Kraft Bags, Greaseproof Naan Wrappers & Sauce Containers">
+        <div class="brand-asset-media" style="height:320px">
+          <span class="brand-asset-tag">DELIVERABLE 04</span>
+          <img src="images/dastarkhwan-packaging.webp" alt="Dastarkhwan Food Packaging Suite" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Full Packaging Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="p1_tag">TAKEOUT &amp; DELIVERY UNBOXING</small>
+          <h3 data-i18n="p1_h">Thermal Takeaway Packaging Suite</h3>
+          <p data-i18n="p1_desc">Durable, thermal-retaining meal boxes tailored for Pakistani curries, Shinwari Karahi, and Dum Biryani. Foil-lined to stop grease leakage, paired with gold-embossed handled kraft bags and custom pattern Naan wraps.</p>
+          <ul class="compare-list" style="margin-top:auto">
+            <li data-i18n="p1_s1">Leak-proof foil-lined Handi &amp; Karahi boxes</li>
+            <li data-i18n="p1_s2">Gold embossed handles on durable kraft carry bags</li>
+            <li data-i18n="p1_s3">Custom pattern greaseproof Roghni Naan wrappers</li>
+            <li data-i18n="p1_s4">Branded sauce cups &amp; tamper-proof seal stickers</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Deliverable 06: Stationery -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-stationery.webp" data-caption="Deliverable 06: Luxury Corporate Stationery — Emerald Green & Antique Gold Foiled Business Cards, Letterhead, Envelopes & Luxury Pens">
+        <div class="brand-asset-media" style="height:320px">
+          <span class="brand-asset-tag">DELIVERABLE 06</span>
+          <img src="images/dastarkhwan-stationery.webp" alt="Dastarkhwan Corporate Stationery" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Full Stationery Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="p2_tag">EXECUTIVE IDENTITY</small>
+          <h3 data-i18n="p2_h">Corporate Stationery &amp; Business Cards</h3>
+          <p data-i18n="p2_desc">Premium emerald green stock with tactile metallic gold foil stamping. Includes executive business cards, official invoice letterhead, gift voucher envelopes, and executive dining leather notebooks.</p>
+          <ul class="compare-list" style="margin-top:auto">
+            <li data-i18n="p2_s1">Double-thick emerald cardstock with gold edge-gilding</li>
+            <li data-i18n="p2_s2">Official letterhead for catering contracts &amp; supplier POs</li>
+            <li data-i18n="p2_s3">Branded invoice folders &amp; corporate gift envelopes</li>
+            <li data-i18n="p2_s4">Staff uniform name badges &amp; leather reservation books</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Multi-Channel Marketing (Social Media & Billboards) -->
+<section class="block" id="advertising">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow gold" data-i18n="ad_eyebrow">05 / Multi-Channel Advertising</div>
+      <h2 data-i18n="ad_title">Viral Social Media Presence &amp; Highway Billboards</h2>
+      <p data-i18n="ad_desc">Positioning Dastarkhwan as the premier dining destination through high-impact outdoor media, sizzling Meta ads, and cohesive social feeds.</p>
+    </div>
+
+    <!-- 4-Card Marketing Grid -->
+    <div class="brand-grid-4">
+      <!-- Deliverable 09: Social Presence -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-social-presence.webp" data-caption="Deliverable 09: Social Media & Digital Presence — Instagram Grid, Stories, Smartphone Website Mockup & #DastarkhwanMoments">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 09</span>
+          <img src="images/dastarkhwan-social-presence.webp" alt="Dastarkhwan Social Media Presence" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Social Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="ad1_tag">DIGITAL ECOSYSTEM</small>
+          <h3 data-i18n="ad1_h">Social Media Presence</h3>
+          <p data-i18n="ad1_desc">Curated Instagram grid aesthetic, food story templates, mobile ordering interface concept, and customer engagement hashtag <code>#DastarkhwanMoments</code>.</p>
+        </div>
+      </div>
+
+      <!-- Deliverable 09: Digital Campaign Kit & 20% OFF Banners -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-social-branding.webp" data-caption="Deliverable 09: Digital & Social Media Branding — 20% OFF Promo Banners, Story Layouts, Stickers & GIFs">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 09</span>
+          <img src="images/dastarkhwan-social-branding.webp" alt="Dastarkhwan Digital & Social Media Branding Kit" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Branding Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="ad4_tag">CAMPAIGN KIT &amp; STORIES</small>
+          <h3 data-i18n="ad4_h">Digital Promo Kit &amp; Banners</h3>
+          <p data-i18n="ad4_desc">High-converting 20% OFF digital promo banners, engaging Instagram story templates, interactive stickers, animated GIFs, and seasonal feast launch creatives.</p>
+        </div>
+      </div>
+
+      <!-- Social Campaigns & Deals -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-social-campaigns.webp" data-caption="Deliverable 09/10: Social Media Deals & Promotions — Weekend Specials, Mojito Refreshers, Dine. Enjoy. Repeat.">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">CAMPAIGN ADS</span>
+          <img src="images/dastarkhwan-social-campaigns.webp" alt="Dastarkhwan Social Media Deals" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Ad Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="ad2_tag">META ADS &amp; DEALS</small>
+          <h3 data-i18n="ad2_h">Weekend Feasts &amp; Specials</h3>
+          <p data-i18n="ad2_desc">High-contrast promotional banners designed for Meta 4:5 vertical feeds, highlighting refreshing mojitos, weekend platters, and midnight Karahi cravings.</p>
+        </div>
+      </div>
+
+      <!-- Deliverable 10: Outdoor Billboards -->
+      <div class="brand-asset-card" data-lightbox="images/dastarkhwan-advertising.webp" data-caption="Deliverable 10: Marketing & Advertising — Highway Billboard 'Experience True Hospitality', Roll-up Banners, Drive-thru Board, Newspaper Ads & Merchandise">
+        <div class="brand-asset-media">
+          <span class="brand-asset-tag">DELIVERABLE 10</span>
+          <img src="images/dastarkhwan-advertising.webp" alt="Dastarkhwan Marketing and Outdoor Advertising" loading="lazy"/>
+          <div class="brand-asset-hover-zoom">
+            <span data-i18n="hint_view">🔍 View Billboard Board</span>
+          </div>
+        </div>
+        <div class="brand-asset-content">
+          <small data-i18n="ad3_tag">OUTDOOR &amp; MASS MEDIA</small>
+          <h3 data-i18n="ad3_h">Highway Billboard &amp; Print</h3>
+          <p data-i18n="ad3_desc">Massive highway billboard campaign (<em>"Experience True Hospitality"</em>), roll-up event stands, restaurant drive-thru boards, newspaper feature ads, and branded caps &amp; mugs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Core Services Deep Dive -->
+<section class="block" id="services" style="background:#09120e">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow gold" data-i18n="svc_eyebrow">06 / Complete Restaurant Suite</div>
       <h2 data-i18n="svc_title">The 5 Core Services We Provide to Dastarkhwan</h2>
       <p data-i18n="svc_desc">Every component is custom-configured, tested in high-volume environments, and handed over turnkey with team training.</p>
     </div>
@@ -984,35 +1555,35 @@
       <div class="service-box">
         <div>
           <span class="service-num">03 / BRANDING</span>
-          <h3 data-i18n="s3_title">Heritage Packaging & Visual Identity</h3>
-          <p data-i18n="s3_desc">Royal maroon, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.</p>
+          <h3 data-i18n="s3_title">Heritage Packaging &amp; Visual Identity</h3>
+          <p data-i18n="s3_desc">Royal emerald green, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.</p>
         </div>
         <div class="service-deliverables-pill">
-          <span>Logo Refinement</span>
+          <span>Logo System</span>
           <span>Takeaway Boxes</span>
-          <span>Bags & Wraps</span>
-          <span>Staff Aprons</span>
+          <span>Bags &amp; Wraps</span>
+          <span>Staff Uniforms</span>
         </div>
       </div>
 
       <div class="service-box">
         <div>
           <span class="service-num">04 / MARKETING</span>
-          <h3 data-i18n="s4_title">Cinematic Food Campaigns & Ads</h3>
+          <h3 data-i18n="s4_title">Cinematic Food Campaigns &amp; Ads</h3>
           <p data-i18n="s4_desc">Transforming flat smartphone photos into sizzling, mouth-watering Meta feed posters and video reels designed to trigger instant cravings.</p>
         </div>
         <div class="service-deliverables-pill">
           <span>Instagram Reels</span>
           <span>Meta Ad Creatives</span>
-          <span>Midnight Deals</span>
-          <span>Local Area Targeting</span>
+          <span>Highway Billboard</span>
+          <span>Local Geo-Targeting</span>
         </div>
       </div>
 
       <div class="service-box">
         <div>
           <span class="service-num">05 / RETENTION</span>
-          <h3 data-i18n="s5_title">Customer Database & Loyalty CRM</h3>
+          <h3 data-i18n="s5_title">Customer Database &amp; Loyalty CRM</h3>
           <p data-i18n="s5_desc">Captures diner contact numbers systematically. Automatically broadcasts Friday dinner specials and requests 5-star Google reviews after visits.</p>
         </div>
         <div class="service-deliverables-pill">
@@ -1023,7 +1594,7 @@
         </div>
       </div>
 
-      <div class="service-box" style="background:linear-gradient(135deg, #18251e, #111a15);border-color:rgba(200,255,57,0.3)">
+      <div class="service-box" style="background:linear-gradient(135deg, #102a1e, #0c1c14);border-color:var(--gold)">
         <div>
           <span class="service-num">06 / TURNKEY</span>
           <h3 data-i18n="s6_title">Ready to Transform Your Restaurant?</h3>
@@ -1039,93 +1610,11 @@
   </div>
 </section>
 
-<!-- Section 4: Visual Packaging & QR Menu Showcase -->
-<section class="block" id="branding">
-  <div class="wrap">
-    <div class="section-head center">
-      <div class="eyebrow lime" data-i18n="vis_eyebrow">04 / Visual Execution</div>
-      <h2 data-i18n="vis_title">Packaging & Digital Menu Design Concepts</h2>
-      <p data-i18n="vis_desc">Dastarkhwan's culinary heritage presented with contemporary, upscale packaging and frictionless digital ordering.</p>
-    </div>
-
-    <div class="showcase-grid-2">
-      <div class="showcase-card">
-        <div class="showcase-media">
-          <img src="images/zaiqa.webp" alt="Dastarkhwan Heritage Packaging Board" loading="lazy"/>
-        </div>
-        <div class="showcase-content">
-          <small data-i18n="vis1_tag">BRANDING DELIVERABLES</small>
-          <h3 data-i18n="vis1_h">Royal Heritage Takeaway Packaging</h3>
-          <p data-i18n="vis1_desc">Durable, thermal-retaining takeaway boxes designed specifically for authentic Pakistani Karahi, Handi gravies, and fragrant Biryani without oil leakage.</p>
-          <ul class="showcase-specs">
-            <li data-i18n="vis1_s1">Leak-proof foil-lined Handi & Karahi boxes</li>
-            <li data-i18n="vis1_s2">Embossed gold foil handles on kraft bags</li>
-            <li data-i18n="vis1_s3">Greaseproof Roghni Naan & Roti envelopes</li>
-            <li data-i18n="vis1_s4">Staff uniform aprons with embroidered motif</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="showcase-card">
-        <div class="showcase-media">
-          <img src="images/qr_menu.webp" alt="Dastarkhwan QR Digital Menu Demo" loading="lazy"/>
-        </div>
-        <div class="showcase-content">
-          <small data-i18n="vis2_tag">DIGITAL TOUCHPOINT</small>
-          <h3 data-i18n="vis2_h">Contactless Mobile QR Menu Experience</h3>
-          <p data-i18n="vis2_desc">Diners scan the table QR stand with their smartphone to view categorized items, high-res photos, spice-level indicators, and single-tap WhatsApp checkout.</p>
-          <ul class="showcase-specs">
-            <li data-i18n="vis2_s1">Loads instantly in mobile browser (0 app install required)</li>
-            <li data-i18n="vis2_s2">Real-time dish availability & price management</li>
-            <li data-i18n="vis2_s3">Bilingual Urdu & English item descriptions</li>
-            <li data-i18n="vis2_s4">Direct send to counter kitchen screen via WhatsApp</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section 5: Food Campaign Creative Direction -->
-<section class="block" id="campaigns">
-  <div class="wrap">
-    <div class="section-head center">
-      <div class="eyebrow lime" data-i18n="camp_eyebrow">05 / Advertising Direction</div>
-      <h2 data-i18n="camp_title">High-Converting Meta Ads & Social Posters</h2>
-      <p data-i18n="camp_desc">We turn everyday cooking photos into mouth-watering, revenue-driving campaigns that trigger immediate dinner and weekend orders.</p>
-    </div>
-
-    <div class="showcase-grid-2">
-      <div class="showcase-card">
-        <div class="showcase-media">
-          <img src="images/burger_deal.webp" alt="Dastarkhwan Promotional Campaign Creative" loading="lazy"/>
-        </div>
-        <div class="showcase-content">
-          <small data-i18n="camp1_tag">CAMPAIGN POSTER</small>
-          <h3 data-i18n="camp1_h">Midnight Dawat & Family Combo Creatives</h3>
-          <p data-i18n="camp1_desc">High-contrast, studio-lit creative layouts optimized for Instagram and Facebook 4:5 feed viewports with prominent WhatsApp ordering buttons.</p>
-        </div>
-      </div>
-
-      <div class="showcase-card">
-        <div class="showcase-media">
-          <img src="images/burger-yard.webp" alt="Dastarkhwan Social Media Showcase" loading="lazy"/>
-        </div>
-        <div class="showcase-content">
-          <small data-i18n="camp2_tag">SOCIAL ECOSYSTEM</small>
-          <h3 data-i18n="camp2_h">Cohesive Social Media Identity</h3>
-          <p data-i18n="camp2_desc">A consistent visual presence across Instagram, TikTok, and Facebook featuring authentic Pakistani hospitality, food reviews, and chef reels.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Section 6: Consultation CTA -->
+<!-- Section 7: Consultation CTA -->
 <section class="block" style="border-bottom:none">
   <div class="wrap">
     <div class="cta-banner-wrap">
-      <div class="eyebrow lime" data-i18n="cta_banner_eye" style="margin-bottom:12px">Turnkey Restaurant Launch</div>
+      <div class="eyebrow gold" data-i18n="cta_banner_eye" style="margin-bottom:12px">Turnkey Restaurant Launch</div>
       <h2 data-i18n="cta_banner_h2">Want Matrix Studio to Upgrade Your Restaurant?</h2>
       <p data-i18n="cta_banner_p">
         Whether you operate a traditional Karahi restaurant, a modern burger joint, a café, or a family dining lounge — we can build your complete digital presence, WhatsApp bot, and branding suite in 7–10 days.
@@ -1151,10 +1640,22 @@
       <p style="margin-top:4px">Karachi, Sindh, Pakistan · Serving F&amp;B Brands Nationwide</p>
     </div>
     <div>
-      <a href="/" style="color:var(--lime);font-weight:700">matrix-studio.com ↗</a>
+      <a href="/" style="color:var(--gold);font-weight:700">matrix-studio.com ↗</a>
     </div>
   </div>
 </footer>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Image Zoom Preview">
+  <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close Lightbox">✕</button>
+  <div class="lightbox-content-box">
+    <img src="" alt="" class="lightbox-img" id="lightboxImg"/>
+    <div class="lightbox-caption">
+      <strong id="lightboxCaption"></strong>
+      <span data-i18n="lightbox_hint">ESC or tap outside to close</span>
+    </div>
+  </div>
+</div>
 
 <!-- Floating WhatsApp Quick Button -->
 <a class="float-wa" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20Dastarkhwan%20demo%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
@@ -1168,18 +1669,26 @@
     en: {
       nav_home: "Main Website",
       nav_overview: "Executive Overview",
+      nav_branding: "Phase 1 Branding",
       nav_bot: "WhatsApp Bot Demo",
+      nav_packaging: "Packaging & Stationery",
+      nav_advertising: "Social & Billboards",
       nav_services: "Core Services",
-      nav_branding: "Branding & Packaging",
-      badge_top: "RESTAURANT SHOWCASE",
+      badge_top: "RESTAURANT DEMO",
       btn_discuss_top: "Discuss Restaurant ↗",
-      hero_client: "DASTARKHWAN RESTAURANT",
-      hero_type: "TURNKEY DIGITAL TRANSFORMATION DEMO",
+      hero_client: "🍲 DASTARKHWAN RESTAURANT",
+      hero_type: "PHASE 1 BRAND & DIGITAL DEMO",
       hero_h1_main: "Dastarkhwan Restaurant",
-      hero_h1_accent: "End-to-End Digital Transformation",
-      hero_sub: "A complete demonstration of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — with 24/7 automated WhatsApp ordering, digital QR table menus, royal heritage packaging, and mouth-watering social ad campaigns.",
-      hero_cta_sim: "Test WhatsApp Bot Simulation ↓",
-      hero_cta_wa: "Get This Setup For Your Food Brand",
+      hero_h1_accent: "Full-Stack Digital Transformation",
+      hero_tagline: "\"GOOD FOOD. GREAT MOMENTS.\"",
+      hero_sub: "A turnkey showcase of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — combining royal heritage visual identity (emerald green & antique gold), 24/7 automated WhatsApp ordering, digital QR menus, custom takeaway packaging, and high-converting billboard & social media campaigns.",
+      hero_cta_assets: "Explore Phase 1 Brand Assets ↓",
+      hero_cta_sim: "Test Live WhatsApp Bot ↓",
+      hero_card_badge: "PHASE 1 HERO ASSET",
+      hero_card_title: "Metallic Gold Cloche Dome Logo Mark",
+      hint_zoom: "🔍 Tap to Zoom",
+      hint_zoom_full: "🔍 Click to Enlarge Overview",
+      hint_view: "🔍 View Full Board",
       hl1_tag: "PILLAR 01",
       hl1_val: "24/7 WhatsApp AI Bot",
       hl1_desc: "Zero missed orders during peak dinner rush with automated order taking and reservations.",
@@ -1188,10 +1697,10 @@
       hl2_desc: "Instant digital menu browsing at tables with photo cards and zero printing costs.",
       hl3_tag: "PILLAR 03",
       hl3_val: "Heritage Packaging",
-      hl3_desc: "Royal maroon & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.",
+      hl3_desc: "Royal emerald & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.",
       hl4_tag: "PILLAR 04",
-      hl4_val: "Cinematic Food Ads",
-      hl4_desc: "Transforming flat phone shots into sizzling Meta reels and midnight deal campaigns.",
+      hl4_val: "Billboard & Social Ads",
+      hl4_desc: "Highway outdoor presence and sizzling Meta feed reels that trigger instant cravings.",
       over_eyebrow: "01 / The Operational Reality",
       over_title: "Why Traditional Desi Restaurants Lose 30%+ Potential Revenue",
       over_desc: "Traditional Pakistani restaurants face massive call volumes between 8 PM to 12 AM. Counter staff cannot attend every phone call, take notes manually, or update paper menus quickly.",
@@ -1208,8 +1717,26 @@
       comp_a2: "Contactless QR Menu allows diners to scan at tables, browse dish photos, and order instantly.",
       comp_a3: "Automated table reservation flow captures party size, preferred time, and confirms slots.",
       comp_a4: "Organized customer database enables automated Friday deals & birthday discount broadcasts.",
-      comp_a5: "Custom royal maroon & gold packaging creates unforgettable unboxing for takeaway food.",
-      sim_eyebrow: "02 / Live Interactive Simulator",
+      comp_a5: "Custom royal emerald & gold packaging creates unforgettable unboxing for takeaway food.",
+      brand_eyebrow: "02 / Phase 1 Brand Identity Deliverables",
+      brand_title: "Royal Heritage Brand Identity & Visual Guidelines",
+      brand_desc: "Every visual element was engineered to balance Pakistani royal culinary heritage with contemporary restaurant hospitality, establishing an unmistakable presence across dine-in, takeaway, and digital channels.",
+      bm_tag: "FULL BRAND OVERVIEW BOARD",
+      bm_h: "Dastarkhwan Master Brand Architecture",
+      bm_p: "Outdoor building facade, gold cloche architectural signage, dining room ambience, kraft packaging, and luxury stationery.",
+      b1_tag: "PALETTE ARCHITECTURE",
+      b1_h: "Royal Color Harmony",
+      b1_desc: "Engineered around royal Pakistani dining: deep emerald green representing heritage, antique gold for luxury, warm ivory for clarity, and charcoal for depth.",
+      b2_tag: "EDITORIAL HIERARCHY",
+      b2_h: "Typography & Menu Book",
+      b2_desc: "Editorial serif Playfair Display brings regal sophistication to logo marks and titles; geometric Montserrat ensures effortless legibility on digital screens and physical menus.",
+      b3_tag: "STANDARDS & MANUAL",
+      b3_h: "Brand Guidelines Board",
+      b3_desc: "A strict 7-section identity manual covering primary & secondary lockups, minimum clear space, digital color values, print CMYK specs, and logo misuse restrictions.",
+      b4_tag: "DELIVERABLE 01 — LOGO SYSTEM",
+      b4_h: "Logo Variations & Physical Applications",
+      b4_desc: "Horizontal wordmark, vertical emblem, monochrome stamps, metal napkin rings, and architectural outdoor signage.",
+      sim_eyebrow: "03 / Live Interactive Simulator",
       sim_title: "Test Dastarkhwan's WhatsApp Smart Assistant",
       sim_desc: "Tap the quick buttons below or type a message to see how the automated assistant takes orders, shares prices, and books tables in real time.",
       sim_sub_eye: "24/7 AI Receptionist",
@@ -1220,7 +1747,39 @@
       sim_online: "● Online · Matrix AI Automated",
       sim_reset: "Restart Demo",
       sim_send: "Send",
-      svc_eyebrow: "03 / Complete Restaurant Suite",
+      pack_eyebrow: "04 / Physical Touchpoints",
+      pack_title: "Custom Food Packaging & Corporate Stationery",
+      pack_desc: "Extending the royal dining experience from restaurant tables to home dining unboxing and executive corporate correspondence.",
+      p1_tag: "TAKEOUT & DELIVERY UNBOXING",
+      p1_h: "Thermal Takeaway Packaging Suite",
+      p1_desc: "Durable, thermal-retaining meal boxes tailored for Pakistani curries, Shinwari Karahi, and Dum Biryani. Foil-lined to stop grease leakage, paired with gold-embossed handled kraft bags and custom pattern Naan wraps.",
+      p1_s1: "Leak-proof foil-lined Handi & Karahi boxes",
+      p1_s2: "Gold embossed handles on durable kraft carry bags",
+      p1_s3: "Custom pattern greaseproof Roghni Naan wrappers",
+      p1_s4: "Branded sauce cups & tamper-proof seal stickers",
+      p2_tag: "EXECUTIVE IDENTITY",
+      p2_h: "Corporate Stationery & Business Cards",
+      p2_desc: "Premium emerald green stock with tactile metallic gold foil stamping. Includes executive business cards, official invoice letterhead, gift voucher envelopes, and executive dining leather notebooks.",
+      p2_s1: "Double-thick emerald cardstock with gold edge-gilding",
+      p2_s2: "Official letterhead for catering contracts & supplier POs",
+      p2_s3: "Branded invoice folders & corporate gift envelopes",
+      p2_s4: "Staff uniform name badges & leather reservation books",
+      ad_eyebrow: "05 / Multi-Channel Advertising",
+      ad_title: "Viral Social Media Presence & Highway Billboards",
+      ad_desc: "Positioning Dastarkhwan as the premier dining destination through high-impact outdoor media, sizzling Meta ads, and cohesive social feeds.",
+      ad1_tag: "DIGITAL ECOSYSTEM",
+      ad1_h: "Social Media Presence",
+      ad1_desc: "Curated Instagram grid aesthetic, food story templates, mobile ordering interface concept, and customer engagement hashtag #DastarkhwanMoments.",
+      ad4_tag: "CAMPAIGN KIT & STORIES",
+      ad4_h: "Digital Promo Kit & Banners",
+      ad4_desc: "High-converting 20% OFF digital promo banners, engaging Instagram story templates, interactive stickers, animated GIFs, and seasonal feast launch creatives.",
+      ad2_tag: "META ADS & DEALS",
+      ad2_h: "Weekend Feasts & Specials",
+      ad2_desc: "High-contrast promotional banners designed for Meta 4:5 vertical feeds, highlighting refreshing mojitos, weekend platters, and midnight Karahi cravings.",
+      ad3_tag: "OUTDOOR & MASS MEDIA",
+      ad3_h: "Highway Billboard & Print",
+      ad3_desc: "Massive highway billboard campaign (\"Experience True Hospitality\"), roll-up event stands, restaurant drive-thru boards, newspaper feature ads, and branded caps & mugs.",
+      svc_eyebrow: "06 / Complete Restaurant Suite",
       svc_title: "The 5 Core Services We Provide to Dastarkhwan",
       svc_desc: "Every component is custom-configured, tested in high-volume environments, and handed over turnkey with team training.",
       s1_title: "24/7 WhatsApp AI Receptionist",
@@ -1228,7 +1787,7 @@
       s2_title: "Digital QR Code Table Menu",
       s2_desc: "Laminated QR stands placed on every table. Diners scan with phone camera to see vivid dish photos, prices, and chef specials with 0 delay.",
       s3_title: "Heritage Packaging & Visual Identity",
-      s3_desc: "Royal maroon, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.",
+      s3_desc: "Royal emerald green, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.",
       s4_title: "Cinematic Food Campaigns & Ads",
       s4_desc: "Transforming flat smartphone photos into sizzling, mouth-watering Meta feed posters and video reels designed to trigger instant cravings.",
       s5_title: "Customer Database & Loyalty CRM",
@@ -1236,53 +1795,36 @@
       s6_title: "Ready to Transform Your Restaurant?",
       s6_desc: "We deliver the complete system within 7–10 days. No complicated technical setup required from your restaurant staff.",
       s6_btn: "Discuss Custom Pricing ↗",
-      vis_eyebrow: "04 / Visual Execution",
-      vis_title: "Packaging & Digital Menu Design Concepts",
-      vis_desc: "Dastarkhwan's culinary heritage presented with contemporary, upscale packaging and frictionless digital ordering.",
-      vis1_tag: "BRANDING DELIVERABLES",
-      vis1_h: "Royal Heritage Takeaway Packaging",
-      vis1_desc: "Durable, thermal-retaining takeaway boxes designed specifically for authentic Pakistani Karahi, Handi gravies, and fragrant Biryani without oil leakage.",
-      vis1_s1: "Leak-proof foil-lined Handi & Karahi boxes",
-      vis1_s2: "Embossed gold foil handles on kraft bags",
-      vis1_s3: "Greaseproof Roghni Naan & Roti envelopes",
-      vis1_s4: "Staff uniform aprons with embroidered motif",
-      vis2_tag: "DIGITAL TOUCHPOINT",
-      vis2_h: "Contactless Mobile QR Menu Experience",
-      vis2_desc: "Diners scan the table QR stand with their smartphone to view categorized items, high-res photos, spice-level indicators, and single-tap WhatsApp checkout.",
-      vis2_s1: "Loads instantly in mobile browser (0 app install required)",
-      vis2_s2: "Real-time dish availability & price management",
-      vis2_s3: "Bilingual Urdu & English item descriptions",
-      vis2_s4: "Direct send to counter kitchen screen via WhatsApp",
-      camp_eyebrow: "05 / Advertising Direction",
-      camp_title: "High-Converting Meta Ads & Social Posters",
-      camp_desc: "We turn everyday cooking photos into mouth-watering, revenue-driving campaigns that trigger immediate dinner and weekend orders.",
-      camp1_tag: "CAMPAIGN POSTER",
-      camp1_h: "Midnight Dawat & Family Combo Creatives",
-      camp1_desc: "High-contrast, studio-lit creative layouts optimized for Instagram and Facebook 4:5 feed viewports with prominent WhatsApp ordering buttons.",
-      camp2_tag: "SOCIAL ECOSYSTEM",
-      camp2_h: "Cohesive Social Media Identity",
-      camp2_desc: "A consistent visual presence across Instagram, TikTok, and Facebook featuring authentic Pakistani hospitality, food reviews, and chef reels.",
       cta_banner_eye: "Turnkey Restaurant Launch",
       cta_banner_h2: "Want Matrix Studio to Upgrade Your Restaurant?",
       cta_banner_p: "Whether you operate a traditional Karahi restaurant, a modern burger joint, a café, or a family dining lounge — we can build your complete digital presence, WhatsApp bot, and branding suite in 7–10 days.",
       cta_banner_btn: "Schedule Restaurant Consultation via WhatsApp",
-      cta_banner_home: "← Back to Matrix Studio Home"
+      cta_banner_home: "← Back to Matrix Studio Home",
+      lightbox_hint: "ESC or tap outside to close"
     },
     ur: {
       nav_home: "Main Website",
       nav_overview: "Mukammal Jaiza",
+      nav_branding: "Phase 1 Branding",
       nav_bot: "WhatsApp Bot Demo",
+      nav_packaging: "Packaging Aur Stationery",
+      nav_advertising: "Social Aur Billboards",
       nav_services: "Khaas Khidmaat",
-      nav_branding: "Branding Aur Packaging",
-      badge_top: "RESTAURANT SHOWCASE",
+      badge_top: "RESTAURANT DEMO",
       btn_discuss_top: "Restaurant Par Baat Karein ↗",
-      hero_client: "DASTARKHWAN RESTAURANT",
-      hero_type: "COMPLETE DIGITAL TRANSFORMATION DEMO",
+      hero_client: "🍲 DASTARKHWAN RESTAURANT",
+      hero_type: "PHASE 1 BRAND AUR DIGITAL DEMO",
       hero_h1_main: "Dastarkhwan Restaurant",
       hero_h1_accent: "Mukammal Digital Transformation",
-      hero_sub: "Ek live demonstration ke Matrix Studio kis tarah Pakistan ke traditional Karahi aur Desi restaurants ko high-revenue digital business mein badalta hai — 24/7 automated WhatsApp orders, digital QR menus, shaandar packaging aur viral food ad campaigns ke zariye.",
+      hero_tagline: "\"GOOD FOOD. GREAT MOMENTS.\"",
+      hero_sub: "Ek live demonstration ke Matrix Studio kis tarah Pakistan ke traditional Karahi aur Desi restaurants ko high-revenue digital business mein badalta hai — royal emerald green aur antique gold visual identity, 24/7 automated WhatsApp orders, digital QR menus, shaandar packaging aur viral highway billboard & social ad campaigns ke zariye.",
+      hero_cta_assets: "Phase 1 Brand Assets Dekhein ↓",
       hero_cta_sim: "WhatsApp Bot Demo Check Karein ↓",
-      hero_cta_wa: "Apne Restaurant Ke Liye Ye System Lagwayein",
+      hero_card_badge: "PHASE 1 HERO ASSET",
+      hero_card_title: "Metallic Gold Cloche Dome Logo Mark",
+      hint_zoom: "🔍 Tap Karke Zoom Karein",
+      hint_zoom_full: "🔍 Bada Karke Dekhein",
+      hint_view: "🔍 Poora Board Dekhein",
       hl1_tag: "PILLAR 01",
       hl1_val: "24/7 WhatsApp AI Bot",
       hl1_desc: "Peak dinner time par koi call miss nahi hoti. Bot orders aur bookings khud manage karta hai.",
@@ -1291,10 +1833,10 @@
       hl2_desc: "Tables par mobile scan se foran tasweeron wala menu open hota hai, printing kharche khatam.",
       hl3_tag: "PILLAR 03",
       hl3_val: "Heritage Packaging",
-      hl3_desc: "Royal maroon aur gold takeaway boxes, kraft bags aur staff aprons.",
+      hl3_desc: "Royal emerald green aur gold takeaway boxes, kraft bags aur staff aprons.",
       hl4_tag: "PILLAR 04",
-      hl4_val: "Cinematic Food Ads",
-      hl4_desc: "Aam phone photo ko dhuan-dhaar karahi ads aur video reels mein badalna.",
+      hl4_val: "Billboard Aur Social Ads",
+      hl4_desc: "Highway par zabardast billboards aur sizzling food reels jo foran bhook bharka dein.",
       over_eyebrow: "01 / Asal Masla",
       over_title: "Desi Restaurants Har Mahine 30%+ Sale Kyun Kho Dete Hain?",
       over_desc: "Raat 8 baje se 12 baje ke darmiyan be-panah phone calls aati hain. Counter staff har call attend nahi kar pata aur ghalat orders likhe jaate hain.",
@@ -1311,8 +1853,26 @@
       comp_a2: "Tables par QR scan karte hi customer apni marzi se khane ki tasweerein dekh kar order karta hai.",
       comp_a3: "Family table booking ka automated flow jo timing aur logon ki tadad note karke confirm karta hai.",
       comp_a4: "Customer database tayar hota hai jis se Juma ke deals aur discounts auto-broadcast hote hain.",
-      comp_a5: "Royal maroon aur gold packaging khana garam rakhti hai aur dawat ka asar deti hai.",
-      sim_eyebrow: "02 / Live Interactive Simulator",
+      comp_a5: "Royal emerald green aur gold packaging khana garam rakhti hai aur dawat ka asar deti hai.",
+      brand_eyebrow: "02 / Phase 1 Brand Identity Deliverables",
+      brand_title: "Royal Heritage Brand Identity Aur Guidelines",
+      brand_desc: "Har visual element ko Pakistan ki shaandar shahi dawat aur modern hospitality ke hisab se design kiya gaya hai, taake dine-in, takeaway aur digital par aik munfarid pehchan banay.",
+      bm_tag: "FULL BRAND OVERVIEW BOARD",
+      bm_h: "Dastarkhwan Master Brand Architecture",
+      bm_p: "Outdoor building facade, gold cloche signage, dining hall mahol, kraft packaging aur luxury stationery.",
+      b1_tag: "PALETTE ARCHITECTURE",
+      b1_h: "Royal Color Harmony",
+      b1_desc: "Pakistan ke shahi khanon ke hisab se tayar kardah: gehra Emerald Green (virasat), Antique Gold (shahi dawat), Warm Ivory (saaf rang) aur Charcoal (wazan).",
+      b2_tag: "EDITORIAL HIERARCHY",
+      b2_h: "Typography Aur Menu Book",
+      b2_desc: "Playfair Display logo aur headings ko royal look deta hai; Montserrat mobile screens aur physical menus par aasan parhai yaqeeni banata hai.",
+      b3_tag: "STANDARDS AUR MANUAL",
+      b3_h: "Brand Guidelines Board",
+      b3_desc: "7 hisson par mushtamil mukammal identity manual jis mein clear space, digital RGB/HEX aur print CMYK/Pantone ke qawaneen hain.",
+      b4_tag: "DELIVERABLE 01 — LOGO SYSTEM",
+      b4_h: "Logo Variations Aur Applications",
+      b4_desc: "Horizontal wordmark, vertical emblem, monochrome stamps, napkin rings aur outdoor architectural board.",
+      sim_eyebrow: "03 / Live Interactive Simulator",
       sim_title: "Dastarkhwan Ka Smart WhatsApp Assistant Test Karein",
       sim_desc: "Neeche diye gaye buttons par tap karein ya khud message likhein aur live dekhein ke automated bot orders aur table reservations kaise leta hai.",
       sim_sub_eye: "24/7 AI Receptionist",
@@ -1323,7 +1883,39 @@
       sim_online: "● Online · Matrix AI Automated",
       sim_reset: "Restart Demo",
       sim_send: "Bhejein",
-      svc_eyebrow: "03 / Mukammal Suite",
+      pack_eyebrow: "04 / Physical Touchpoints",
+      pack_title: "Custom Food Packaging Aur Corporate Stationery",
+      pack_desc: "Restaurant table ki shahi dawat ko ghar ke unboxing aur executive official correspondence tak le jana.",
+      p1_tag: "TAKEOUT AUR DELIVERY UNBOXING",
+      p1_h: "Thermal Takeaway Packaging Suite",
+      p1_desc: "Shinwari Karahi, White Handi aur Dum Biryani ke liye leak-proof foil-lined boxes jo tail bahar aane se rokte hain aur khana garam rakhte hain.",
+      p1_s1: "Foil-lined leak-proof Karahi aur Handi boxes",
+      p1_s2: "Gold embossed handles wale mazboot kraft carry bags",
+      p1_s3: "Roghni Naan aur Roti ke liye greaseproof custom wrappers",
+      p1_s4: "Branded sauce cups aur tamper-proof seal stickers",
+      p2_tag: "EXECUTIVE IDENTITY",
+      p2_h: "Corporate Stationery Aur Business Cards",
+      p2_desc: "Emerald green card par gold foil stamping ke sath banaye gaye visiting cards, invoice letterheads aur booking folders.",
+      p2_s1: "Gold foil edge wale motay emerald visiting cards",
+      p2_s2: "Catering contracts aur suppliers ke liye official letterhead",
+      p2_s3: "Branded invoice lifafay aur dining gift vouchers",
+      p2_s4: "Staff ke liye embroidered badges aur leather notebooks",
+      ad_eyebrow: "05 / Multi-Channel Advertising",
+      ad_title: "Viral Social Media Aur Highway Billboards",
+      ad_desc: "Dastarkhwan ko shehar ka sab se maqbool dining spot banana high-impact billboards aur video ads ke zariye.",
+      ad1_tag: "DIGITAL ECOSYSTEM",
+      ad1_h: "Social Media Presence",
+      ad1_desc: "Instagram feed curation, food story templates, mobile ordering interface concept aur brand hashtag #DastarkhwanMoments.",
+      ad4_tag: "CAMPAIGN KIT AUR STORIES",
+      ad4_h: "Digital Promo Kit Aur Banners",
+      ad4_desc: "20% OFF digital promo banners, engaging Instagram story templates, animated stickers, GIFs aur seasonal launch graphics.",
+      ad2_tag: "META ADS AUR DEALS",
+      ad2_h: "Weekend Feasts Aur Specials",
+      ad2_desc: "Instagram aur Facebook feed ke mutabiq 4:5 ads jo mojitos, dawat platters aur midnight orders generate karte hain.",
+      ad3_tag: "OUTDOOR AUR MASS MEDIA",
+      ad3_h: "Highway Billboard Aur Print",
+      ad3_desc: "Highway par massive billboard ('Experience True Hospitality'), roll-up stands, drive-thru menu boards aur newspaper feature ads.",
+      svc_eyebrow: "06 / Mukammal Suite",
       svc_title: "Dastarkhwan Ke Liye Hamari 5 Badi Khidmaat",
       svc_desc: "Har service aapke kitchen aur counter ke hisab se tailor ki jati hai aur staff ko complete training di jati hai.",
       s1_title: "24/7 WhatsApp AI Receptionist",
@@ -1331,7 +1923,7 @@
       s2_title: "Digital QR Code Table Menu",
       s2_desc: "Tables par stylish QR stands. Diners mobile se scan karke bina app download kiye laziz khanon ki tasweerein dekh sakte hain.",
       s3_title: "Heritage Packaging Aur Visual Identity",
-      s3_desc: "Maroon aur gold packaging design: Karahi foil takeaway boxes, butter paper wraps, kraft bags aur staff aprons.",
+      s3_desc: "Emerald green aur gold packaging design: Karahi foil takeaway boxes, butter paper wraps, kraft bags aur staff aprons.",
       s4_title: "Cinematic Food Ads Aur Campaigns",
       s4_desc: "Mobile photo ko cinematic lighting aur steaming karahi graphics mein badal kar Instagram aur Facebook par chalana.",
       s5_title: "Customer Database Aur Loyalty CRM",
@@ -1339,37 +1931,12 @@
       s6_title: "Apne Restaurant Ko Modernize Karna Chahte Hain?",
       s6_desc: "Hum sirf 7 se 10 dino mein mukammal setup tayar karke live kar dete hain.",
       s6_btn: "Package Aur Rates Discuss Karein ↗",
-      vis_eyebrow: "04 / Visual Execution",
-      vis_title: "Packaging Aur Digital Menu Ke Concepts",
-      vis_desc: "Dastarkhwan ke shandar zaiqe ko aala darjay ki packaging aur digital ordering ke sath pesh kiya gaya hai.",
-      vis1_tag: "BRANDING DELIVERABLES",
-      vis1_h: "Royal Heritage Takeaway Packaging",
-      vis1_desc: "Karahi, Handi aur Dum Biryani ke liye khas banaye gaye thermal boxes jo tail ko leak hone se rokte hain aur khana garam rakhte hain.",
-      vis1_s1: "Foil-lined leak-proof Karahi aur Handi boxes",
-      vis1_s2: "Gold embossed handles wale premium kraft bags",
-      vis1_s3: "Roghni Naan aur Roti ke greaseproof lifafay",
-      vis1_s4: "Staff ke liye branded embroidered aprons",
-      vis2_tag: "DIGITAL TOUCHPOINT",
-      vis2_h: "Mobile QR Table Menu Experience",
-      vis2_desc: "Customer baghair kisi app ke camera se scan karke menu dekhta hai aur 1 tap mein WhatsApp par order bhej sakta hai.",
-      vis2_s1: "Browser mein foran open hota hai (no app install)",
-      vis2_s2: "Live rates aur available items ki foran updating",
-      vis2_s3: "English aur Roman Urdu dono mein tafseel",
-      vis2_s4: "Counter kitchen screen par WhatsApp notification",
-      camp_eyebrow: "05 / Advertising Direction",
-      camp_title: "Sales Barhane Wale Social Media Ads",
-      camp_desc: "Hum aapke khane ki photo ko aese ads mein badalte hain jo dekhte hi bhook bharka dein aur foran order generate karein.",
-      camp1_tag: "CAMPAIGN POSTER",
-      camp1_h: "Midnight Dawat Aur Family Combos",
-      camp1_desc: "Instagram aur Facebook feed ke mutabiq 4:5 vertical ads jo WhatsApp ordering par direct link karte hain.",
-      camp2_tag: "SOCIAL ECOSYSTEM",
-      camp2_h: "Professional Social Media Presence",
-      camp2_desc: "TikTok, Instagram aur Facebook par consistent visual branding aur authentic Pakistani khanon ki video reels.",
       cta_banner_eye: "Turnkey Restaurant Launch",
       cta_banner_h2: "Apne Restaurant Ko Matrix Studio Se Upgrade Karwayein?",
       cta_banner_p: "Chahe aapka Karahi restaurant ho, fast food joint ho, cafe ya family dining hall — hum 7 se 10 dino mein aapka mukammal digital system tayar kar dete hain.",
       cta_banner_btn: "WhatsApp Par Restaurant Consultation Schedule Karein",
-      cta_banner_home: "← Matrix Studio Home Page Par Wapis Jayein"
+      cta_banner_home: "← Matrix Studio Home Page Par Wapis Jayein",
+      lightbox_hint: "Band karne ke liye ESC dabayein ya bahar tap karein"
     }
   };
 
@@ -1452,7 +2019,7 @@
     setTimeout(() => {
       const reply = getDastarkhwanBotReply(text);
       appendSimMsg(reply, false);
-    }, 450);
+    }, 400);
   }
 
   simChatForm.addEventListener('submit', (e) => {
@@ -1479,6 +2046,54 @@
   }
 
   simResetBtn.addEventListener('click', initSimChat);
+
+  // Lightbox Modal Functionality
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || 'Enlarged Image Preview';
+    lightboxCaption.textContent = caption || '';
+    lightboxModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightboxModal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      lightboxImg.src = '';
+    }, 200);
+  }
+
+  document.querySelectorAll('[data-lightbox]').forEach(el => {
+    el.addEventListener('click', () => {
+      const src = el.getAttribute('data-lightbox');
+      const caption = el.getAttribute('data-caption');
+      openLightbox(src, caption);
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const src = el.getAttribute('data-lightbox');
+        const caption = el.getAttribute('data-caption');
+        openLightbox(src, caption);
+      }
+    });
+  });
+
+  lightboxCloseBtn.addEventListener('click', closeLightbox);
+  lightboxModal.addEventListener('click', (e) => {
+    if (e.target === lightboxModal) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
 
   // Initialize
   initSimChat();
