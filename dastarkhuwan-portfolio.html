@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#080b0b" name="theme-color"/>
+<title>Dastarkhwan Restaurant — Digital Transformation Demo | Matrix Studio</title>
+<meta content="A complete demonstration of how Matrix Studio transforms traditional Pakistani dining: 24/7 AI WhatsApp ordering, digital QR menu, heritage packaging design, and high-converting food advertising." name="description"/>
+<meta content="Dastarkhwan Restaurant — Full Digital Transformation Demo" property="og:title"/>
+<meta content="From missed dinner-rush calls to automated WhatsApp orders, digital QR menus, and premium packaging." property="og:description"/>
+<meta content="images/burger_deal.webp" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="https://matrix-studio-ai-receptionist-ry3b.vercel.app/dastarkhwan-portfolio" property="og:url"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b0b;
+      --panel: #0f1613;
+      --panel-card: #13201a;
+      --panel-maroon: #1a1012;
+      --lime: #c8ff39;
+      --lime-glow: rgba(200, 255, 57, 0.22);
+      --maroon: #851825;
+      --gold: #d4af37;
+      --muted: #a6b4ac;
+      --line: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Manrope', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-hand: 'Caveat', cursive;
+      --font-serif: 'Playfair Display', serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: #f4f7f3;
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; background: none; border: 0; }
+    ::selection { background: var(--lime); color: #111; }
+
+    .wrap {
+      width: min(1360px, calc(100% - 8vw));
+      margin: auto;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 11px;
+      font-weight: 700;
+      color: #b5c0b8;
+    }
+    .lime { color: var(--lime); }
+    .gold { color: var(--gold); }
+    .handwritten { font-family: var(--font-hand); letter-spacing: 0.04em; }
+
+    /* Navigation Header */
+    .header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      background: rgba(8, 11, 11, 0.94);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    .nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font: 800 24px/0.95 var(--font-heading);
+      letter-spacing: .18em;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+    .logo span span { color: var(--lime); }
+    .logo small {
+      font: 600 9px var(--font-body);
+      letter-spacing: .5em;
+      margin-top: 5px;
+      color: #8c9790;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      color: #d4dbd7;
+      align-items: center;
+    }
+    .nav-links a { transition: color 0.2s; position: relative; }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-badge-pill {
+      font-size: 10.5px;
+      letter-spacing: .08em;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: rgba(200, 255, 57, 0.12);
+      border: 1px solid rgba(200, 255, 57, 0.35);
+      color: var(--lime);
+      font-weight: 700;
+    }
+    .navright {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .lang-switcher {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 99px;
+      padding: 3px;
+    }
+    .lang-btn {
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5ce;
+      border-radius: 99px;
+      transition: all 0.2s ease;
+    }
+    .lang-btn.active {
+      background: var(--lime);
+      color: #0c1410;
+    }
+    .btn-wa-header {
+      background: var(--lime);
+      color: #090e0c;
+      font-weight: 800;
+      font-size: 12.5px;
+      padding: 10px 18px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-wa-header:hover {
+      box-shadow: 0 0 20px rgba(200, 255, 57, 0.4);
+      transform: translateY(-1px);
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #ffffff;
+      padding: 6px;
+    }
+
+    /* Buttons */
+    .primary-btn {
+      background: var(--lime);
+      color: #080d0b;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s;
+    }
+    .primary-btn:hover {
+      box-shadow: 0 10px 25px rgba(200, 255, 57, 0.35);
+      transform: translateY(-2px);
+    }
+    .secondary-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 26px;
+      border-radius: 100px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s;
+    }
+    .secondary-btn:hover {
+      border-color: var(--lime);
+      color: var(--lime);
+      background: rgba(200, 255, 57, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-case {
+      padding: 150px 0 70px;
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(133, 24, 37, 0.18), transparent 55%), radial-gradient(circle at 85% 60%, rgba(200, 255, 57, 0.06), transparent 50%), var(--bg);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-top-badges {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+    .badge-client {
+      background: #7a1622;
+      color: #ffd8dd;
+      font-weight: 800;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 216, 221, 0.25);
+    }
+    .badge-demo {
+      background: rgba(200, 255, 57, 0.12);
+      color: var(--lime);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid rgba(200, 255, 57, 0.35);
+    }
+    .hero-title {
+      font: 800 clamp(34px, 5.2vw, 62px)/1.08 var(--font-heading);
+      letter-spacing: -.035em;
+      margin-bottom: 20px;
+      max-width: 980px;
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.65;
+      color: #c4d2c8;
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 45px;
+    }
+    .hero-highlights-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      background: rgba(14, 22, 18, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 24px 28px;
+      backdrop-filter: blur(10px);
+    }
+    .highlight-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .highlight-card small {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--lime);
+      font-weight: 700;
+    }
+    .highlight-card strong {
+      font-size: 16px;
+      color: #ffffff;
+      font-family: var(--font-heading);
+    }
+    .highlight-card p {
+      font-size: 12.5px;
+      color: #9ab0a2;
+      line-height: 1.45;
+    }
+
+    /* Section Global Styles */
+    section.block {
+      padding: 85px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      margin-bottom: 44px;
+    }
+    .section-head.center {
+      text-align: center;
+      max-width: 740px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-head h2 {
+      font: 800 clamp(26px, 3.8vw, 42px)/1.15 var(--font-heading);
+      letter-spacing: -.025em;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+    .section-head p {
+      font-size: 15px;
+      color: #aebdb3;
+      line-height: 1.65;
+    }
+
+    /* Executive Problem vs Solution Grid */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .compare-card {
+      padding: 34px 30px;
+      border-radius: 24px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .compare-card.before {
+      background: #150f11;
+      border: 1px solid rgba(255, 107, 107, 0.25);
+    }
+    .compare-card.after {
+      background: #0f1c16;
+      border: 1px solid rgba(200, 255, 57, 0.35);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(200, 255, 57, 0.08);
+    }
+    .compare-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      align-self: flex-start;
+    }
+    .compare-card.before .compare-tag {
+      background: rgba(255, 107, 107, 0.15);
+      color: #ff8585;
+      border: 1px solid rgba(255, 107, 107, 0.3);
+    }
+    .compare-card.after .compare-tag {
+      background: rgba(200, 255, 57, 0.15);
+      color: var(--lime);
+      border: 1px solid rgba(200, 255, 57, 0.35);
+    }
+    .compare-card h3 {
+      font: 700 22px var(--font-heading);
+    }
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: #c9d5cd;
+      line-height: 1.5;
+    }
+    .compare-card.before .compare-list li::before {
+      content: "✕";
+      color: #ff6b6b;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .compare-card.after .compare-list li::before {
+      content: "✓";
+      color: var(--lime);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Core Services Deep Dive Grid */
+    .services-deep-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .service-box:hover {
+      border-color: var(--lime);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(200, 255, 57, 0.12);
+    }
+    .service-num {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      color: var(--lime);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .service-box h3 {
+      font: 800 21px/1.25 var(--font-heading);
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+    .service-box p {
+      font-size: 13.5px;
+      color: #aebdb3;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .service-deliverables-pill {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+    .service-deliverables-pill span {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      color: #d6e2d9;
+    }
+
+    /* Interactive WhatsApp Simulator */
+    .simulator-wrap {
+      display: grid;
+      grid-template-columns: 48% 52%;
+      gap: 36px;
+      align-items: center;
+      background: #0f1915;
+      border: 1px solid rgba(200, 255, 57, 0.28);
+      border-radius: 28px;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .sim-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .sim-info h3 {
+      font: 800 clamp(24px, 3.2vw, 36px)/1.2 var(--font-heading);
+    }
+    .sim-info p {
+      font-size: 14.5px;
+      color: #b7c7bc;
+      line-height: 1.65;
+    }
+    .sim-phone-frame {
+      background: #0b1411;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 520px;
+    }
+    .sim-phone-header {
+      background: #122119;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sim-bot-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sim-bot-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #7a1622;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .sim-bot-text strong {
+      display: block;
+      font-size: 13.5px;
+      color: #ffffff;
+    }
+    .sim-bot-text small {
+      font-size: 10.5px;
+      color: var(--lime);
+    }
+    .sim-reset-btn {
+      font-size: 11px;
+      color: #b0c0b5;
+      padding: 5px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 100px;
+    }
+    .sim-reset-btn:hover { color: var(--lime); border-color: var(--lime); }
+    .sim-chat-body {
+      flex: 1;
+      padding: 18px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #080f0c;
+    }
+    .chat-msg {
+      max-width: 82%;
+      padding: 11px 14px;
+      border-radius: 14px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      position: relative;
+    }
+    .chat-msg.bot {
+      background: #15251e;
+      color: #e2ede5;
+      border-top-left-radius: 4px;
+      align-self: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .chat-msg.user {
+      background: #005c4b;
+      color: #ffffff;
+      border-top-right-radius: 4px;
+      align-self: flex-end;
+    }
+    .chat-time {
+      font-size: 9.5px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+      text-align: right;
+      display: block;
+    }
+    .sim-quick-chips {
+      padding: 10px 14px;
+      background: #0d1713;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .sim-quick-chips button {
+      white-space: nowrap;
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: rgba(200, 255, 57, 0.08);
+      border: 1px solid rgba(200, 255, 57, 0.25);
+      color: #d6e8dc;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .sim-quick-chips button:hover {
+      background: var(--lime);
+      color: #0c1410;
+    }
+    .sim-input-row {
+      padding: 12px 14px;
+      background: #111e18;
+      display: flex;
+      gap: 8px;
+    }
+    .sim-input-row input {
+      flex: 1;
+      background: #09120e;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 100px;
+      padding: 8px 14px;
+      font-size: 12.5px;
+      color: #ffffff;
+      outline: none;
+    }
+    .sim-input-row input:focus { border-color: var(--lime); }
+    .sim-input-row button {
+      background: var(--lime);
+      color: #080d0b;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12.5px;
+    }
+
+    /* Visual Showcase Cards (Branding & QR Menu) */
+    .showcase-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .showcase-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .showcase-media {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      background: #0b120f;
+    }
+    .showcase-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .showcase-card:hover .showcase-media img {
+      transform: scale(1.05);
+    }
+    .showcase-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .showcase-content small {
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--lime);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .showcase-content h3 {
+      font: 800 22px var(--font-heading);
+      margin-bottom: 10px;
+    }
+    .showcase-content p {
+      font-size: 14px;
+      color: #aebdb3;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .showcase-specs {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+    }
+    .showcase-specs li {
+      font-size: 12.5px;
+      color: #d1ded5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .showcase-specs li::before {
+      content: "•";
+      color: var(--lime);
+      font-size: 18px;
+    }
+
+    /* Final Pitch & WhatsApp CTA Banner */
+    .cta-banner-wrap {
+      background: linear-gradient(135deg, #18281f, #0d1712);
+      border: 1px solid rgba(200, 255, 57, 0.38);
+      border-radius: 30px;
+      padding: 60px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 40px rgba(200, 255, 57, 0.12);
+    }
+    .cta-banner-wrap h2 {
+      font: 800 clamp(28px, 4vw, 46px)/1.15 var(--font-heading);
+      letter-spacing: -.03em;
+      margin-bottom: 16px;
+    }
+    .cta-banner-wrap p {
+      font-size: 16px;
+      color: #c5d4c9;
+      max-width: 680px;
+      margin: 0 auto 34px;
+      line-height: 1.65;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 50px 0 36px;
+      background: #060908;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+      color: #8c9b91;
+    }
+    .footer-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Floating WhatsApp Button */
+    .float-wa {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 999;
+      background: #00a884;
+      color: #ffffff;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      transition: transform 0.25s;
+    }
+    .float-wa:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 30px rgba(0, 168, 132, 0.6);
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 992px) {
+      .hero-highlights-strip { grid-template-columns: 1fr 1fr; }
+      .services-deep-grid { grid-template-columns: 1fr; }
+      .simulator-wrap { grid-template-columns: 1fr; }
+      .showcase-grid-2 { grid-template-columns: 1fr; }
+      .compare-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .nav { height: 68px; }
+      .hero-case { padding: 115px 0 50px; }
+      .hero-highlights-strip { grid-template-columns: 1fr; gap: 14px; }
+      .cta-banner-wrap { padding: 40px 22px; border-radius: 20px; }
+      .simulator-wrap { padding: 24px 18px; }
+      .sim-phone-frame { height: 480px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<header class="header">
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="Matrix Studio Home">
+      <span>MATR<span>I</span>X</span>
+      <small>STUDIO</small>
+    </a>
+
+    <nav class="nav-links">
+      <a href="/" data-i18n="nav_home">Main Website</a>
+      <a href="#overview" data-i18n="nav_overview">Executive Overview</a>
+      <a href="#simulator" data-i18n="nav_bot">WhatsApp Bot Demo</a>
+      <a href="#services" data-i18n="nav_services">Core Services</a>
+      <a href="#branding" data-i18n="nav_branding">Branding & Packaging</a>
+    </nav>
+
+    <div class="navright">
+      <span class="nav-badge-pill" data-i18n="badge_top">RESTAURANT SHOWCASE</span>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="ur">Roman Urdu</button>
+      </div>
+      <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20I%20saw%20your%20Dastarkhwan%20Restaurant%20demo.%20I%20want%20to%20discuss%20services%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer" class="btn-wa-header">
+        <span>💬</span>
+        <span data-i18n="btn_discuss_top">Discuss Restaurant ↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-case">
+  <div class="wrap">
+    <div class="hero-top-badges">
+      <span class="badge-client" data-i18n="hero_client">DASTARKHWAN RESTAURANT</span>
+      <span class="badge-demo" data-i18n="hero_type">TURNKEY DIGITAL TRANSFORMATION DEMO</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span data-i18n="hero_h1_main">Dastarkhwan Restaurant</span><br/>
+      <span class="lime" data-i18n="hero_h1_accent">End-to-End Digital Transformation</span>
+    </h1>
+
+    <p class="hero-subtitle" data-i18n="hero_sub">
+      A complete demonstration of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — with 24/7 automated WhatsApp ordering, digital QR table menus, royal heritage packaging, and mouth-watering social ad campaigns.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#simulator" class="primary-btn">
+        <span data-i18n="hero_cta_sim">Test WhatsApp Bot Simulation ↓</span>
+      </a>
+      <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20Dastarkhwan%20jesa%20digital%20system%20apne%20restaurant%20ke%20liye%20chahiye." target="_blank" rel="noopener noreferrer" class="secondary-btn">
+        <span>💬</span>
+        <span data-i18n="hero_cta_wa">Get This Setup For Your Food Brand</span>
+      </a>
+    </div>
+
+    <div class="hero-highlights-strip">
+      <div class="highlight-card">
+        <small data-i18n="hl1_tag">PILLAR 01</small>
+        <strong data-i18n="hl1_val">24/7 WhatsApp AI Bot</strong>
+        <p data-i18n="hl1_desc">Zero missed orders during peak dinner rush with automated order taking and reservations.</p>
+      </div>
+      <div class="highlight-card">
+        <small data-i18n="hl2_tag">PILLAR 02</small>
+        <strong data-i18n="hl2_val">Contactless QR Menu</strong>
+        <p data-i18n="hl2_desc">Instant digital menu browsing at tables with photo cards and zero printing costs.</p>
+      </div>
+      <div class="highlight-card">
+        <small data-i18n="hl3_tag">PILLAR 03</small>
+        <strong data-i18n="hl3_val">Heritage Packaging</strong>
+        <p data-i18n="hl3_desc">Royal maroon & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.</p>
+      </div>
+      <div class="highlight-card">
+        <small data-i18n="hl4_tag">PILLAR 04</small>
+        <strong data-i18n="hl4_val">Cinematic Food Ads</strong>
+        <p data-i18n="hl4_desc">Transforming flat phone shots into sizzling Meta reels and midnight deal campaigns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 1: Executive Overview & Problem vs Solution -->
+<section class="block" id="overview">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow lime" data-i18n="over_eyebrow">01 / The Operational Reality</div>
+      <h2 data-i18n="over_title">Why Traditional Desi Restaurants Lose 30%+ Potential Revenue</h2>
+      <p data-i18n="over_desc">Traditional Pakistani restaurants face massive call volumes between 8 PM to 12 AM. Counter staff cannot attend every phone call, take notes manually, or update paper menus quickly.</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card before">
+        <span class="compare-tag" data-i18n="comp_before_tag">TRADITIONAL BOTTLENECKS</span>
+        <h3 data-i18n="comp_before_h">Before Matrix Studio Setup</h3>
+        <ul class="compare-list">
+          <li data-i18n="comp_b1">Busy phone lines during dinner rush cause 25–40% missed calls and lost food orders.</li>
+          <li data-i18n="comp_b2">Physical paper menus get oily, torn, and costly to reprint every time prices fluctuate.</li>
+          <li data-i18n="comp_b3">Staff struggle to manually explain deals, menu prices, and delivery charges repeatedly.</li>
+          <li data-i18n="comp_b4">Zero customer database collected — no way to bring customers back on quiet weekdays.</li>
+          <li data-i18n="comp_b5">Generic unbranded plastic takeaway bags make premium dishes look ordinary.</li>
+        </ul>
+      </div>
+
+      <div class="compare-card after">
+        <span class="compare-tag" data-i18n="comp_after_tag">MATRIX STUDIO UPGRADE</span>
+        <h3 data-i18n="comp_after_h">With Automated Dastarkhwan Systems</h3>
+        <ul class="compare-list">
+          <li data-i18n="comp_a1">24/7 WhatsApp AI handles unlimited concurrent customer inquiries with 0 waiting time.</li>
+          <li data-i18n="comp_a2">Contactless QR Menu allows diners to scan at tables, browse dish photos, and order instantly.</li>
+          <li data-i18n="comp_a3">Automated table reservation flow captures party size, preferred time, and confirms slots.</li>
+          <li data-i18n="comp_a4">Organized customer database enables automated Friday deals & birthday discount broadcasts.</li>
+          <li data-i18n="comp_a5">Custom royal maroon & gold packaging creates unforgettable unboxing for takeaway food.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Interactive WhatsApp Simulator -->
+<section class="block" id="simulator" style="background:#0a120e">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow lime" data-i18n="sim_eyebrow">02 / Live Interactive Simulator</div>
+      <h2 data-i18n="sim_title">Test Dastarkhwan's WhatsApp Smart Assistant</h2>
+      <p data-i18n="sim_desc">Tap the quick buttons below or type a message to see how the automated assistant takes orders, shares prices, and books tables in real time.</p>
+    </div>
+
+    <div class="simulator-wrap">
+      <div class="sim-info">
+        <div class="eyebrow lime" data-i18n="sim_sub_eye">24/7 AI Receptionist</div>
+        <h3 data-i18n="sim_h3">Never Miss a Late-Night Karahi Order Again.</h3>
+        <p data-i18n="sim_p1">
+          When customers message Dastarkhwan on WhatsApp, they don't wait on hold. The assistant instantly presents the menu, active deals, delivery areas, or books a family hall table.
+        </p>
+        <p data-i18n="sim_p2">
+          If a custom inquiry requires personal attention, the assistant seamlessly alerts your human manager with the customer's phone number and order summary.
+        </p>
+        <div style="margin-top:10px">
+          <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20Dastarkhwan%20jaisa%20WhatsApp%20Bot%20chahiye." target="_blank" rel="noopener noreferrer" class="primary-btn">
+            <span data-i18n="sim_btn_build">Build This Bot For My Restaurant ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sim-phone-frame">
+        <div class="sim-phone-header">
+          <div class="sim-bot-meta">
+            <div class="sim-bot-avatar">🍲</div>
+            <div class="sim-bot-text">
+              <strong>Dastarkhwan Assistant</strong>
+              <small data-i18n="sim_online">● Online · Matrix AI Automated</small>
+            </div>
+          </div>
+          <button type="button" class="sim-reset-btn" id="simResetBtn" data-i18n="sim_reset">Restart Demo</button>
+        </div>
+
+        <div class="sim-chat-body" id="simChatBody">
+          <!-- Messages inserted dynamically via JS -->
+        </div>
+
+        <div class="sim-quick-chips">
+          <button type="button" class="sim-chip" data-prompt="Menu">📜 Dastarkhwan Menu</button>
+          <button type="button" class="sim-chip" data-prompt="Special Deals">🔥 Family Deals</button>
+          <button type="button" class="sim-chip" data-prompt="Table Booking">🪑 Table Booking</button>
+          <button type="button" class="sim-chip" data-prompt="Delivery Areas">🛵 Delivery & Timing</button>
+          <button type="button" class="sim-chip" data-prompt="Manager">👤 Talk to Manager</button>
+        </div>
+
+        <form class="sim-input-row" id="simChatForm">
+          <input type="text" id="simChatInput" placeholder="Type a message (e.g. Menu, Karahi, Table)..." autocomplete="off"/>
+          <button type="submit" data-i18n="sim_send">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Core Services Breakdown -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow lime" data-i18n="svc_eyebrow">03 / Complete Restaurant Suite</div>
+      <h2 data-i18n="svc_title">The 5 Core Services We Provide to Dastarkhwan</h2>
+      <p data-i18n="svc_desc">Every component is custom-configured, tested in high-volume environments, and handed over turnkey with team training.</p>
+    </div>
+
+    <div class="services-deep-grid">
+      <div class="service-box">
+        <div>
+          <span class="service-num">01 / AUTOMATION</span>
+          <h3 data-i18n="s1_title">24/7 WhatsApp AI Receptionist</h3>
+          <p data-i18n="s1_desc">Takes delivery orders, answers menu inquiries, confirms table reservations, and calculates delivery fees automatically on WhatsApp.</p>
+        </div>
+        <div class="service-deliverables-pill">
+          <span>WhatsApp Business API</span>
+          <span>Order Bot Flow</span>
+          <span>Table Bookings</span>
+          <span>Lead Log</span>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div>
+          <span class="service-num">02 / PRESENCE</span>
+          <h3 data-i18n="s2_title">Digital QR Code Table Menu</h3>
+          <p data-i18n="s2_desc">Laminated QR stands placed on every table. Diners scan with phone camera to see vivid dish photos, prices, and chef specials with 0 delay.</p>
+        </div>
+        <div class="service-deliverables-pill">
+          <span>No App Required</span>
+          <span>Instant Price Updates</span>
+          <span>Multi-Category Menu</span>
+          <span>WhatsApp Cart</span>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div>
+          <span class="service-num">03 / BRANDING</span>
+          <h3 data-i18n="s3_title">Heritage Packaging & Visual Identity</h3>
+          <p data-i18n="s3_desc">Royal maroon, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.</p>
+        </div>
+        <div class="service-deliverables-pill">
+          <span>Logo Refinement</span>
+          <span>Takeaway Boxes</span>
+          <span>Bags & Wraps</span>
+          <span>Staff Aprons</span>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div>
+          <span class="service-num">04 / MARKETING</span>
+          <h3 data-i18n="s4_title">Cinematic Food Campaigns & Ads</h3>
+          <p data-i18n="s4_desc">Transforming flat smartphone photos into sizzling, mouth-watering Meta feed posters and video reels designed to trigger instant cravings.</p>
+        </div>
+        <div class="service-deliverables-pill">
+          <span>Instagram Reels</span>
+          <span>Meta Ad Creatives</span>
+          <span>Midnight Deals</span>
+          <span>Local Area Targeting</span>
+        </div>
+      </div>
+
+      <div class="service-box">
+        <div>
+          <span class="service-num">05 / RETENTION</span>
+          <h3 data-i18n="s5_title">Customer Database & Loyalty CRM</h3>
+          <p data-i18n="s5_desc">Captures diner contact numbers systematically. Automatically broadcasts Friday dinner specials and requests 5-star Google reviews after visits.</p>
+        </div>
+        <div class="service-deliverables-pill">
+          <span>Customer CRM</span>
+          <span>Review Automations</span>
+          <span>Friday Deals Broadcast</span>
+          <span>Birthday Perks</span>
+        </div>
+      </div>
+
+      <div class="service-box" style="background:linear-gradient(135deg, #18251e, #111a15);border-color:rgba(200,255,57,0.3)">
+        <div>
+          <span class="service-num">06 / TURNKEY</span>
+          <h3 data-i18n="s6_title">Ready to Transform Your Restaurant?</h3>
+          <p data-i18n="s6_desc">We deliver the complete system within 7–10 days. No complicated technical setup required from your restaurant staff.</p>
+        </div>
+        <div style="margin-top:20px">
+          <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20apne%20restaurant%20ke%20liye%20packages%20aur%20rates%20chahiye." target="_blank" rel="noopener noreferrer" class="primary-btn" style="width:100%;justify-content:center">
+            <span data-i18n="s6_btn">Discuss Custom Pricing ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Visual Packaging & QR Menu Showcase -->
+<section class="block" id="branding">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow lime" data-i18n="vis_eyebrow">04 / Visual Execution</div>
+      <h2 data-i18n="vis_title">Packaging & Digital Menu Design Concepts</h2>
+      <p data-i18n="vis_desc">Dastarkhwan's culinary heritage presented with contemporary, upscale packaging and frictionless digital ordering.</p>
+    </div>
+
+    <div class="showcase-grid-2">
+      <div class="showcase-card">
+        <div class="showcase-media">
+          <img src="images/zaiqa.webp" alt="Dastarkhwan Heritage Packaging Board" loading="lazy"/>
+        </div>
+        <div class="showcase-content">
+          <small data-i18n="vis1_tag">BRANDING DELIVERABLES</small>
+          <h3 data-i18n="vis1_h">Royal Heritage Takeaway Packaging</h3>
+          <p data-i18n="vis1_desc">Durable, thermal-retaining takeaway boxes designed specifically for authentic Pakistani Karahi, Handi gravies, and fragrant Biryani without oil leakage.</p>
+          <ul class="showcase-specs">
+            <li data-i18n="vis1_s1">Leak-proof foil-lined Handi & Karahi boxes</li>
+            <li data-i18n="vis1_s2">Embossed gold foil handles on kraft bags</li>
+            <li data-i18n="vis1_s3">Greaseproof Roghni Naan & Roti envelopes</li>
+            <li data-i18n="vis1_s4">Staff uniform aprons with embroidered motif</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <div class="showcase-media">
+          <img src="images/qr_menu.webp" alt="Dastarkhwan QR Digital Menu Demo" loading="lazy"/>
+        </div>
+        <div class="showcase-content">
+          <small data-i18n="vis2_tag">DIGITAL TOUCHPOINT</small>
+          <h3 data-i18n="vis2_h">Contactless Mobile QR Menu Experience</h3>
+          <p data-i18n="vis2_desc">Diners scan the table QR stand with their smartphone to view categorized items, high-res photos, spice-level indicators, and single-tap WhatsApp checkout.</p>
+          <ul class="showcase-specs">
+            <li data-i18n="vis2_s1">Loads instantly in mobile browser (0 app install required)</li>
+            <li data-i18n="vis2_s2">Real-time dish availability & price management</li>
+            <li data-i18n="vis2_s3">Bilingual Urdu & English item descriptions</li>
+            <li data-i18n="vis2_s4">Direct send to counter kitchen screen via WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Food Campaign Creative Direction -->
+<section class="block" id="campaigns">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="eyebrow lime" data-i18n="camp_eyebrow">05 / Advertising Direction</div>
+      <h2 data-i18n="camp_title">High-Converting Meta Ads & Social Posters</h2>
+      <p data-i18n="camp_desc">We turn everyday cooking photos into mouth-watering, revenue-driving campaigns that trigger immediate dinner and weekend orders.</p>
+    </div>
+
+    <div class="showcase-grid-2">
+      <div class="showcase-card">
+        <div class="showcase-media">
+          <img src="images/burger_deal.webp" alt="Dastarkhwan Promotional Campaign Creative" loading="lazy"/>
+        </div>
+        <div class="showcase-content">
+          <small data-i18n="camp1_tag">CAMPAIGN POSTER</small>
+          <h3 data-i18n="camp1_h">Midnight Dawat & Family Combo Creatives</h3>
+          <p data-i18n="camp1_desc">High-contrast, studio-lit creative layouts optimized for Instagram and Facebook 4:5 feed viewports with prominent WhatsApp ordering buttons.</p>
+        </div>
+      </div>
+
+      <div class="showcase-card">
+        <div class="showcase-media">
+          <img src="images/burger-yard.webp" alt="Dastarkhwan Social Media Showcase" loading="lazy"/>
+        </div>
+        <div class="showcase-content">
+          <small data-i18n="camp2_tag">SOCIAL ECOSYSTEM</small>
+          <h3 data-i18n="camp2_h">Cohesive Social Media Identity</h3>
+          <p data-i18n="camp2_desc">A consistent visual presence across Instagram, TikTok, and Facebook featuring authentic Pakistani hospitality, food reviews, and chef reels.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Consultation CTA -->
+<section class="block" style="border-bottom:none">
+  <div class="wrap">
+    <div class="cta-banner-wrap">
+      <div class="eyebrow lime" data-i18n="cta_banner_eye" style="margin-bottom:12px">Turnkey Restaurant Launch</div>
+      <h2 data-i18n="cta_banner_h2">Want Matrix Studio to Upgrade Your Restaurant?</h2>
+      <p data-i18n="cta_banner_p">
+        Whether you operate a traditional Karahi restaurant, a modern burger joint, a café, or a family dining lounge — we can build your complete digital presence, WhatsApp bot, and branding suite in 7–10 days.
+      </p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+        <a href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Maine%20aapka%20Dastarkhwan%20demo%20dekha.%20Mujhe%20apne%20restaurant%20ke%20liye%20quotation%20chahiye." target="_blank" rel="noopener noreferrer" class="primary-btn" style="font-size:15px;padding:16px 36px">
+          <span>💬</span>
+          <span data-i18n="cta_banner_btn">Schedule Restaurant Consultation via WhatsApp</span>
+        </a>
+        <a href="/" class="secondary-btn" style="font-size:15px;padding:16px 28px">
+          <span data-i18n="cta_banner_home">← Back to Matrix Studio Home</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap footer-flex">
+    <div>
+      <strong>Matrix Studio · Digital Transformation Agency</strong>
+      <p style="margin-top:4px">Karachi, Sindh, Pakistan · Serving F&amp;B Brands Nationwide</p>
+    </div>
+    <div>
+      <a href="/" style="color:var(--lime);font-weight:700">matrix-studio.com ↗</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Quick Button -->
+<a class="float-wa" href="https://wa.me/923022053002?text=Salam%20Matrix%20Studio!%20Mujhe%20Dastarkhwan%20demo%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us">
+  <svg fill="currentColor" height="28" viewbox="0 0 24 24" width="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+
+<script>
+  let currentLang = 'en';
+
+  const translations = {
+    en: {
+      nav_home: "Main Website",
+      nav_overview: "Executive Overview",
+      nav_bot: "WhatsApp Bot Demo",
+      nav_services: "Core Services",
+      nav_branding: "Branding & Packaging",
+      badge_top: "RESTAURANT SHOWCASE",
+      btn_discuss_top: "Discuss Restaurant ↗",
+      hero_client: "DASTARKHWAN RESTAURANT",
+      hero_type: "TURNKEY DIGITAL TRANSFORMATION DEMO",
+      hero_h1_main: "Dastarkhwan Restaurant",
+      hero_h1_accent: "End-to-End Digital Transformation",
+      hero_sub: "A complete demonstration of how Matrix Studio modernizes traditional Pakistani Karahi & BBQ restaurants into high-revenue digital operations — with 24/7 automated WhatsApp ordering, digital QR table menus, royal heritage packaging, and mouth-watering social ad campaigns.",
+      hero_cta_sim: "Test WhatsApp Bot Simulation ↓",
+      hero_cta_wa: "Get This Setup For Your Food Brand",
+      hl1_tag: "PILLAR 01",
+      hl1_val: "24/7 WhatsApp AI Bot",
+      hl1_desc: "Zero missed orders during peak dinner rush with automated order taking and reservations.",
+      hl2_tag: "PILLAR 02",
+      hl2_val: "Contactless QR Menu",
+      hl2_desc: "Instant digital menu browsing at tables with photo cards and zero printing costs.",
+      hl3_tag: "PILLAR 03",
+      hl3_val: "Heritage Packaging",
+      hl3_desc: "Royal maroon & gold takeaway kraft boxes, greaseproof wraps, and staff uniforms.",
+      hl4_tag: "PILLAR 04",
+      hl4_val: "Cinematic Food Ads",
+      hl4_desc: "Transforming flat phone shots into sizzling Meta reels and midnight deal campaigns.",
+      over_eyebrow: "01 / The Operational Reality",
+      over_title: "Why Traditional Desi Restaurants Lose 30%+ Potential Revenue",
+      over_desc: "Traditional Pakistani restaurants face massive call volumes between 8 PM to 12 AM. Counter staff cannot attend every phone call, take notes manually, or update paper menus quickly.",
+      comp_before_tag: "TRADITIONAL BOTTLENECKS",
+      comp_before_h: "Before Matrix Studio Setup",
+      comp_b1: "Busy phone lines during dinner rush cause 25–40% missed calls and lost food orders.",
+      comp_b2: "Physical paper menus get oily, torn, and costly to reprint every time prices fluctuate.",
+      comp_b3: "Staff struggle to manually explain deals, menu prices, and delivery charges repeatedly.",
+      comp_b4: "Zero customer database collected — no way to bring customers back on quiet weekdays.",
+      comp_b5: "Generic unbranded plastic takeaway bags make premium dishes look ordinary.",
+      comp_after_tag: "MATRIX STUDIO UPGRADE",
+      comp_after_h: "With Automated Dastarkhwan Systems",
+      comp_a1: "24/7 WhatsApp AI handles unlimited concurrent customer inquiries with 0 waiting time.",
+      comp_a2: "Contactless QR Menu allows diners to scan at tables, browse dish photos, and order instantly.",
+      comp_a3: "Automated table reservation flow captures party size, preferred time, and confirms slots.",
+      comp_a4: "Organized customer database enables automated Friday deals & birthday discount broadcasts.",
+      comp_a5: "Custom royal maroon & gold packaging creates unforgettable unboxing for takeaway food.",
+      sim_eyebrow: "02 / Live Interactive Simulator",
+      sim_title: "Test Dastarkhwan's WhatsApp Smart Assistant",
+      sim_desc: "Tap the quick buttons below or type a message to see how the automated assistant takes orders, shares prices, and books tables in real time.",
+      sim_sub_eye: "24/7 AI Receptionist",
+      sim_h3: "Never Miss a Late-Night Karahi Order Again.",
+      sim_p1: "When customers message Dastarkhwan on WhatsApp, they don't wait on hold. The assistant instantly presents the menu, active deals, delivery areas, or books a family hall table.",
+      sim_p2: "If a custom inquiry requires personal attention, the assistant seamlessly alerts your human manager with the customer's phone number and order summary.",
+      sim_btn_build: "Build This Bot For My Restaurant ↗",
+      sim_online: "● Online · Matrix AI Automated",
+      sim_reset: "Restart Demo",
+      sim_send: "Send",
+      svc_eyebrow: "03 / Complete Restaurant Suite",
+      svc_title: "The 5 Core Services We Provide to Dastarkhwan",
+      svc_desc: "Every component is custom-configured, tested in high-volume environments, and handed over turnkey with team training.",
+      s1_title: "24/7 WhatsApp AI Receptionist",
+      s1_desc: "Takes delivery orders, answers menu inquiries, confirms table reservations, and calculates delivery fees automatically on WhatsApp.",
+      s2_title: "Digital QR Code Table Menu",
+      s2_desc: "Laminated QR stands placed on every table. Diners scan with phone camera to see vivid dish photos, prices, and chef specials with 0 delay.",
+      s3_title: "Heritage Packaging & Visual Identity",
+      s3_desc: "Royal maroon, antique gold, and deep charcoal packaging design: Karahi takeaway boxes, butter paper, cutlery wraps, and staff uniforms.",
+      s4_title: "Cinematic Food Campaigns & Ads",
+      s4_desc: "Transforming flat smartphone photos into sizzling, mouth-watering Meta feed posters and video reels designed to trigger instant cravings.",
+      s5_title: "Customer Database & Loyalty CRM",
+      s5_desc: "Captures diner contact numbers systematically. Automatically broadcasts Friday dinner specials and requests 5-star Google reviews after visits.",
+      s6_title: "Ready to Transform Your Restaurant?",
+      s6_desc: "We deliver the complete system within 7–10 days. No complicated technical setup required from your restaurant staff.",
+      s6_btn: "Discuss Custom Pricing ↗",
+      vis_eyebrow: "04 / Visual Execution",
+      vis_title: "Packaging & Digital Menu Design Concepts",
+      vis_desc: "Dastarkhwan's culinary heritage presented with contemporary, upscale packaging and frictionless digital ordering.",
+      vis1_tag: "BRANDING DELIVERABLES",
+      vis1_h: "Royal Heritage Takeaway Packaging",
+      vis1_desc: "Durable, thermal-retaining takeaway boxes designed specifically for authentic Pakistani Karahi, Handi gravies, and fragrant Biryani without oil leakage.",
+      vis1_s1: "Leak-proof foil-lined Handi & Karahi boxes",
+      vis1_s2: "Embossed gold foil handles on kraft bags",
+      vis1_s3: "Greaseproof Roghni Naan & Roti envelopes",
+      vis1_s4: "Staff uniform aprons with embroidered motif",
+      vis2_tag: "DIGITAL TOUCHPOINT",
+      vis2_h: "Contactless Mobile QR Menu Experience",
+      vis2_desc: "Diners scan the table QR stand with their smartphone to view categorized items, high-res photos, spice-level indicators, and single-tap WhatsApp checkout.",
+      vis2_s1: "Loads instantly in mobile browser (0 app install required)",
+      vis2_s2: "Real-time dish availability & price management",
+      vis2_s3: "Bilingual Urdu & English item descriptions",
+      vis2_s4: "Direct send to counter kitchen screen via WhatsApp",
+      camp_eyebrow: "05 / Advertising Direction",
+      camp_title: "High-Converting Meta Ads & Social Posters",
+      camp_desc: "We turn everyday cooking photos into mouth-watering, revenue-driving campaigns that trigger immediate dinner and weekend orders.",
+      camp1_tag: "CAMPAIGN POSTER",
+      camp1_h: "Midnight Dawat & Family Combo Creatives",
+      camp1_desc: "High-contrast, studio-lit creative layouts optimized for Instagram and Facebook 4:5 feed viewports with prominent WhatsApp ordering buttons.",
+      camp2_tag: "SOCIAL ECOSYSTEM",
+      camp2_h: "Cohesive Social Media Identity",
+      camp2_desc: "A consistent visual presence across Instagram, TikTok, and Facebook featuring authentic Pakistani hospitality, food reviews, and chef reels.",
+      cta_banner_eye: "Turnkey Restaurant Launch",
+      cta_banner_h2: "Want Matrix Studio to Upgrade Your Restaurant?",
+      cta_banner_p: "Whether you operate a traditional Karahi restaurant, a modern burger joint, a café, or a family dining lounge — we can build your complete digital presence, WhatsApp bot, and branding suite in 7–10 days.",
+      cta_banner_btn: "Schedule Restaurant Consultation via WhatsApp",
+      cta_banner_home: "← Back to Matrix Studio Home"
+    },
+    ur: {
+      nav_home: "Main Website",
+      nav_overview: "Mukammal Jaiza",
+      nav_bot: "WhatsApp Bot Demo",
+      nav_services: "Khaas Khidmaat",
+      nav_branding: "Branding Aur Packaging",
+      badge_top: "RESTAURANT SHOWCASE",
+      btn_discuss_top: "Restaurant Par Baat Karein ↗",
+      hero_client: "DASTARKHWAN RESTAURANT",
+      hero_type: "COMPLETE DIGITAL TRANSFORMATION DEMO",
+      hero_h1_main: "Dastarkhwan Restaurant",
+      hero_h1_accent: "Mukammal Digital Transformation",
+      hero_sub: "Ek live demonstration ke Matrix Studio kis tarah Pakistan ke traditional Karahi aur Desi restaurants ko high-revenue digital business mein badalta hai — 24/7 automated WhatsApp orders, digital QR menus, shaandar packaging aur viral food ad campaigns ke zariye.",
+      hero_cta_sim: "WhatsApp Bot Demo Check Karein ↓",
+      hero_cta_wa: "Apne Restaurant Ke Liye Ye System Lagwayein",
+      hl1_tag: "PILLAR 01",
+      hl1_val: "24/7 WhatsApp AI Bot",
+      hl1_desc: "Peak dinner time par koi call miss nahi hoti. Bot orders aur bookings khud manage karta hai.",
+      hl2_tag: "PILLAR 02",
+      hl2_val: "Contactless QR Menu",
+      hl2_desc: "Tables par mobile scan se foran tasweeron wala menu open hota hai, printing kharche khatam.",
+      hl3_tag: "PILLAR 03",
+      hl3_val: "Heritage Packaging",
+      hl3_desc: "Royal maroon aur gold takeaway boxes, kraft bags aur staff aprons.",
+      hl4_tag: "PILLAR 04",
+      hl4_val: "Cinematic Food Ads",
+      hl4_desc: "Aam phone photo ko dhuan-dhaar karahi ads aur video reels mein badalna.",
+      over_eyebrow: "01 / Asal Masla",
+      over_title: "Desi Restaurants Har Mahine 30%+ Sale Kyun Kho Dete Hain?",
+      over_desc: "Raat 8 baje se 12 baje ke darmiyan be-panah phone calls aati hain. Counter staff har call attend nahi kar pata aur ghalat orders likhe jaate hain.",
+      comp_before_tag: "PURANA TAREEQA",
+      comp_before_h: "Matrix Studio Se Pehle Ka Haal",
+      comp_b1: "Peak time par phone busy hone se 25–40% calls miss aur orders cancel ho jate hain.",
+      comp_b2: "Kaghazi menu par tail aur saalan lag jata hai, daam badalne par naya chapwana mehanga hota hai.",
+      comp_b3: "Staff ko baar baar phone par rates aur deals samjhani parti hain.",
+      comp_b4: "Customers ka koi data save nahi hota — sust dino mein unhe wapis bulane ka zariya nahi hota.",
+      comp_b5: "Saada polythene bags se khana thanda ho jata hai aur brand ka impact khatam ho jata hai.",
+      comp_after_tag: "MATRIX STUDIO SYSTEM",
+      comp_after_h: "Dastarkhwan Ke Automated Setup Ke Baad",
+      comp_a1: "WhatsApp AI ek waqt mein saikron customers ko bina intezaar ke foran jawab deta hai.",
+      comp_a2: "Tables par QR scan karte hi customer apni marzi se khane ki tasweerein dekh kar order karta hai.",
+      comp_a3: "Family table booking ka automated flow jo timing aur logon ki tadad note karke confirm karta hai.",
+      comp_a4: "Customer database tayar hota hai jis se Juma ke deals aur discounts auto-broadcast hote hain.",
+      comp_a5: "Royal maroon aur gold packaging khana garam rakhti hai aur dawat ka asar deti hai.",
+      sim_eyebrow: "02 / Live Interactive Simulator",
+      sim_title: "Dastarkhwan Ka Smart WhatsApp Assistant Test Karein",
+      sim_desc: "Neeche diye gaye buttons par tap karein ya khud message likhein aur live dekhein ke automated bot orders aur table reservations kaise leta hai.",
+      sim_sub_eye: "24/7 AI Receptionist",
+      sim_h3: "Raat Ki Rush Mein Ab Koi Karahi Order Miss Nahi Hoga.",
+      sim_p1: "Jab customer WhatsApp par rabta karta hai, use wait nahi karna parta. Bot foran menu, deals, delivery timing aur table booking pesh karta hai.",
+      sim_p2: "Agar koi khas sawal ho, toh bot foran aapke counter manager ko customer ke number aur tafseel ke sath alert bhej deta hai.",
+      sim_btn_build: "Apne Restaurant Ke Liye Ye Bot Banwayein ↗",
+      sim_online: "● Online · Matrix AI Automated",
+      sim_reset: "Restart Demo",
+      sim_send: "Bhejein",
+      svc_eyebrow: "03 / Mukammal Suite",
+      svc_title: "Dastarkhwan Ke Liye Hamari 5 Badi Khidmaat",
+      svc_desc: "Har service aapke kitchen aur counter ke hisab se tailor ki jati hai aur staff ko complete training di jati hai.",
+      s1_title: "24/7 WhatsApp AI Receptionist",
+      s1_desc: "Delivery orders lena, menu aur rates batana, family hall tables book karna aur delivery charges calculate karna.",
+      s2_title: "Digital QR Code Table Menu",
+      s2_desc: "Tables par stylish QR stands. Diners mobile se scan karke bina app download kiye laziz khanon ki tasweerein dekh sakte hain.",
+      s3_title: "Heritage Packaging Aur Visual Identity",
+      s3_desc: "Maroon aur gold packaging design: Karahi foil takeaway boxes, butter paper wraps, kraft bags aur staff aprons.",
+      s4_title: "Cinematic Food Ads Aur Campaigns",
+      s4_desc: "Mobile photo ko cinematic lighting aur steaming karahi graphics mein badal kar Instagram aur Facebook par chalana.",
+      s5_title: "Customer Database Aur Loyalty CRM",
+      s5_desc: "Har order dene wale ka record mehfooz karna, Juma deals bhejna aur Google par 5-star reviews lena.",
+      s6_title: "Apne Restaurant Ko Modernize Karna Chahte Hain?",
+      s6_desc: "Hum sirf 7 se 10 dino mein mukammal setup tayar karke live kar dete hain.",
+      s6_btn: "Package Aur Rates Discuss Karein ↗",
+      vis_eyebrow: "04 / Visual Execution",
+      vis_title: "Packaging Aur Digital Menu Ke Concepts",
+      vis_desc: "Dastarkhwan ke shandar zaiqe ko aala darjay ki packaging aur digital ordering ke sath pesh kiya gaya hai.",
+      vis1_tag: "BRANDING DELIVERABLES",
+      vis1_h: "Royal Heritage Takeaway Packaging",
+      vis1_desc: "Karahi, Handi aur Dum Biryani ke liye khas banaye gaye thermal boxes jo tail ko leak hone se rokte hain aur khana garam rakhte hain.",
+      vis1_s1: "Foil-lined leak-proof Karahi aur Handi boxes",
+      vis1_s2: "Gold embossed handles wale premium kraft bags",
+      vis1_s3: "Roghni Naan aur Roti ke greaseproof lifafay",
+      vis1_s4: "Staff ke liye branded embroidered aprons",
+      vis2_tag: "DIGITAL TOUCHPOINT",
+      vis2_h: "Mobile QR Table Menu Experience",
+      vis2_desc: "Customer baghair kisi app ke camera se scan karke menu dekhta hai aur 1 tap mein WhatsApp par order bhej sakta hai.",
+      vis2_s1: "Browser mein foran open hota hai (no app install)",
+      vis2_s2: "Live rates aur available items ki foran updating",
+      vis2_s3: "English aur Roman Urdu dono mein tafseel",
+      vis2_s4: "Counter kitchen screen par WhatsApp notification",
+      camp_eyebrow: "05 / Advertising Direction",
+      camp_title: "Sales Barhane Wale Social Media Ads",
+      camp_desc: "Hum aapke khane ki photo ko aese ads mein badalte hain jo dekhte hi bhook bharka dein aur foran order generate karein.",
+      camp1_tag: "CAMPAIGN POSTER",
+      camp1_h: "Midnight Dawat Aur Family Combos",
+      camp1_desc: "Instagram aur Facebook feed ke mutabiq 4:5 vertical ads jo WhatsApp ordering par direct link karte hain.",
+      camp2_tag: "SOCIAL ECOSYSTEM",
+      camp2_h: "Professional Social Media Presence",
+      camp2_desc: "TikTok, Instagram aur Facebook par consistent visual branding aur authentic Pakistani khanon ki video reels.",
+      cta_banner_eye: "Turnkey Restaurant Launch",
+      cta_banner_h2: "Apne Restaurant Ko Matrix Studio Se Upgrade Karwayein?",
+      cta_banner_p: "Chahe aapka Karahi restaurant ho, fast food joint ho, cafe ya family dining hall — hum 7 se 10 dino mein aapka mukammal digital system tayar kar dete hain.",
+      cta_banner_btn: "WhatsApp Par Restaurant Consultation Schedule Karein",
+      cta_banner_home: "← Matrix Studio Home Page Par Wapis Jayein"
+    }
+  };
+
+  function setLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (translations[lang][key]) el.innerHTML = translations[lang][key];
+    });
+    initSimChat();
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.addEventListener('click', () => setLanguage(b.dataset.lang));
+  });
+
+  // Simulated WhatsApp Bot Logic for Dastarkhwan
+  const simChatBody = document.getElementById('simChatBody');
+  const simChatForm = document.getElementById('simChatForm');
+  const simChatInput = document.getElementById('simChatInput');
+  const simResetBtn = document.getElementById('simResetBtn');
+
+  function appendSimMsg(text, isUser = false) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + (isUser ? 'user' : 'bot');
+    div.style.whiteSpace = 'pre-line';
+    div.textContent = text;
+    const time = document.createElement('span');
+    time.className = 'chat-time';
+    time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    div.appendChild(time);
+    simChatBody.appendChild(div);
+    simChatBody.scrollTop = simChatBody.scrollHeight;
+  }
+
+  function getDastarkhwanBotReply(raw) {
+    const q = raw.toLowerCase();
+    const isUr = (currentLang === 'ur');
+
+    if (/menu|item|karahi|handi|bbq|biryani|roti|daal/.test(q)) {
+      return isUr
+        ? "🍲 **Dastarkhwan Special Menu:**\n\n1. Shinwari Mutton Karahi (Full): Rs. 2,450\n2. Chicken White Handi (Boneless): Rs. 1,650\n3. Malai Boti Platter (12 Pcs): Rs. 1,190\n4. Beef Seekh Kabab (4 Pcs): Rs. 780\n5. Special Mutton Dum Biryani: Rs. 690\n6. Roghni / Garlic Naan: Rs. 90\n\n👉 Kya aap delivery order place karna chahte hain ya table book karwani hai?"
+        : "🍲 **Dastarkhwan Special Menu:**\n\n1. Shinwari Mutton Karahi (Full): Rs. 2,450\n2. Chicken White Handi (Boneless): Rs. 1,650\n3. Malai Boti Platter (12 Pcs): Rs. 1,190\n4. Beef Seekh Kabab (4 Pcs): Rs. 780\n5. Special Mutton Dum Biryani: Rs. 690\n6. Roghni / Garlic Naan: Rs. 90\n\n👉 Would you like to place a delivery order or book a table?";
+    }
+
+    if (/deal|family|offer|discount|combo|bachat/.test(q)) {
+      return isUr
+        ? "🔥 **Dastarkhwan Family Feast Deals:**\n\n• **Dawat-e-Khas Combo (Serves 4-5):**\n1 Full Chicken Karahi + 1 Plate Beef Seekh Kabab + 6 Roghni Naan + 1.5L Cold Drink = **Rs. 2,890** (Save Rs. 550!)\n\n• **Midnight Karahi Deal (10 PM to 2 AM):**\nHalf Mutton Karahi + 3 Naan + 2 Cold Drinks = **Rs. 1,490**\n\nKaunsi deal book karni hai?"
+        : "🔥 **Dastarkhwan Family Feast Deals:**\n\n• **Dawat-e-Khas Combo (Serves 4-5):**\n1 Full Chicken Karahi + 1 Plate Beef Seekh Kabab + 6 Roghni Naan + 1.5L Soft Drink = **Rs. 2,890** (Save Rs. 550!)\n\n• **Midnight Karahi Deal (10 PM to 2 AM):**\nHalf Mutton Karahi + 3 Naan + 2 Drinks = **Rs. 1,490**\n\nWhich deal would you like to order?";
+    }
+
+    if (/book|table|seat|hall|family|reservation|kursi/.test(q)) {
+      return isUr
+        ? "🪑 **Family Hall Table Reservation:**\nHumare paas AC Family Hall aur Open-Air Dastarkhwan seating dono available hain!\n\nBarahe karam batayein:\n1. Kitne afrad (persons) hain?\n2. Kis tareekh aur waqt par tashreef layenge?\n\nHum foran table reserve karke SMS/WhatsApp confirmation bhej dete hain."
+        : "🪑 **Family Hall Table Reservation:**\nWe offer both Air-Conditioned Family Hall and Open-Air Dastarkhwan seating!\n\nPlease let us know:\n1. Number of guests?\n2. Preferred date and arrival time?\n\nWe will confirm your table slot immediately.";
+    }
+
+    if (/delivery|timing|rider|area|address|location|kahan|charges/.test(q)) {
+      return isUr
+        ? "🛵 **Delivery Information & Timings:**\n\n• **Timings:** Rozana 12:30 PM se 2:30 AM tak.\n• **Delivery Areas:** Defence, Clifton, PECHS, Gulshan-e-Iqbal, Bahadurabad, Johar aur Saddar.\n• **Delivery Time:** 35 se 45 minutes (garam thermal packing ke sath).\n• **Flat Rider Fee:** Rs. 150.\n\nApna mukammal address share karein taake order shuru kiya ja sake!"
+        : "🛵 **Delivery Information & Timings:**\n\n• **Timings:** Daily 12:30 PM to 2:30 AM.\n• **Delivery Coverage:** Defence, Clifton, PECHS, Gulshan-e-Iqbal, Bahadurabad, Johar, and Saddar.\n• **Average Delivery Time:** 35 to 45 mins (thermal insulated packaging).\n• **Flat Delivery Fee:** Rs. 150.\n\nPlease share your delivery address to start your order!";
+    }
+
+    if (/manager|human|agent|talk|call|rabta|person/.test(q)) {
+      return isUr
+        ? "👤 **Counter Manager Contact:**\nAap hamare restaurant counter manager se direct call ya WhatsApp par rabta kar sakte hain:\n📞 Phone: +92 302 2053002\n\n(Aapka inquiry ticket manager screen par notify kardiya gaya hai)."
+        : "👤 **Counter Manager Direct Line:**\nYou can connect directly with our restaurant duty manager via call or WhatsApp:\n📞 Phone: +92 302 2053002\n\n(Your inquiry has been flagged for counter manager review).";
+    }
+
+    return isUr
+      ? "Shukriya! 😊 Dastarkhwan AI Assistant aapki khidmat mein hazir hai. Aap 'Menu', 'Deals', 'Table Booking' ya 'Delivery' likh kar pooch sakte hain."
+      : "Thank you! 😊 Dastarkhwan AI Assistant is at your service. Try asking for 'Menu', 'Deals', 'Table Booking', or 'Delivery'.";
+  }
+
+  function handleSimSend(text) {
+    if (!text.trim()) return;
+    appendSimMsg(text, true);
+    setTimeout(() => {
+      const reply = getDastarkhwanBotReply(text);
+      appendSimMsg(reply, false);
+    }, 450);
+  }
+
+  simChatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = simChatInput.value.trim();
+    if (!val) return;
+    handleSimSend(val);
+    simChatInput.value = '';
+  });
+
+  document.querySelectorAll('.sim-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      handleSimSend(btn.dataset.prompt);
+    });
+  });
+
+  function initSimChat() {
+    simChatBody.innerHTML = '';
+    const isUr = (currentLang === 'ur');
+    const welcome = isUr
+      ? "Assalam-o-Alaikum! 🍲\nDastarkhwan Restaurant mein Khush Aamdeed! Main aapka AI Virtual Assistant hoon.\n\nAap menu dekh sakte hain, deals check kar sakte hain, ya table reserve karwa sakte hain. Main aapki kya madad karoon?"
+      : "Assalam-o-Alaikum & Welcome to Dastarkhwan Restaurant! 🍲\nI am your 24/7 AI Virtual Assistant.\n\nI can help you explore our Karahi & Handi menu, order family feast deals, or reserve a dining table. How can I assist you today?";
+    appendSimMsg(welcome, false);
+  }
+
+  simResetBtn.addEventListener('click', initSimChat);
+
+  // Initialize
+  initSimChat();
+</script>
+</body>
+</html>
